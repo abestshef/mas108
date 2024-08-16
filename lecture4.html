@@ -435,6 +435,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4-homework-exercises">Lecture 4 Homework exercises</a></li>
 </ul>
             </nav>
@@ -450,12 +451,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-4-more-examples-of-difference-equation-models">
 <h1>Lecture 4. More examples of difference equation models<a class="headerlink" href="#lecture-4-more-examples-of-difference-equation-models" title="Link to this heading">#</a></h1>
 <p>The last couple of lectures introduced a wealth of new concepts, which might have felt a bit overwhelming! This lecture, we are going to shift down gears with the mathematical investigations and just explore a few examples of difference equation models.</p>
-<div class="proof example admonition" id="ex4_1">
-<p class="admonition-title"><span class="caption-number">Example 5 </span></p>
-<section class="example-content" id="proof-content">
-<p>Paying off a mortgage. Suppose you buy a house and borrow <span class="math notranslate nohighlight">\(M\)</span> pounds from the bank as a mortgage. The bank charges interest at a rate of <span class="math notranslate nohighlight">\(R \%\)</span> per year, and each year you pay <span class="math notranslate nohighlight">\(s\)</span> pounds to the bank. How long does it take to pay off your mortgage, as a function of <span class="math notranslate nohighlight">\(M, R\)</span>, and <span class="math notranslate nohighlight">\(s\)</span> ? Writing <span class="math notranslate nohighlight">\(r=R / 100\)</span>, find the numerical value of this time when <span class="math notranslate nohighlight">\(M=200,000\)</span>, <span class="math notranslate nohighlight">\(s=10,000\)</span>, and <span class="math notranslate nohighlight">\(r=0.02\)</span>. Are there any values of <span class="math notranslate nohighlight">\(M, R\)</span>, and <span class="math notranslate nohighlight">\(s\)</span> for which you will never pay off your mortgage?</p>
-</section>
-</div><p>We can model this situation as follows</p>
+<section id="solution">
+<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>We can model this situation as follows</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -491,8 +489,14 @@ T=\frac{\ln (10,000)-\ln (10,000-0.02 \times 200,000)}{\ln (1.02)} \approx 25.8 
 \]</div>
 <p>so it will take 26 years to pay off your mortgage.</p>
 <p>You will not get a solution if <span class="math notranslate nohighlight">\(r M&gt;s\)</span>, so in this case you will never pay off your mortgage. This is because the annual payments are not sufficient even for paying off the interest on the mortgage.</p>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+</section>
+<div class="proof example admonition" id="ex4_1">
+<p class="admonition-title"><span class="caption-number">Example 5 </span></p>
+<section class="example-content" id="proof-content">
+<p>Paying off a mortgage. Suppose you buy a house and borrow <span class="math notranslate nohighlight">\(M\)</span> pounds from the bank as a mortgage. The bank charges interest at a rate of <span class="math notranslate nohighlight">\(R \%\)</span> per year, and each year you pay <span class="math notranslate nohighlight">\(s\)</span> pounds to the bank. How long does it take to pay off your mortgage, as a function of <span class="math notranslate nohighlight">\(M, R\)</span>, and <span class="math notranslate nohighlight">\(s\)</span> ? Writing <span class="math notranslate nohighlight">\(r=R / 100\)</span>, find the numerical value of this time when <span class="math notranslate nohighlight">\(M=200,000\)</span>, <span class="math notranslate nohighlight">\(s=10,000\)</span>, and <span class="math notranslate nohighlight">\(r=0.02\)</span>. Are there any values of <span class="math notranslate nohighlight">\(M, R\)</span>, and <span class="math notranslate nohighlight">\(s\)</span> for which you will never pay off your mortgage?</p>
+</section>
+</div><section id="id1">
+<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>(a) Suppose we start with <span class="math notranslate nohighlight">\(U(0)\)</span> organisms. In month one they breed, but they do not give birth, so at the end of the month we have <span class="math notranslate nohighlight">\(U(1)=U(0)\)</span> organisms. In month two, those who bred in month one give birth at a rate <span class="math notranslate nohighlight">\(r\)</span>, so we have <span class="math notranslate nohighlight">\(r U(0)\)</span> new organisms, in addition to the <span class="math notranslate nohighlight">\(U(1)\)</span> we already have, so <span class="math notranslate nohighlight">\(U(2)=U(1)+r U(0)\)</span>. In general, in month <span class="math notranslate nohighlight">\(t+1\)</span>, we have all the organisms we had at the end of month <span class="math notranslate nohighlight">\(t\)</span>, which is <span class="math notranslate nohighlight">\(U(t)\)</span> organisms, plus those born as a result of breeding in month <span class="math notranslate nohighlight">\(t\)</span>, which is <span class="math notranslate nohighlight">\(r U(t-1)\)</span> organisms. The resulting model is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -528,8 +532,8 @@ U(t+1) &amp; =U(t)+r U(t-1), \quad \text { for } t \geq 1 \tag{24}
 <p>(c) Find the steady state solution of the sequence <span class="math notranslate nohighlight">\(S(t)=U(t) / U(t-1)\)</span> for <span class="math notranslate nohighlight">\(r=1\)</span>.</p>
 </section>
 </div><p>Notice that, for <span class="math notranslate nohighlight">\(r=1\)</span>, the positive value of <span class="math notranslate nohighlight">\(S_{*}\)</span> is called the Golden Ratio. If you have never heard of the Golden Ratio then look it up using your favourite search engine. There are many claims about its relation to a wide range of applications (some more dubious than others).</p>
-<section id="id1">
-<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2>Solution.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> be the probability that it is dry on day <span class="math notranslate nohighlight">\(t\)</span>. Then the probability of it being wet on day <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(1-U(t)\)</span>. Thus probability of it being dry on day <span class="math notranslate nohighlight">\(t+1\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -551,8 +555,8 @@ U(t)=U(0)(q-p)^{t}+\frac{p\left[(q-p)^{t}-1\right]}{q-p-1} \tag{28}
 <section class="example-content" id="proof-content">
 <p>Predicting the weather. Suppose that there is a probability <span class="math notranslate nohighlight">\(p\)</span> of there being a dry day (no rain) after a wet day (some rain) and a probability <span class="math notranslate nohighlight">\(q\)</span> of there being a dry day after a dry day. Suppose it is a dry day today. What is the probability that it will be a dry day in <span class="math notranslate nohighlight">\(t\)</span> days time, as a function of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> ? Find the numerical value for <span class="math notranslate nohighlight">\(p=0.2\)</span>, and <span class="math notranslate nohighlight">\(q=0.8\)</span>, and <span class="math notranslate nohighlight">\(t=1,2,3,4,5\)</span>.</p>
 </section>
-</div><section id="id2">
-<h2>Solution.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+</div><section id="id3">
+<h2>Solution.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>The parameter <span class="math notranslate nohighlight">\(r\)</span> is the net reproductive rate of the organisms, which we are assuming is the same for both populations. Parameters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> denote the strength of intraspecific competition (meaning the competition of rabbits with other rabbits and sheep with other sheep) for <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> respectively. The parameter <span class="math notranslate nohighlight">\(b\)</span> denotes the effect of interspecific competition (meaning competition between rabbits and sheep) on the death rate of rabbits and <span class="math notranslate nohighlight">\(\beta\)</span> denotes the effect of interspecies competition on the death rate of sheep.</p>
 <p>(a) Let <span class="math notranslate nohighlight">\(U_{*}\)</span> and <span class="math notranslate nohighlight">\(V_{*}\)</span> denote the steady states of <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> respectively. Then, using</p>
 <p>Equations (29-30) with <span class="math notranslate nohighlight">\(r=1, a=\alpha=2, b=\beta=1\)</span>, we have the following equations for <span class="math notranslate nohighlight">\(U_{*}\)</span> and <span class="math notranslate nohighlight">\(V_{*}\)</span></p>
@@ -689,6 +693,7 @@ species.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4-homework-exercises">Lecture 4 Homework exercises</a></li>
 </ul>
   </nav></div>
