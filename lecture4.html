@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Lecture 4. More examples of difference equation models &#8212; MAS108 Mathematical Modelling</title>
   
@@ -15,53 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture4';</script>
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="MAS108 Mathematical Modelling - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="MAS108 Mathematical Modelling - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +199,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="lecture15.html">Lecture 15. Motion in more than one dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture16.html">Lecture 16. Relative motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture17.html">Lecture 17. Modelling the effect of gravity close to the Earth’s surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture18.html">Lecture 18. Modelling projectile motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture19.html">Lecture 19. More examples of motion with constant acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture20.html">Lecture 20. The muddiest point: part III</a></li>
+
 </ul>
 
     </div>
@@ -191,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +262,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture4.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -360,26 +390,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -400,6 +432,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4-homework-exercises">Lecture 4 Homework exercises</a></li>
 </ul>
             </nav>
@@ -410,10 +445,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-4-more-examples-of-difference-equation-models">
-<h1>Lecture 4. More examples of difference equation models<a class="headerlink" href="#lecture-4-more-examples-of-difference-equation-models" title="Permalink to this heading">#</a></h1>
+<h1>Lecture 4. More examples of difference equation models<a class="headerlink" href="#lecture-4-more-examples-of-difference-equation-models" title="Link to this heading">#</a></h1>
 <p>The last couple of lectures introduced a wealth of new concepts, which might have felt a bit overwhelming! This lecture, we are going to shift down gears with the mathematical investigations and just explore a few examples of difference equation models.</p>
 <div class="proof example admonition" id="ex4_1">
 <p class="admonition-title"><span class="caption-number">Example 5 </span></p>
@@ -456,13 +491,8 @@ T=\frac{\ln (10,000)-\ln (10,000-0.02 \times 200,000)}{\ln (1.02)} \approx 25.8 
 \]</div>
 <p>so it will take 26 years to pay off your mortgage.</p>
 <p>You will not get a solution if <span class="math notranslate nohighlight">\(r M&gt;s\)</span>, so in this case you will never pay off your mortgage. This is because the annual payments are not sufficient even for paying off the interest on the mortgage.</p>
-<div class="proof example admonition" id="ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die.">
-<p class="admonition-title"><span class="caption-number">Example 6 </span></p>
-<section class="example-content" id="proof-content">
-<p>(a) Construct a difference equation model of the change in population size over time.</p>
-<p>(b) In the case <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(U(0)=1\)</span>, find the values of <span class="math notranslate nohighlight">\(U(1), \ldots, U(10)\)</span>. Do you recognise this sequence?</p>
-<p>(c) Find the steady state solution of the sequence <span class="math notranslate nohighlight">\(S(t)=U(t) / U(t-1)\)</span> for <span class="math notranslate nohighlight">\(r=1\)</span>.</p>
-<p class="rubric">Solution.</p>
+<section id="solution">
+<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
 <p>(a) Suppose we start with <span class="math notranslate nohighlight">\(U(0)\)</span> organisms. In month one they breed, but they do not give birth, so at the end of the month we have <span class="math notranslate nohighlight">\(U(1)=U(0)\)</span> organisms. In month two, those who bred in month one give birth at a rate <span class="math notranslate nohighlight">\(r\)</span>, so we have <span class="math notranslate nohighlight">\(r U(0)\)</span> new organisms, in addition to the <span class="math notranslate nohighlight">\(U(1)\)</span> we already have, so <span class="math notranslate nohighlight">\(U(2)=U(1)+r U(0)\)</span>. In general, in month <span class="math notranslate nohighlight">\(t+1\)</span>, we have all the organisms we had at the end of month <span class="math notranslate nohighlight">\(t\)</span>, which is <span class="math notranslate nohighlight">\(U(t)\)</span> organisms, plus those born as a result of breeding in month <span class="math notranslate nohighlight">\(t\)</span>, which is <span class="math notranslate nohighlight">\(r U(t-1)\)</span> organisms. The resulting model is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -490,12 +520,16 @@ U(t+1) &amp; =U(t)+r U(t-1), \quad \text { for } t \geq 1 \tag{24}
 \end{align*}
 \end{split}\]</div>
 </section>
-</div><p>Notice that, for <span class="math notranslate nohighlight">\(r=1\)</span>, the positive value of <span class="math notranslate nohighlight">\(S_{*}\)</span> is called the Golden Ratio. If you have never heard of the Golden Ratio then look it up using your favourite search engine. There are many claims about its relation to a wide range of applications (some more dubious than others).</p>
-<div class="proof example admonition" id="ex4_3">
-<p class="admonition-title"><span class="caption-number">Example 7 </span></p>
+<div class="proof example admonition" id="ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die.">
+<p class="admonition-title"><span class="caption-number">Example 6 </span></p>
 <section class="example-content" id="proof-content">
-<p>Predicting the weather. Suppose that there is a probability <span class="math notranslate nohighlight">\(p\)</span> of there being a dry day (no rain) after a wet day (some rain) and a probability <span class="math notranslate nohighlight">\(q\)</span> of there being a dry day after a dry day. Suppose it is a dry day today. What is the probability that it will be a dry day in <span class="math notranslate nohighlight">\(t\)</span> days time, as a function of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> ? Find the numerical value for <span class="math notranslate nohighlight">\(p=0.2\)</span>, and <span class="math notranslate nohighlight">\(q=0.8\)</span>, and <span class="math notranslate nohighlight">\(t=1,2,3,4,5\)</span>.</p>
-<p class="rubric">Solution.</p>
+<p>(a) Construct a difference equation model of the change in population size over time.</p>
+<p>(b) In the case <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(U(0)=1\)</span>, find the values of <span class="math notranslate nohighlight">\(U(1), \ldots, U(10)\)</span>. Do you recognise this sequence?</p>
+<p>(c) Find the steady state solution of the sequence <span class="math notranslate nohighlight">\(S(t)=U(t) / U(t-1)\)</span> for <span class="math notranslate nohighlight">\(r=1\)</span>.</p>
+</section>
+</div><p>Notice that, for <span class="math notranslate nohighlight">\(r=1\)</span>, the positive value of <span class="math notranslate nohighlight">\(S_{*}\)</span> is called the Golden Ratio. If you have never heard of the Golden Ratio then look it up using your favourite search engine. There are many claims about its relation to a wide range of applications (some more dubious than others).</p>
+<section id="id1">
+<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> be the probability that it is dry on day <span class="math notranslate nohighlight">\(t\)</span>. Then the probability of it being wet on day <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(1-U(t)\)</span>. Thus probability of it being dry on day <span class="math notranslate nohighlight">\(t+1\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -512,22 +546,13 @@ U(t)=U(0)(q-p)^{t}+\frac{p\left[(q-p)^{t}-1\right]}{q-p-1} \tag{28}
 \]</div>
 <p>If <span class="math notranslate nohighlight">\(p=0.2\)</span> and <span class="math notranslate nohighlight">\(q=0.8\)</span> then <span class="math notranslate nohighlight">\(U(t)=1,0.8,0.68,0.61,0.56,0.54\)</span> for <span class="math notranslate nohighlight">\(t=0,1,2,3,4,5\)</span> respectively. Note that <span class="math notranslate nohighlight">\(U(0)=1\)</span> because the question stated ‘it is a dry day today’.</p>
 </section>
-</div><div class="proof example admonition" id="ex4_4">
-<p class="admonition-title"><span class="caption-number">Example 8 </span></p>
+<div class="proof example admonition" id="ex4_3">
+<p class="admonition-title"><span class="caption-number">Example 7 </span></p>
 <section class="example-content" id="proof-content">
-<p>Competing species. Suppose we have two competing species of organisms in the same place, for example rabbits and sheep competing for edible vegetation. Denote by <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> the number of organisms of each species given in some arbitrary unit (for example, there could be <span class="math notranslate nohighlight">\(U(t)\)</span> thousand rabbits and <span class="math notranslate nohighlight">\(V(t)\)</span> thousand sheep). We can model this as follows</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-&amp; U(t+1)=(1+r) U(t)-a U^{2}(t)-b U(t) V(t)  \tag{29}\\
-&amp; V(t+1)=(1+r) V(t)-\alpha V^{2}(t)-\beta U(t) V(t) \tag{30}
-\end{align*}
-\end{split}\]</div>
-<p>Explain what all the parameters <span class="math notranslate nohighlight">\((r, a, b, \alpha, \beta)\)</span> mean biologically. Consider the case where <span class="math notranslate nohighlight">\(r=1, a=\alpha=2, b=\beta=1\)</span> and <span class="math notranslate nohighlight">\(U(0)=1 / 2, V(0)=1 / 4\)</span>.</p>
-<p>(a) Calculate the steady state solutions.</p>
-<p>(b) Explore how the population changes over time (possibly using coding).</p>
-<p>(c) Which steady state solution does the system appear to be moving towards?</p>
-<p class="rubric">Solution.</p>
+<p>Predicting the weather. Suppose that there is a probability <span class="math notranslate nohighlight">\(p\)</span> of there being a dry day (no rain) after a wet day (some rain) and a probability <span class="math notranslate nohighlight">\(q\)</span> of there being a dry day after a dry day. Suppose it is a dry day today. What is the probability that it will be a dry day in <span class="math notranslate nohighlight">\(t\)</span> days time, as a function of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> ? Find the numerical value for <span class="math notranslate nohighlight">\(p=0.2\)</span>, and <span class="math notranslate nohighlight">\(q=0.8\)</span>, and <span class="math notranslate nohighlight">\(t=1,2,3,4,5\)</span>.</p>
+</section>
+</div><section id="id2">
+<h2>Solution.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>The parameter <span class="math notranslate nohighlight">\(r\)</span> is the net reproductive rate of the organisms, which we are assuming is the same for both populations. Parameters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> denote the strength of intraspecific competition (meaning the competition of rabbits with other rabbits and sheep with other sheep) for <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> respectively. The parameter <span class="math notranslate nohighlight">\(b\)</span> denotes the effect of interspecific competition (meaning competition between rabbits and sheep) on the death rate of rabbits and <span class="math notranslate nohighlight">\(\beta\)</span> denotes the effect of interspecies competition on the death rate of sheep.</p>
 <p>(a) Let <span class="math notranslate nohighlight">\(U_{*}\)</span> and <span class="math notranslate nohighlight">\(V_{*}\)</span> denote the steady states of <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> respectively. Then, using</p>
 <p>Equations (29-30) with <span class="math notranslate nohighlight">\(r=1, a=\alpha=2, b=\beta=1\)</span>, we have the following equations for <span class="math notranslate nohighlight">\(U_{*}\)</span> and <span class="math notranslate nohighlight">\(V_{*}\)</span></p>
@@ -558,8 +583,24 @@ V_{*}=\frac{1-U_{*}}{2}, U_{*}=\frac{1-V_{*}}{2} \Longrightarrow U_{*}=V_{*}=\fr
 <p>(c) We see from Figure 7 that the solution seems to converge to the steady state solution from Equation (36), <span class="math notranslate nohighlight">\(U_{*}=V_{*}=1 / 3\)</span>. This means we can expect coexistence between the two
 species.</p>
 </section>
+<div class="proof example admonition" id="ex4_4">
+<p class="admonition-title"><span class="caption-number">Example 8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Competing species. Suppose we have two competing species of organisms in the same place, for example rabbits and sheep competing for edible vegetation. Denote by <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> the number of organisms of each species given in some arbitrary unit (for example, there could be <span class="math notranslate nohighlight">\(U(t)\)</span> thousand rabbits and <span class="math notranslate nohighlight">\(V(t)\)</span> thousand sheep). We can model this as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp; U(t+1)=(1+r) U(t)-a U^{2}(t)-b U(t) V(t)  \tag{29}\\
+&amp; V(t+1)=(1+r) V(t)-\alpha V^{2}(t)-\beta U(t) V(t) \tag{30}
+\end{align*}
+\end{split}\]</div>
+<p>Explain what all the parameters <span class="math notranslate nohighlight">\((r, a, b, \alpha, \beta)\)</span> mean biologically. Consider the case where <span class="math notranslate nohighlight">\(r=1, a=\alpha=2, b=\beta=1\)</span> and <span class="math notranslate nohighlight">\(U(0)=1 / 2, V(0)=1 / 4\)</span>.</p>
+<p>(a) Calculate the steady state solutions.</p>
+<p>(b) Explore how the population changes over time (possibly using coding).</p>
+<p>(c) Which steady state solution does the system appear to be moving towards?</p>
+</section>
 </div><section id="lecture-4-homework-exercises">
-<h2>Lecture 4 Homework exercises<a class="headerlink" href="#lecture-4-homework-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Lecture 4 Homework exercises<a class="headerlink" href="#lecture-4-homework-exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-7 admonition">
 <p class="admonition-title">Exercise 7</p>
 <p>Find the steady state solution to Equation (27). Give values of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> for a city that has dry days <span class="math notranslate nohighlight">\(80 \%\)</span> of the time (note that there is not a unique answer to this question).</p>
@@ -606,11 +647,10 @@ species.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="lecture3.html"
@@ -630,10 +670,7 @@ species.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -642,12 +679,16 @@ species.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4-homework-exercises">Lecture 4 Homework exercises</a></li>
 </ul>
   </nav></div>
@@ -670,9 +711,10 @@ By Alex Best / Jonathan Potts
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -696,8 +738,8 @@ By Alex Best / Jonathan Potts
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

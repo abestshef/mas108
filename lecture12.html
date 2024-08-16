@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Lecture 12. Inhomogeneous second order ODEs &#8212; MAS108 Mathematical Modelling</title>
   
@@ -15,53 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture12';</script>
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="MAS108 Mathematical Modelling - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="MAS108 Mathematical Modelling - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +199,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="lecture15.html">Lecture 15. Motion in more than one dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture16.html">Lecture 16. Relative motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture17.html">Lecture 17. Modelling the effect of gravity close to the Earth’s surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture18.html">Lecture 18. Modelling projectile motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture19.html">Lecture 19. More examples of motion with constant acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture20.html">Lecture 20. The muddiest point: part III</a></li>
+
 </ul>
 
     </div>
@@ -191,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +262,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture12.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -360,26 +390,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -400,7 +432,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-homework-exercises">Lecture 12 Homework exercises</a></li>
 </ul>
             </nav>
@@ -411,30 +447,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-12-inhomogeneous-second-order-odes">
-<h1>Lecture 12. Inhomogeneous second order ODEs<a class="headerlink" href="#lecture-12-inhomogeneous-second-order-odes" title="Permalink to this heading">#</a></h1>
+<h1>Lecture 12. Inhomogeneous second order ODEs<a class="headerlink" href="#lecture-12-inhomogeneous-second-order-odes" title="Link to this heading">#</a></h1>
 <p>Before we go any further, let’s start with an example.</p>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 18 </span></p>
-<section class="example-content" id="proof-content">
-<p>A particle <span class="math notranslate nohighlight">\(P\)</span> of mass <span class="math notranslate nohighlight">\(m\)</span> is attached to one end of a spring of natural length <span class="math notranslate nohighlight">\(L\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span>. The other end of the spring is fixed at the point <span class="math notranslate nohighlight">\(A\)</span>. Initially the spring hangs down vertically in equilibrium. The point <span class="math notranslate nohighlight">\(A\)</span> is then set in vertical motion, so that its displacement from its initial position is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-y(t)=D \sin (\sigma t) \tag{135}
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(\sigma&gt;0\)</span> are constants. Let <span class="math notranslate nohighlight">\(x(t)\)</span> be the displacement of the particle from its equilibrium position. Show that the equation of motion for the particle is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\ddot{x}+\omega^{2} x=\omega^{2} D \sin (\sigma t) \tag{136}
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is a positive constant which should be determined.</p>
-<p class="rubric">Solution.</p>
+<section id="solution">
+<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
 <p>The forces acting on <span class="math notranslate nohighlight">\(P\)</span> are the weight, <span class="math notranslate nohighlight">\(m g\)</span>, acting vertically downwards, and the tension, <span class="math notranslate nohighlight">\(T\)</span>, in the spring, acting vertically upwards. In equilibrium, let the tension in the spring be <span class="math notranslate nohighlight">\(T=T_{0}\)</span> and the extension of the spring be <span class="math notranslate nohighlight">\(a\)</span>. By Hooke’s Law, <span class="math notranslate nohighlight">\(T_{0}=k a\)</span>. Since the system is in equilibrium, the vertical forces balance (Figure 19), so</p>
 <div class="math notranslate nohighlight">
 \[
@@ -477,6 +496,49 @@ m \ddot{x}+k x &amp; =k y=k D \sin (\sigma t) \\
 \end{equation*}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega^{2}=\frac{k}{m}\)</span>, so that <span class="math notranslate nohighlight">\(\omega=\sqrt{\frac{k}{m}}\)</span>.</p>
+<section id="the-method-of-undetermined-coefficients">
+<h3>12.1 The method of undetermined coefficients<a class="headerlink" href="#the-method-of-undetermined-coefficients" title="Link to this heading">#</a></h3>
+<p>There is no single catch-all method for solving inhomogeneous second order ODE with constant coefficients, but there is a method that works in many cases, called the method of undetermined coefficients, as follows</p>
+<ol class="arabic simple">
+<li><p>Try to find a solution to Equation (142) of the same form as <span class="math notranslate nohighlight">\(f(t)\)</span>, called the particular solution, <span class="math notranslate nohighlight">\(x_{P}(t)\)</span>.</p></li>
+<li><p>Solve the associated homogeneous ODE, <span class="math notranslate nohighlight">\(\ddot{x}_{I}+b \dot{x}_{I}+c x_{I}=0\)</span> to obtain the complementary function, <span class="math notranslate nohighlight">\(x_{I}(t)\)</span>.</p></li>
+<li><p>Then the general solution is <span class="math notranslate nohighlight">\(x(t)=x_{I}(t)+x_{P}(t)\)</span>.</p></li>
+</ol>
+<p>The problem with this method is that Step 1 does not always work for any function <span class="math notranslate nohighlight">\(f(t)\)</span>. However, it usually works for polynomials, exponential functions, sine, and cosine.</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 18 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the general solution to Equation (141) in the case <span class="math notranslate nohighlight">\(\sigma^{2} \neq \omega^{2}\)</span>.</p>
+</section>
+</div><p>The tricky thing about this method is finding a good guess for the form of the particular solution. Here’s some rules as to what you should try for certain specific functions.</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(f(t)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(f(t)=a_{0}+a_{1} t+a_{2} t^{2}+\cdots+a_{n} t^{n}\)</span>, try setting <span class="math notranslate nohighlight">\(x_{P}(t)\)</span> to be another polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(x_{P}(t)=A_{0}+A_{1} t+A_{2} t^{2}+\cdots+A_{n} t^{n}\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \exp \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \exp \left(a_{1} t\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> or <span class="math notranslate nohighlight">\(f(t)=\cos \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A_{1} \sin \left(a_{1} t\right)+A_{2} \cos \left(a_{1} t\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, <span class="math notranslate nohighlight">\(\operatorname{try} x_{P}(t)=A \sin \left(a_{1} t\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \cos \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \cos \left(a_{1} t\right)\)</span>.</p></li>
+</ol>
+<p>In the above, <span class="math notranslate nohighlight">\(A, a_{i}\)</span>, and <span class="math notranslate nohighlight">\(A_{i}\)</span> (for each <span class="math notranslate nohighlight">\(i\)</span> ) are all constants.</p>
+</section>
+</section>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 19 </span></p>
+<section class="example-content" id="proof-content">
+<p>A particle <span class="math notranslate nohighlight">\(P\)</span> of mass <span class="math notranslate nohighlight">\(m\)</span> is attached to one end of a spring of natural length <span class="math notranslate nohighlight">\(L\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span>. The other end of the spring is fixed at the point <span class="math notranslate nohighlight">\(A\)</span>. Initially the spring hangs down vertically in equilibrium. The point <span class="math notranslate nohighlight">\(A\)</span> is then set in vertical motion, so that its displacement from its initial position is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+y(t)=D \sin (\sigma t) \tag{135}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(\sigma&gt;0\)</span> are constants. Let <span class="math notranslate nohighlight">\(x(t)\)</span> be the displacement of the particle from its equilibrium position. Show that the equation of motion for the particle is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\ddot{x}+\omega^{2} x=\omega^{2} D \sin (\sigma t) \tag{136}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is a positive constant which should be determined.</p>
 </section>
 </div><p>Notice that the resulting ODE (Equation 141) is not in the form of Equation (109) so we cannot use our results from Propositions 4-6.</p>
 <div class="proof definition admonition" id="def12_1">
@@ -492,20 +554,8 @@ m \ddot{x}+k x &amp; =k y=k D \sin (\sigma t) \\
 <p>for some function <span class="math notranslate nohighlight">\(f(t) \neq 0\)</span> and constants <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, is called an inhomogeneous second order ODE with constant coefficients.</p>
 </section>
 </div><p>Notice that Equation (141) is an example of an inhomogeneous second order ODE with constant coefficients.</p>
-<section id="the-method-of-undetermined-coefficients">
-<h2>12.1 The method of undetermined coefficients<a class="headerlink" href="#the-method-of-undetermined-coefficients" title="Permalink to this heading">#</a></h2>
-<p>There is no single catch-all method for solving inhomogeneous second order ODE with constant coefficients, but there is a method that works in many cases, called the method of undetermined coefficients, as follows</p>
-<ol class="arabic simple">
-<li><p>Try to find a solution to Equation (142) of the same form as <span class="math notranslate nohighlight">\(f(t)\)</span>, called the particular solution, <span class="math notranslate nohighlight">\(x_{P}(t)\)</span>.</p></li>
-<li><p>Solve the associated homogeneous ODE, <span class="math notranslate nohighlight">\(\ddot{x}_{I}+b \dot{x}_{I}+c x_{I}=0\)</span> to obtain the complementary function, <span class="math notranslate nohighlight">\(x_{I}(t)\)</span>.</p></li>
-<li><p>Then the general solution is <span class="math notranslate nohighlight">\(x(t)=x_{I}(t)+x_{P}(t)\)</span>.</p></li>
-</ol>
-<p>The problem with this method is that Step 1 does not always work for any function <span class="math notranslate nohighlight">\(f(t)\)</span>. However, it usually works for polynomials, exponential functions, sine, and cosine.</p>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 19 </span></p>
-<section class="example-content" id="proof-content">
-<p>Find the general solution to Equation (141) in the case <span class="math notranslate nohighlight">\(\sigma^{2} \neq \omega^{2}\)</span>.</p>
-<p class="rubric">Solution.</p>
+<section id="id1">
+<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The right-hand side of Equation (141) is <span class="math notranslate nohighlight">\(\sin (\sigma t)\)</span>, so we will try to find a solution of the form <span class="math notranslate nohighlight">\(x(t)=A \sin (\sigma t)\)</span>. Here, <span class="math notranslate nohighlight">\(\dot{x}(t)=A \sigma \cos (\sigma t)\)</span> and <span class="math notranslate nohighlight">\(\ddot{x}(t)=-A \sigma^{2} \sin (\sigma t)\)</span>. Plugging these into Equation (141) gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -544,18 +594,8 @@ x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\
 \end{equation*}
 \]</div>
 </section>
-</div><p>The tricky thing about this method is finding a good guess for the form of the particular solution. Here’s some rules as to what you should try for certain specific functions.</p>
-<ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(f(t)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(f(t)=a_{0}+a_{1} t+a_{2} t^{2}+\cdots+a_{n} t^{n}\)</span>, try setting <span class="math notranslate nohighlight">\(x_{P}(t)\)</span> to be another polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(x_{P}(t)=A_{0}+A_{1} t+A_{2} t^{2}+\cdots+A_{n} t^{n}\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \exp \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \exp \left(a_{1} t\right)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> or <span class="math notranslate nohighlight">\(f(t)=\cos \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A_{1} \sin \left(a_{1} t\right)+A_{2} \cos \left(a_{1} t\right)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, <span class="math notranslate nohighlight">\(\operatorname{try} x_{P}(t)=A \sin \left(a_{1} t\right)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \cos \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \cos \left(a_{1} t\right)\)</span>.</p></li>
-</ol>
-<p>In the above, <span class="math notranslate nohighlight">\(A, a_{i}\)</span>, and <span class="math notranslate nohighlight">\(A_{i}\)</span> (for each <span class="math notranslate nohighlight">\(i\)</span> ) are all constants.</p>
-</section>
 <section id="lecture-12-homework-exercises">
-<h2>Lecture 12 Homework exercises<a class="headerlink" href="#lecture-12-homework-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Lecture 12 Homework exercises<a class="headerlink" href="#lecture-12-homework-exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-26 admonition">
 <p class="admonition-title">Exercise 26</p>
 <ol class="arabic simple" start="26">
@@ -600,11 +640,10 @@ x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="lecture11.html"
@@ -624,10 +663,7 @@ x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -636,13 +672,18 @@ x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-homework-exercises">Lecture 12 Homework exercises</a></li>
 </ul>
   </nav></div>
@@ -665,9 +706,10 @@ By Alex Best / Jonathan Potts
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -691,8 +733,8 @@ By Alex Best / Jonathan Potts
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
