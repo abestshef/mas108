@@ -435,20 +435,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-model">1.1 What is a model?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelling-cycle">1.2 The modelling cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-model-construction">1.3 Examples of model construction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-question">Scientific question.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-quantities">Required quantities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Scientific question.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Required quantities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Assumptions.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Model.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Scientific question.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Required quantities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Model.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -495,11 +482,33 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Example 1 </span> (The pirate.)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose you are a pirate, firing a cannon from your ship towards a merchant sailor’s ship. The cannon fires balls at a fixed speed and you know how far away the other ship is.</p>
+<p><strong>Scientific question.</strong>
+At what angle do you need to point the cannon when firing it, in order to hit the other ship?</p>
+<p><strong>Required quantities.</strong>
+Speed of exit from cannon, <span class="math notranslate nohighlight">\(u\)</span>; angle of exit from cannon, <span class="math notranslate nohighlight">\(\theta\)</span>; acceleration due to gravity, <span class="math notranslate nohighlight">\(g\)</span>; distance between ships, <span class="math notranslate nohighlight">\(L\)</span>; horizontal speed of ball, <span class="math notranslate nohighlight">\(v_{x}(t)\)</span>; vertical speed of ball, <span class="math notranslate nohighlight">\(v_{y}(t)\)</span>; location of ball, anything else?</p>
+<p><strong>Assumptions.</strong>
+Air resistance and wind are negligible, cannon ball does not hit a bird (or UFO) in transit, anything else?</p>
+<p><strong>Model.</strong>
+We will look in detail at modelling trajectories of such objects in Lecture 18 and following. I’ll save the maths for then.</p>
 </section>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 2 </span> (Population growth.)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose ten rabbits (five male, five female) are introduced to an island full of lush vegetation and free of predators.</p>
+<p><strong>Scientific question.</strong>
+How many rabbits will there be in <span class="math notranslate nohighlight">\(N\)</span> years time?</p>
+<p><strong>Required quantities.</strong>
+Number of rabbits, <span class="math notranslate nohighlight">\(U(t)\)</span>; birth rate of rabbits, <span class="math notranslate nohighlight">\(a\)</span>; natural death rate of rabbits, <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p><strong>Assumptions.</strong>
+Sufficient vegetation so that competition for resources is negligible, no predation, anything else?</p>
+<p><strong>Model.</strong>
+Let <span class="math notranslate nohighlight">\(U(t)\)</span> be the number of rabbits in year <span class="math notranslate nohighlight">\(t\)</span>. Suppose that each year each female gives birth to an average of <span class="math notranslate nohighlight">\(2 a&gt;0\)</span> rabbits. Suppose that a proportion <span class="math notranslate nohighlight">\(d \in[0,1]\)</span> of the rabbit population dies each year. Then we can model this as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=(1-d) U(t)+a U(t) \tag{1}
+\end{equation*}
+\]</div>
 </section>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -510,57 +519,12 @@ document.write(`
 <section class="example-content" id="proof-content">
 <p>Here’s a more complicated example. I will leave you to think about the assumptions made here, with the caveat that many of them are not obvious. Do not worry of you do not fully understand this example now! Over the course of time, you will get there. But it is worth having a think about, even now.</p>
 <p>Suppose we have two animal populations, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, that each eat the same food, so compete with one another for that food.</p>
-</section>
-</div></section>
-<section id="scientific-question">
-<h2>Scientific question.<a class="headerlink" href="#scientific-question" title="Link to this heading">#</a></h2>
-<p>At what angle do you need to point the cannon when firing it, in order to hit the other ship?</p>
-</section>
-<section id="required-quantities">
-<h2>Required quantities.<a class="headerlink" href="#required-quantities" title="Link to this heading">#</a></h2>
-<p>Speed of exit from cannon, <span class="math notranslate nohighlight">\(u\)</span>; angle of exit from cannon, <span class="math notranslate nohighlight">\(\theta\)</span>; acceleration due to gravity, <span class="math notranslate nohighlight">\(g\)</span>; distance between ships, <span class="math notranslate nohighlight">\(L\)</span>; horizontal speed of ball, <span class="math notranslate nohighlight">\(v_{x}(t)\)</span>; vertical speed of ball, <span class="math notranslate nohighlight">\(v_{y}(t)\)</span>; location of ball, anything else?</p>
-</section>
-<section id="assumptions">
-<h2>Assumptions.<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h2>
-<p>Air resistance and wind are negligible, cannon ball does not hit a bird (or UFO) in transit, anything else?</p>
-</section>
-<section id="model">
-<h2>Model.<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
-<p>We will look in detail at modelling trajectories of such objects in Lecture 18 and following. I’ll save the maths for then.</p>
-</section>
-<section id="id1">
-<h2>Scientific question.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>How many rabbits will there be in <span class="math notranslate nohighlight">\(N\)</span> years time?</p>
-</section>
-<section id="id2">
-<h2>Required quantities.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>Number of rabbits, <span class="math notranslate nohighlight">\(U(t)\)</span>; birth rate of rabbits, <span class="math notranslate nohighlight">\(a\)</span>; natural death rate of rabbits, <span class="math notranslate nohighlight">\(d\)</span>.</p>
-</section>
-<section id="id3">
-<h2>Assumptions.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>Sufficient vegetation so that competition for resources is negligible, no predation, anything else?</p>
-</section>
-<section id="id4">
-<h2>Model.<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> be the number of rabbits in year <span class="math notranslate nohighlight">\(t\)</span>. Suppose that each year each female gives birth to an average of <span class="math notranslate nohighlight">\(2 a&gt;0\)</span> rabbits. Suppose that a proportion <span class="math notranslate nohighlight">\(d \in[0,1]\)</span> of the rabbit population dies each year. Then we can model this as</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-U(t+1)=(1-d) U(t)+a U(t) \tag{1}
-\end{equation*}
-\]</div>
-</section>
-<section id="id5">
-<h2>Scientific question.<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>Do we have coexistence between the two populations, or does one end up dominating?</p>
-</section>
-<section id="id6">
-<h2>Required quantities.<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>Number of animals in population <span class="math notranslate nohighlight">\(A\)</span>, Number of animals in population <span class="math notranslate nohighlight">\(B\)</span>, their birth and death rates, the effect of competition between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> on the death rates of each (called interspecific competition), the effect of competition between individuals of the same population (called intraspecific competition).</p>
-</section>
-<section id="id7">
-<h2>Model.<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> be, respectively, the number of animals in populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. One classical model for this is given by the following differential equations</p>
+<p><strong>Scientific question.</strong>
+Do we have coexistence between the two populations, or does one end up dominating?</p>
+<p><strong>Required quantities.</strong>
+Number of animals in population <span class="math notranslate nohighlight">\(A\)</span>, Number of animals in population <span class="math notranslate nohighlight">\(B\)</span>, their birth and death rates, the effect of competition between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> on the death rates of each (called interspecific competition), the effect of competition between individuals of the same population (called intraspecific competition).</p>
+<p><strong>Model.</strong>
+Let <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> be, respectively, the number of animals in populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. One classical model for this is given by the following differential equations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -569,8 +533,10 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 \end{align*}
 \end{split}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are the net reproductive rates (i.e. birth rate minus death rate) of populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively; <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> denote intraspecific competition of populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively; <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> denote interspecific competition of populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively.</p>
+</section>
+</div></section>
 <section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-1 admonition">
 <p class="admonition-title">Exercise 1</p>
 <p>Think about the following scientific questions and how you might build a mathematical model to help answer them. Try to write down the required quantities that need to go into the model and the modelling assumptions. Note that these are not simple examples and there is no single correct answer, but this question is just to get you thinking. So have a go and don’t worry if you are not sure what you write is correct! I’m happy to discuss your ideas if you want: use the Discussion Board or come ot my student hours.</p>
@@ -586,7 +552,6 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 <p>(c) What is the main difference between the graphs in parts (a) and (b)?</p>
 <p>(d) [Hard-ish] Find a general relationship between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(d\)</span> that ensures the rabbit population does not die out. You may want to begin by experimenting with keeping <span class="math notranslate nohighlight">\(a\)</span> constant and varying <span class="math notranslate nohighlight">\(d\)</span>.</p>
 </div>
-</section>
 </section>
 </section>
 
@@ -657,20 +622,7 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-model">1.1 What is a model?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelling-cycle">1.2 The modelling cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-model-construction">1.3 Examples of model construction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-question">Scientific question.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-quantities">Required quantities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Scientific question.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Required quantities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Assumptions.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Model.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Scientific question.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Required quantities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Model.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
   </nav></div>
 

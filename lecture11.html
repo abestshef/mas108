@@ -432,7 +432,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-11-homework-exercises">Lecture 11 Homework exercises</a></li>
 </ul>
             </nav>
@@ -448,8 +447,24 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-11-modelling-damped-oscillations-with-homogeneous-second-order-odes">
 <h1>Lecture 11. Modelling damped oscillations with homogeneous second order ODEs<a class="headerlink" href="#lecture-11-modelling-damped-oscillations-with-homogeneous-second-order-odes" title="Link to this heading">#</a></h1>
 <p>In Example 15, we examined a spring in a gravity-free, friction-free environment. Whilst gravity-free environments exist, it is never possible to have an environment completely free of friction. Even if we are in space, there will be some friction due to the spring itself. But also, by accounting for friction, we can bring our example down to Earth (quite literally). This lecture will explore what happens when we account for friction, as an example of modelling with homogeneous second order ODEs.</p>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 17 </span></p>
+<section class="example-content" id="proof-content">
+<p>A particle of mass <span class="math notranslate nohighlight">\(m\)</span> is attached to the end of a massless spring of stiffness <span class="math notranslate nohighlight">\(k\)</span> on a horizontal table. Let the extension of the spring be <span class="math notranslate nohighlight">\(x(t)\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. The friction (from the table, spring, and air) causes a force of <span class="math notranslate nohighlight">\(2 \beta \omega m \dot{x}\)</span> to act on the particle in the opposite direction to motion, where <span class="math notranslate nohighlight">\(\beta&gt;0\)</span> is a constant and <span class="math notranslate nohighlight">\(\omega=+\sqrt{\frac{k}{m}}\)</span>. Show that the equation of motion of the particle is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\ddot{x}+2 \beta \omega \dot{x}+\omega^{2} x=0 \tag{123}
+\end{equation*}
+\]</div>
+<p>Find the general solution for <span class="math notranslate nohighlight">\(x(t)\)</span> in each of the following three cases</p>
+<p>(a) <span class="math notranslate nohighlight">\(\beta=\frac{3}{2}\)</span>,</p>
+<p>(b) <span class="math notranslate nohighlight">\(\beta=1\)</span>,</p>
+<p>(c) <span class="math notranslate nohighlight">\(\beta=\frac{1}{2}\)</span>.</p>
+<p>Interpret each solution in terms of the motion of the spring.</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_15_41dd2eb40876053e397fg-1.jpg?height=398&width=1423&top_left_y=1754&top_left_x=319" alt="drawing" width="400"/>
+<p><em>Figure 16: A spring on a table, with a mass on one end and fixed at the other end.</em></p>
+<p><strong>Solution.</strong></p>
 <p>The forces acting on the particle are the tension in the spring, <span class="math notranslate nohighlight">\(T\)</span>, and the resistance, <span class="math notranslate nohighlight">\(R\)</span>, both acting horizontally to oppose motion. By Hooke’s Law (see Example 15), the tension in the spring is <span class="math notranslate nohighlight">\(T=k x\)</span>. The resistance is <span class="math notranslate nohighlight">\(R=2 \beta \omega m \dot{x}\)</span>. Since both <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(T\)</span> act in the opposite direction to the motion, the second law of motion (Equation 106) gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -540,24 +555,6 @@ x(t)=\exp \left(-\frac{\omega t}{2}\right)\left[A \sin \left(\frac{\sqrt{3}}{2} 
 \frac{\sqrt{3}}{4 \pi} \omega
 \]</div>
 <p>The sine and cosine terms cause the mass <span class="math notranslate nohighlight">\(m\)</span> to oscillate between a positive and negative extension, whilst the <span class="math notranslate nohighlight">\(\exp (-\omega t / 2)\)</span> term causes those oscillations to decrease over time. Figure 18 gives a plot of Equation (134) for <span class="math notranslate nohighlight">\(\omega=1, A=0, B=1\)</span>.</p>
-</section>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 17 </span></p>
-<section class="example-content" id="proof-content">
-<p>A particle of mass <span class="math notranslate nohighlight">\(m\)</span> is attached to the end of a massless spring of stiffness <span class="math notranslate nohighlight">\(k\)</span> on a horizontal table. Let the extension of the spring be <span class="math notranslate nohighlight">\(x(t)\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. The friction (from the table, spring, and air) causes a force of <span class="math notranslate nohighlight">\(2 \beta \omega m \dot{x}\)</span> to act on the particle in the opposite direction to motion, where <span class="math notranslate nohighlight">\(\beta&gt;0\)</span> is a constant and <span class="math notranslate nohighlight">\(\omega=+\sqrt{\frac{k}{m}}\)</span>. Show that the equation of motion of the particle is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\ddot{x}+2 \beta \omega \dot{x}+\omega^{2} x=0 \tag{123}
-\end{equation*}
-\]</div>
-<p>Find the general solution for <span class="math notranslate nohighlight">\(x(t)\)</span> in each of the following three cases</p>
-<p>(a) <span class="math notranslate nohighlight">\(\beta=\frac{3}{2}\)</span>,</p>
-<p>(b) <span class="math notranslate nohighlight">\(\beta=1\)</span>,</p>
-<p>(c) <span class="math notranslate nohighlight">\(\beta=\frac{1}{2}\)</span>.</p>
-<p>Interpret each solution in terms of the motion of the spring.</p>
-<img src="https://cdn.mathpix.com/cropped/2024_08_15_41dd2eb40876053e397fg-1.jpg?height=398&width=1423&top_left_y=1754&top_left_x=319" alt="drawing" width="400"/>
-<p><em>Figure 16: A spring on a table, with a mass on one end and fixed at the other end.</em></p>
 </section>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -656,7 +653,6 @@ x(t)=\exp \left(-\frac{\omega t}{2}\right)\left[A \sin \left(\frac{\sqrt{3}}{2} 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-11-homework-exercises">Lecture 11 Homework exercises</a></li>
 </ul>
   </nav></div>

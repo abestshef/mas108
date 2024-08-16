@@ -432,7 +432,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-13-homework-exercises">Lecture 13 Homework exercises</a></li>
 </ul>
             </nav>
@@ -448,8 +447,41 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-13-modelling-oscillations-with-second-order-odes-a-worked-example">
 <h1>Lecture 13. Modelling oscillations with second order ODEs: a worked example<a class="headerlink" href="#lecture-13-modelling-oscillations-with-second-order-odes-a-worked-example" title="Link to this heading">#</a></h1>
 <p>In the last three lectures, we introduced both homogeneous and inhomogeneous ODEs, showing how they can be used to model oscillatory motion. Here we will work through a single example that encompasses the various cases we have looked at: undamped motion, damped motion, and forced motion.</p>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 20 </span></p>
+<section class="example-content" id="proof-content">
+<p>A particle <span class="math notranslate nohighlight">\(P\)</span> of mass <span class="math notranslate nohighlight">\(m\)</span> is tied to one end of an elastic string of natural length <span class="math notranslate nohighlight">\(a\)</span> and stiffness <span class="math notranslate nohighlight">\(2 m \omega^{2}\)</span>. The other end <span class="math notranslate nohighlight">\(B\)</span> is attached to a point <span class="math notranslate nohighlight">\(A\)</span> on a fixed smooth horizontal plane. The particle is released from rest on the plane when the string is extended to a length <span class="math notranslate nohighlight">\(2 a\)</span>.</p>
+<p>(a) Undamped motion. If the subsequent motion is unresisted, find an expression for extension, <span class="math notranslate nohighlight">\(x(t)\)</span>, of the string at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>(b) Damped motion. Suppose now that the subsequent motion is resisted by a force <span class="math notranslate nohighlight">\(2 m \omega\)</span> times the speed. Show that</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\ddot{x}+2 \omega \dot{x}+2 \omega^{2} x=0 \quad(x \geq 0) \tag{148}
+\end{equation*}
+\]</div>
+<p>Find <span class="math notranslate nohighlight">\(x\)</span> as a function of <span class="math notranslate nohighlight">\(t\)</span>, and show that the speed of the particle at the moment the string becomes slack is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\omega a \sqrt{2} e^{-\frac{3 \pi}{4}} \tag{149}
+\end{equation*}
+\]</div>
+<p>(c) Forced motion. Finally, suppose that the motion is resisted as described in part (b), but, instead of the other end of the string being fixed, it is forced to oscillate so that the distance of <span class="math notranslate nohighlight">\(B\)</span> from <span class="math notranslate nohighlight">\(A\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+y(t)=a[2 \sin (\omega t)-\cos (\omega t)] . \tag{150}
+\end{equation*}
+\]</div>
+<p>In this case, show that the equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\ddot{x}+2 \omega \dot{x}+2 \omega^{2} x=-5 a \omega^{2} \cos (\omega t) \tag{151}
+\end{equation*}
+\]</div>
+<p>and find <span class="math notranslate nohighlight">\(x\)</span> as a function of <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p><strong>Solution.</strong></p>
 <p>(a) By Hooke’s law, the tension in the string when it is extended a distance <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(T=2 m \omega^{2} x\)</span>. Since <span class="math notranslate nohighlight">\(T\)</span> is the only force acting on the mass (Figure 20), the second law of motion (Equation 106) says that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -623,41 +655,6 @@ x(t)=x_{P}(t)+x_{I}(t)=a e^{-\omega t}[\cos (\omega t)+\sin (\omega t)]-a[\cos (
 \end{equation*}
 \]</div>
 </section>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 20 </span></p>
-<section class="example-content" id="proof-content">
-<p>A particle <span class="math notranslate nohighlight">\(P\)</span> of mass <span class="math notranslate nohighlight">\(m\)</span> is tied to one end of an elastic string of natural length <span class="math notranslate nohighlight">\(a\)</span> and stiffness <span class="math notranslate nohighlight">\(2 m \omega^{2}\)</span>. The other end <span class="math notranslate nohighlight">\(B\)</span> is attached to a point <span class="math notranslate nohighlight">\(A\)</span> on a fixed smooth horizontal plane. The particle is released from rest on the plane when the string is extended to a length <span class="math notranslate nohighlight">\(2 a\)</span>.</p>
-<p>(a) Undamped motion. If the subsequent motion is unresisted, find an expression for extension, <span class="math notranslate nohighlight">\(x(t)\)</span>, of the string at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<p>(b) Damped motion. Suppose now that the subsequent motion is resisted by a force <span class="math notranslate nohighlight">\(2 m \omega\)</span> times the speed. Show that</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\ddot{x}+2 \omega \dot{x}+2 \omega^{2} x=0 \quad(x \geq 0) \tag{148}
-\end{equation*}
-\]</div>
-<p>Find <span class="math notranslate nohighlight">\(x\)</span> as a function of <span class="math notranslate nohighlight">\(t\)</span>, and show that the speed of the particle at the moment the string becomes slack is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\omega a \sqrt{2} e^{-\frac{3 \pi}{4}} \tag{149}
-\end{equation*}
-\]</div>
-<p>(c) Forced motion. Finally, suppose that the motion is resisted as described in part (b), but, instead of the other end of the string being fixed, it is forced to oscillate so that the distance of <span class="math notranslate nohighlight">\(B\)</span> from <span class="math notranslate nohighlight">\(A\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-y(t)=a[2 \sin (\omega t)-\cos (\omega t)] . \tag{150}
-\end{equation*}
-\]</div>
-<p>In this case, show that the equation of motion is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\ddot{x}+2 \omega \dot{x}+2 \omega^{2} x=-5 a \omega^{2} \cos (\omega t) \tag{151}
-\end{equation*}
-\]</div>
-<p>and find <span class="math notranslate nohighlight">\(x\)</span> as a function of <span class="math notranslate nohighlight">\(t\)</span>.</p>
-</section>
 </div><section id="lecture-13-homework-exercises">
 <h2>Lecture 13 Homework exercises<a class="headerlink" href="#lecture-13-homework-exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-27 admonition">
@@ -733,7 +730,6 @@ y(t)=a[2 \sin (\omega t)-\cos (\omega t)] . \tag{150}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-13-homework-exercises">Lecture 13 Homework exercises</a></li>
 </ul>
   </nav></div>
