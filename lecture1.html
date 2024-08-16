@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Lecture 1. The concept of mathematical modelling &#8212; MAS108 Mathematical Modelling</title>
   
@@ -15,53 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture1';</script>
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="MAS108 Mathematical Modelling - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="MAS108 Mathematical Modelling - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -198,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -207,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,14 +262,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -367,26 +390,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -410,7 +435,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-model">1.1 What is a model?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelling-cycle">1.2 The modelling cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-model-construction">1.3 Examples of model construction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-question">Scientific question.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-quantities">Required quantities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Scientific question.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Required quantities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Assumptions.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Model.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Scientific question.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Required quantities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Model.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -420,10 +458,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-1-the-concept-of-mathematical-modelling">
-<h1>Lecture 1. The concept of mathematical modelling<a class="headerlink" href="#lecture-1-the-concept-of-mathematical-modelling" title="Permalink to this heading">#</a></h1>
+<h1>Lecture 1. The concept of mathematical modelling<a class="headerlink" href="#lecture-1-the-concept-of-mathematical-modelling" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p><em>‘All models are wrong but some are useful.’ - George Box</em></p>
 </div></blockquote>
@@ -431,14 +469,14 @@ document.write(`
 <div><p><em>‘All models are wrong but some are in this course.’ - adapted from Alica Ackles</em></p>
 </div></blockquote>
 <section id="what-is-a-model">
-<h2>1.1 What is a model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this heading">#</a></h2>
+<h2>1.1 What is a model?<a class="headerlink" href="#what-is-a-model" title="Link to this heading">#</a></h2>
 <p>A perfectly reasonable question for  you to ask when you look at your timetable is ‘What is a mathematical model?’ Think about what it means to build a model airplane or model village. We are taking something large, complicated and unwieldy and reducing it down to something much smaller and simpler. It still retains the essence of the thing we’re interested in, but we can play with it, experiment with it, and even see how to break it.</p>
 <p>The same idea is true of a mathematical model. The universe is a complex thing, and a central pillar of science is trying to understand various aspects of it. Mathematical modelling is very much a part of that toolkit, allowing us to answer questions about the aerodynamics of a new vehicle, how far a ball will travel when hit, the most effective dose of a drug to precscribe to a patient, whether an asteroid will enter Earth’s atmosphere, and a gerat many questions besides.</p>
 <p>Just like a model airplane, the level of detail will vary depending on our question and how much time and expertise we have at our disposal. A simple paper dart takes the rough shape of a plane and will glide for a small while, but has very little detail. A plastic model starts to look more like a real plane and - if you’re brave enough to throw it - will also glide, but it has no locomotion. A radio-controlled plane starts getting us much close to the real thing, though it’s inner workings are decidedly different from a jet engine.</p>
 <p>When we work with models, we must always remember that that is exactly what they are, and recognise the assumptions and simplifications we have made. What might be missing? Is it important? This leads us to thinking about the modelling process as being a cycle.</p>
 </section>
 <section id="the-modelling-cycle">
-<h2>1.2 The modelling cycle<a class="headerlink" href="#the-modelling-cycle" title="Permalink to this heading">#</a></h2>
+<h2>1.2 The modelling cycle<a class="headerlink" href="#the-modelling-cycle" title="Link to this heading">#</a></h2>
 <p>Mathematical modelling is as much an art as a science. There is no perfect way of modelling a physical system . Therefore many modellers talk of a ‘modelling cycle’ of iterative model improvements towards answering a specific scientific question (Figure 2).</p>
 <p>The starting point of this process is to formulate a scientific question. There is no point in building a model unless you have an idea of what you want to achieve by building the model. Remember that. Furthermore, the scientific question will inform what needs to go into the mathematical model. For example, if your question is ‘how will a population of single-celled organisms on a petri dish change over time’, this immediately tells you you need to model the number of organisms at any point in time, which we might call <span class="math notranslate nohighlight">\(U(t)\)</span> ( <span class="math notranslate nohighlight">\(t\)</span> is time). You will also need to account for the birth rate, <span class="math notranslate nohighlight">\(a\)</span>, and death rate, <span class="math notranslate nohighlight">\(d\)</span>, of organisms. However, there are some things that you will probably not need in the model, such as details of the internal workings of each organism, the height of the petri dish above sea level, the phase of the moon, or the weight of the table on which the petri dish sits.</p>
 <div class="admonition-exercise admonition">
@@ -452,31 +490,58 @@ document.write(`
 <p>We will see several examples of this kind of iterative model improvement throughout the module. But before we go this far, let’s spend some time looking at some examples of the first two steps: constructing a scientific question and building a mathematical model to answer it.</p>
 </section>
 <section id="examples-of-model-construction">
-<h2>1.3 Examples of model construction<a class="headerlink" href="#examples-of-model-construction" title="Permalink to this heading">#</a></h2>
+<h2>1.3 Examples of model construction<a class="headerlink" href="#examples-of-model-construction" title="Link to this heading">#</a></h2>
 <div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 1 </span> (The pirate. )</p>
+<p class="admonition-title"><span class="caption-number">Example 1 </span> (The pirate.)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose you are a pirate, firing a cannon from your ship towards a merchant sailor’s ship. The cannon fires balls at a fixed speed and you know how far away the other ship is.</p>
-<p class="rubric">Scientific question.</p>
-<p>At what angle do you need to point the cannon when firing it, in order to hit the other ship?</p>
-<p class="rubric">Required quantities.</p>
-<p>Speed of exit from cannon, <span class="math notranslate nohighlight">\(u\)</span>; angle of exit from cannon, <span class="math notranslate nohighlight">\(\theta\)</span>; acceleration due to gravity, <span class="math notranslate nohighlight">\(g\)</span>; distance between ships, <span class="math notranslate nohighlight">\(L\)</span>; horizontal speed of ball, <span class="math notranslate nohighlight">\(v_{x}(t)\)</span>; vertical speed of ball, <span class="math notranslate nohighlight">\(v_{y}(t)\)</span>; location of ball, anything else?</p>
-<p class="rubric">Assumptions.</p>
-<p>Air resistance and wind are negligible, cannon ball does not hit a bird (or UFO) in transit, anything else?</p>
-<p class="rubric">Model.</p>
-<p>We will look in detail at modelling trajectories of such objects in Lecture 18 and following. I’ll save the maths for then.</p>
 </section>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 2 </span> (Population growth.)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose ten rabbits (five male, five female) are introduced to an island full of lush vegetation and free of predators.</p>
-<p class="rubric">Scientific question.</p>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are assuming that half the rabbits are female at any point in time. Can you see why? Also, if <span class="math notranslate nohighlight">\(a&gt;d\)</span> this model may be good for small <span class="math notranslate nohighlight">\(N\)</span>, but will eventually become unrealistic. We will show this in Lecture 2, and how to remedy this fact.</p>
+</div>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 3 </span> (Competing animals.)</p>
+<section class="example-content" id="proof-content">
+<p>Here’s a more complicated example. I will leave you to think about the assumptions made here, with the caveat that many of them are not obvious. Do not worry of you do not fully understand this example now! Over the course of time, you will get there. But it is worth having a think about, even now.</p>
+<p>Suppose we have two animal populations, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, that each eat the same food, so compete with one another for that food.</p>
+</section>
+</div></section>
+<section id="scientific-question">
+<h2>Scientific question.<a class="headerlink" href="#scientific-question" title="Link to this heading">#</a></h2>
+<p>At what angle do you need to point the cannon when firing it, in order to hit the other ship?</p>
+</section>
+<section id="required-quantities">
+<h2>Required quantities.<a class="headerlink" href="#required-quantities" title="Link to this heading">#</a></h2>
+<p>Speed of exit from cannon, <span class="math notranslate nohighlight">\(u\)</span>; angle of exit from cannon, <span class="math notranslate nohighlight">\(\theta\)</span>; acceleration due to gravity, <span class="math notranslate nohighlight">\(g\)</span>; distance between ships, <span class="math notranslate nohighlight">\(L\)</span>; horizontal speed of ball, <span class="math notranslate nohighlight">\(v_{x}(t)\)</span>; vertical speed of ball, <span class="math notranslate nohighlight">\(v_{y}(t)\)</span>; location of ball, anything else?</p>
+</section>
+<section id="assumptions">
+<h2>Assumptions.<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h2>
+<p>Air resistance and wind are negligible, cannon ball does not hit a bird (or UFO) in transit, anything else?</p>
+</section>
+<section id="model">
+<h2>Model.<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
+<p>We will look in detail at modelling trajectories of such objects in Lecture 18 and following. I’ll save the maths for then.</p>
+</section>
+<section id="id1">
+<h2>Scientific question.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>How many rabbits will there be in <span class="math notranslate nohighlight">\(N\)</span> years time?</p>
-<p class="rubric">Required quantities.</p>
+</section>
+<section id="id2">
+<h2>Required quantities.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Number of rabbits, <span class="math notranslate nohighlight">\(U(t)\)</span>; birth rate of rabbits, <span class="math notranslate nohighlight">\(a\)</span>; natural death rate of rabbits, <span class="math notranslate nohighlight">\(d\)</span>.</p>
-<p class="rubric">Assumptions.</p>
+</section>
+<section id="id3">
+<h2>Assumptions.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>Sufficient vegetation so that competition for resources is negligible, no predation, anything else?</p>
-<p class="rubric">Model.</p>
+</section>
+<section id="id4">
+<h2>Model.<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> be the number of rabbits in year <span class="math notranslate nohighlight">\(t\)</span>. Suppose that each year each female gives birth to an average of <span class="math notranslate nohighlight">\(2 a&gt;0\)</span> rabbits. Suppose that a proportion <span class="math notranslate nohighlight">\(d \in[0,1]\)</span> of the rabbit population dies each year. Then we can model this as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -485,20 +550,16 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 \end{equation*}
 \]</div>
 </section>
-</div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We are assuming that half the rabbits are female at any point in time. Can you see why? Also, if <span class="math notranslate nohighlight">\(a&gt;d\)</span> this model may be good for small <span class="math notranslate nohighlight">\(N\)</span>, but will eventually become unrealistic. We will show this in Lecture 2, and how to remedy this fact.</p>
-</div>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 3 </span> (Competing animals. )</p>
-<section class="example-content" id="proof-content">
-<p>Here’s a more complicated example. I will leave you to think about the assumptions made here, with the caveat that many of them are not obvious. Do not worry of you do not fully understand this example now! Over the course of time, you will get there. But it is worth having a think about, even now.</p>
-<p>Suppose we have two animal populations, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, that each eat the same food, so compete with one another for that food.</p>
-<p class="rubric">Scientific question.</p>
+<section id="id5">
+<h2>Scientific question.<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>Do we have coexistence between the two populations, or does one end up dominating?</p>
-<p class="rubric">Required quantities.</p>
+</section>
+<section id="id6">
+<h2>Required quantities.<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>Number of animals in population <span class="math notranslate nohighlight">\(A\)</span>, Number of animals in population <span class="math notranslate nohighlight">\(B\)</span>, their birth and death rates, the effect of competition between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> on the death rates of each (called interspecific competition), the effect of competition between individuals of the same population (called intraspecific competition).</p>
-<p class="rubric">Model.</p>
+</section>
+<section id="id7">
+<h2>Model.<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(V(t)\)</span> be, respectively, the number of animals in populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. One classical model for this is given by the following differential equations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -508,13 +569,11 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 \end{align*}
 \end{split}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are the net reproductive rates (i.e. birth rate minus death rate) of populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively; <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> denote intraspecific competition of populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively; <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> denote interspecific competition of populations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively.</p>
-</section>
-</div></section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
 <div class="admonition-exercise-1 admonition">
 <p class="admonition-title">Exercise 1</p>
-<p>Think about the following scientific (i.e. ‘World of Matter’) questions and how you might build a mathematical model to help answer them. Try to write down the required quantities that need to go into the model and the modelling assumptions. Note that these are not simple examples and there is no single correct answer, but this question is just to get you thinking. So have a go and don’t worry if you are not sure what you write is correct! I’m happy to discuss your ideas if you want: drop me an email or book and office hour appointment.</p>
+<p>Think about the following scientific questions and how you might build a mathematical model to help answer them. Try to write down the required quantities that need to go into the model and the modelling assumptions. Note that these are not simple examples and there is no single correct answer, but this question is just to get you thinking. So have a go and don’t worry if you are not sure what you write is correct! I’m happy to discuss your ideas if you want: use the Discussion Board or come ot my student hours.</p>
 <p>(a) Given a scenario where the average world’s temperature will increase by <span class="math notranslate nohighlight">\(x\)</span> degrees centigrade in the next 50 years, how much will the average global sea level rise?</p>
 <p>(b) Every year, mule deer in the Greater Yellowstone Area of North America migrate so that they can find the best vegetation to eat. Suppose that you have knowledge of the distribution of vegetation at each day of the year. What day (or days) will the mule deer decide to migrate and what will be their movement trajectory?</p>
 <p>(c) A funny video is posted on a social media platform. What proportion of users end up viewing the video?</p>
@@ -527,6 +586,7 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 <p>(c) What is the main difference between the graphs in parts (a) and (b)?</p>
 <p>(d) [Hard-ish] Find a general relationship between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(d\)</span> that ensures the rabbit population does not die out. You may want to begin by experimenting with keeping <span class="math notranslate nohighlight">\(a\)</span> constant and varying <span class="math notranslate nohighlight">\(d\)</span>.</p>
 </div>
+</section>
 </section>
 </section>
 
@@ -555,11 +615,10 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -579,10 +638,7 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -590,6 +646,7 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -600,7 +657,20 @@ U(t+1)=(1-d) U(t)+a U(t) \tag{1}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-model">1.1 What is a model?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelling-cycle">1.2 The modelling cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-model-construction">1.3 Examples of model construction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-question">Scientific question.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-quantities">Required quantities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Scientific question.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Required quantities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Assumptions.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Model.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Scientific question.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Required quantities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Model.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -622,9 +692,10 @@ By Alex Best / Jonathan Potts
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -648,8 +719,8 @@ By Alex Best / Jonathan Potts
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Lecture 15. Motion in more than one dimension &#8212; MAS108 Mathematical Modelling</title>
   
@@ -15,53 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture15';</script>
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="MAS108 Mathematical Modelling - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="MAS108 Mathematical Modelling - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -198,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -207,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,14 +262,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture15.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -367,26 +390,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -407,8 +432,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-15-homework-exercises">Lecture 15 Homework exercises</a></li>
 </ul>
             </nav>
@@ -419,25 +449,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-15-motion-in-more-than-one-dimension">
-<h1>Lecture 15. Motion in more than one dimension<a class="headerlink" href="#lecture-15-motion-in-more-than-one-dimension" title="Permalink to this heading">#</a></h1>
+<h1>Lecture 15. Motion in more than one dimension<a class="headerlink" href="#lecture-15-motion-in-more-than-one-dimension" title="Link to this heading">#</a></h1>
 <p>So far, we have only looked at particles that move in one dimension. However, given that space has (at least) three spatial dimensions, this is very limiting in terms of what we can model about the physical world. To extend the ideas from previous lectures into higher dimensions, we need vectors, which you have been studying in your Core module. For example, suppose there is a particle <span class="math notranslate nohighlight">\(P\)</span> moving in 3 dimensions, as in Figure 21. Then its location at time <span class="math notranslate nohighlight">\(t\)</span> is given by a vector, which we call <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>. (Note that we use bold font for vectors.) As <span class="math notranslate nohighlight">\(t\)</span> changes, <span class="math notranslate nohighlight">\(P\)</span> traces out a curve, called the path of the particle.</p>
 <img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-1.jpg?height=529&width=826&top_left_y=752&top_left_x=615" alt="drawing" width="400"/>
 <p><em>Figure 21: A particle moving in 3 dimensions, tracing out a path.</em></p>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 21 </span></p>
-<section class="example-content" id="proof-content">
-<p>The position vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{r}(t)=\frac{1}{2} \mathbf{g} t^{2} \tag{176}
-\end{equation*}
-\]</div>
-<p>where g is a constant vector. Sketch the path of the particle.</p>
-<p class="rubric">Solution.</p>
+<section id="solution">
+<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
 <p>Since <span class="math notranslate nohighlight">\(\overrightarrow{O P}=\mathbf{r}\)</span>, the vector <span class="math notranslate nohighlight">\(\overrightarrow{O P}\)</span> is always in the direction of the constant vector <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>. Therefore <span class="math notranslate nohighlight">\(P\)</span> moves along a straight line through the origin <span class="math notranslate nohighlight">\(O\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>. At time <span class="math notranslate nohighlight">\(t\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -447,6 +467,77 @@ O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{
 \]</div>
 <p>Therefore the particle moves away from <span class="math notranslate nohighlight">\(O\)</span> in the direction of g , and its distance from <span class="math notranslate nohighlight">\(O\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(g t^{2} / 2\)</span>. A sketch of the path is given below.</p>
 <img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-1.jpg?height=343&width=803&top_left_y=2287&top_left_x=632" alt="drawing" width="400"/>
+<section id="geometric-interpretation-of-velocity">
+<h3>15.1 Geometric interpretation of velocity<a class="headerlink" href="#geometric-interpretation-of-velocity" title="Link to this heading">#</a></h3>
+<p>We can interpret velocity geometrically, by using the definition of a derivative</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\dot{r}_{i}(t)=\lim _{\delta t \rightarrow 0} \frac{r_{i}(t+\delta t)-r_{i}(t)}{\delta t} \tag{184}
+\end{equation*}
+\]</div>
+<p>Combining this definition with Equation (179) gives</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\dot{\mathbf{r}}(t)=\lim _{\delta t \rightarrow 0} \frac{\mathbf{r}(t+\delta t)-\mathbf{r}(t)}{\delta t} \tag{185}
+\end{equation*}
+\]</div>
+<p>Now, suppose a particle is at location <span class="math notranslate nohighlight">\(P\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. Then the vector associated to this location is <span class="math notranslate nohighlight">\(\mathbf{r}(t)=\overrightarrow{O P}\)</span>. Suppose that, at time <span class="math notranslate nohighlight">\(t+\delta t\)</span> the particle is at <span class="math notranslate nohighlight">\(P^{\prime}\)</span> (where <span class="math notranslate nohighlight">\(\delta t\)</span> is arbitrarily small). Then we can write <span class="math notranslate nohighlight">\(\mathbf{r}(t+\delta t)=\overrightarrow{O P^{\prime}}\)</span>.</p>
+<p>Furthermore, <span class="math notranslate nohighlight">\(\overrightarrow{P P^{\prime}}=\overrightarrow{O P^{\prime}}-\overrightarrow{O P}\)</span> (see Figure 22). Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{v}=\frac{d \mathbf{r}}{d t}=\dot{\mathbf{r}}=\lim _{\delta t \rightarrow 0}\left(\frac{1}{\delta t} \overrightarrow{P P^{\prime}}\right) \tag{186}
+\end{equation*}
+\]</div>
+<p>In this limit, the velocity of the particle is along the tangent to the path.. Hence we can view the velocity at a point as the tangent vector to the path of motion at that point.</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-3.jpg?height=600&width=807&top_left_y=1302&top_left_x=633" alt="drawing" width="400"/>
+<p><em>Figure 22: Geometric interpretation of velocity</em></p>
+</section>
+<section id="examples">
+<h3>15.2 Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 21 </span></p>
+<section class="example-content" id="proof-content">
+<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\frac{1}{2} \mathbf{g} t^{2} \tag{187}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is a constant vector. Find the velocity, speed, and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</section>
+</div><p>Notice that velocity and acceleration are vectors, whereas speed is a scalar.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 22 </span></p>
+<section class="example-content" id="proof-content">
+<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> in two dimensions is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\sin (t) \mathbf{i}+\cos (t) \mathbf{j} \tag{190}
+\end{equation*}
+\]</div>
+<p>(a) Find the velocity, speed and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.
+(b) Show that the path of the particle is a unit circle around the origin.
+(c) Show that the acceleration is orthogonal to the velocity.</p>
+</section>
+</div><p>Recall from your Core module that, since the dot product vanishes, this means that <span class="math notranslate nohighlight">\(\mathbf{a}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}(t)\)</span> are orthogonal. Acceleration acting orthogonally to the direction of motion is sometimes called centripetal acceleration.</p>
+</section>
+</section>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 23 </span></p>
+<section class="example-content" id="proof-content">
+<p>The position vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\frac{1}{2} \mathbf{g} t^{2} \tag{176}
+\end{equation*}
+\]</div>
+<p>where g is a constant vector. Sketch the path of the particle.</p>
 </section>
 </div><p>Now we have shown how to describe the location of a particle, we also want to be able to describe its velocity and acceleration. For this, we need to know how to differentiate vectors.</p>
 <div class="proof definition admonition" id="definition-1">
@@ -506,48 +597,8 @@ O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{
 \mathbf{i}=\binom{1}{0}, \quad \mathbf{j}=\binom{0}{1} \tag{183}
 \end{equation*}
 \]</div>
-<section id="geometric-interpretation-of-velocity">
-<h2>15.1 Geometric interpretation of velocity<a class="headerlink" href="#geometric-interpretation-of-velocity" title="Permalink to this heading">#</a></h2>
-<p>We can interpret velocity geometrically, by using the definition of a derivative</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\dot{r}_{i}(t)=\lim _{\delta t \rightarrow 0} \frac{r_{i}(t+\delta t)-r_{i}(t)}{\delta t} \tag{184}
-\end{equation*}
-\]</div>
-<p>Combining this definition with Equation (179) gives</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\dot{\mathbf{r}}(t)=\lim _{\delta t \rightarrow 0} \frac{\mathbf{r}(t+\delta t)-\mathbf{r}(t)}{\delta t} \tag{185}
-\end{equation*}
-\]</div>
-<p>Now, suppose a particle is at location <span class="math notranslate nohighlight">\(P\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. Then the vector associated to this location is <span class="math notranslate nohighlight">\(\mathbf{r}(t)=\overrightarrow{O P}\)</span>. Suppose that, at time <span class="math notranslate nohighlight">\(t+\delta t\)</span> the particle is at <span class="math notranslate nohighlight">\(P^{\prime}\)</span> (where <span class="math notranslate nohighlight">\(\delta t\)</span> is arbitrarily small). Then we can write <span class="math notranslate nohighlight">\(\mathbf{r}(t+\delta t)=\overrightarrow{O P^{\prime}}\)</span>.</p>
-<p>Furthermore, <span class="math notranslate nohighlight">\(\overrightarrow{P P^{\prime}}=\overrightarrow{O P^{\prime}}-\overrightarrow{O P}\)</span> (see Figure 22). Therefore</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{v}=\frac{d \mathbf{r}}{d t}=\dot{\mathbf{r}}=\lim _{\delta t \rightarrow 0}\left(\frac{1}{\delta t} \overrightarrow{P P^{\prime}}\right) \tag{186}
-\end{equation*}
-\]</div>
-<p>In this limit, the velocity of the particle is along the tangent to the path.. Hence we can view the velocity at a point as the tangent vector to the path of motion at that point.</p>
-<img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-3.jpg?height=600&width=807&top_left_y=1302&top_left_x=633" alt="drawing" width="400"/>
-<p><em>Figure 22: Geometric interpretation of velocity</em></p>
-</section>
-<section id="examples">
-<h2>15.2 Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 22 </span></p>
-<section class="example-content" id="proof-content">
-<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{r}(t)=\frac{1}{2} \mathbf{g} t^{2} \tag{187}
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is a constant vector. Find the velocity, speed, and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<p class="rubric">Solution.</p>
+<section id="id1">
+<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The velocity is <span class="math notranslate nohighlight">\(\mathbf{v}(t)=\dot{\mathbf{r}}(t)\)</span>. Since <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is a constant,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -563,21 +614,8 @@ O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{
 \end{equation*}
 \]</div>
 </section>
-</div><p>Notice that velocity and acceleration are vectors, whereas speed is a scalar.</p>
-<div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 23 </span></p>
-<section class="example-content" id="proof-content">
-<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> in two dimensions is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{r}(t)=\sin (t) \mathbf{i}+\cos (t) \mathbf{j} \tag{190}
-\end{equation*}
-\]</div>
-<p>(a) Find the velocity, speed and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.
-(b) Show that the path of the particle is a unit circle around the origin.
-(c) Show that the acceleration is orthogonal to the velocity.</p>
-<p class="rubric">Solution.</p>
+<section id="id2">
+<h2>Solution.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>(a) The velocity is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -618,12 +656,10 @@ product as</p>
 \end{equation*}
 \]</div>
 </section>
-</div><p>Recall from your Core module that, since the dot product vanishes, this means that <span class="math notranslate nohighlight">\(\mathbf{a}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}(t)\)</span> are orthogonal. Acceleration acting orthogonally to the direction of motion is sometimes called centripetal acceleration.</p>
-</section>
 <section id="lecture-15-homework-exercises">
-<h2>Lecture 15 Homework exercises<a class="headerlink" href="#lecture-15-homework-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Lecture 15 Homework exercises<a class="headerlink" href="#lecture-15-homework-exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-28 admonition">
-<p class="admonition-title">Exercise 28. </p>
+<p class="admonition-title">Exercise 28.</p>
 <p>For each of the following location vectors, calculate the velocity, speed, and acceleration of a particle whose location is described by the vector. In each case, sketch the path of the particle. [Hint: an easy way to sketch a path is to plot values of <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> for various values of <span class="math notranslate nohighlight">\(t\)</span> and join the dots; for example, try <span class="math notranslate nohighlight">\(t=0,1,2,3,4,5, \ldots\)</span> ]
 (a) <span class="math notranslate nohighlight">\(\mathbf{r}(t)=t \mathbf{i}+t^{2} \mathbf{j}\)</span>.
 (b) <span class="math notranslate nohighlight">\(\mathbf{r}(t)=t \mathbf{i}+t^{3} \mathbf{j}\)</span>
@@ -632,7 +668,7 @@ product as</p>
 (e) <span class="math notranslate nohighlight">\(\mathbf{r}(t)=\exp (-t)[\sin (t) \mathbf{i}+\cos (t) \mathbf{j}]\)</span></p>
 </div>
 <div class="admonition-exercise-29 admonition">
-<p class="admonition-title">Exercise 29. </p>
+<p class="admonition-title">Exercise 29.</p>
 <p>(a) At time <span class="math notranslate nohighlight">\(t\)</span>, the location vector <span class="math notranslate nohighlight">\(\mathbf{r}=\mathbf{r}(t)\)</span> of a point <span class="math notranslate nohighlight">\(P\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -652,7 +688,7 @@ product as</p>
 (c) What are the dimensions of <span class="math notranslate nohighlight">\(\mathbf{g}, \mathbf{U}\)</span> and <span class="math notranslate nohighlight">\(k\)</span> ?</p>
 </div>
 <div class="admonition-exercise-30 admonition">
-<p class="admonition-title">Exercise 30. </p>
+<p class="admonition-title">Exercise 30.</p>
 <p>A particle <span class="math notranslate nohighlight">\(P\)</span> is moving such that at time <span class="math notranslate nohighlight">\(t\)</span> its location vector is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -693,11 +729,10 @@ product as</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="lecture14.html"
@@ -717,10 +752,7 @@ product as</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -729,14 +761,20 @@ product as</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-15-homework-exercises">Lecture 15 Homework exercises</a></li>
 </ul>
   </nav></div>
@@ -759,9 +797,10 @@ By Alex Best / Jonathan Potts
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -785,8 +824,8 @@ By Alex Best / Jonathan Potts
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

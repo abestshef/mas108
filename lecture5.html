@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Lecture 5. From difference to differential equations &#8212; MAS108 Mathematical Modelling</title>
   
@@ -15,53 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture5';</script>
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="MAS108 Mathematical Modelling - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="MAS108 Mathematical Modelling - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +199,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="lecture15.html">Lecture 15. Motion in more than one dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture16.html">Lecture 16. Relative motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture17.html">Lecture 17. Modelling the effect of gravity close to the Earth’s surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture18.html">Lecture 18. Modelling projectile motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture19.html">Lecture 19. More examples of motion with constant acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture20.html">Lecture 20. The muddiest point: part III</a></li>
+
 </ul>
 
     </div>
@@ -191,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +262,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture5.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -360,26 +390,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -402,7 +434,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuum-limit">5.1 The continuum limit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-examples">5.2 Separable solutions: examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-homework-exercises">Lecture 5 Homework exercises</a></li>
 </ul>
             </nav>
@@ -413,12 +449,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-5-from-difference-to-differential-equations">
-<h1>Lecture 5. From difference to differential equations<a class="headerlink" href="#lecture-5-from-difference-to-differential-equations" title="Permalink to this heading">#</a></h1>
+<h1>Lecture 5. From difference to differential equations<a class="headerlink" href="#lecture-5-from-difference-to-differential-equations" title="Link to this heading">#</a></h1>
 <section id="the-continuum-limit">
-<h2>5.1 The continuum limit<a class="headerlink" href="#the-continuum-limit" title="Permalink to this heading">#</a></h2>
+<h2>5.1 The continuum limit<a class="headerlink" href="#the-continuum-limit" title="Link to this heading">#</a></h2>
 <p>Difference equations are an intuitive way to model many dynamical systems, but they can be tricky to deal with from an analytic perspective. On the other hand, differential equations (some of which you met in school) admit a far wider range of analytic techniques. Moreover, they are formally related to difference equations. Here we will explain this relation.</p>
 <p>Recall Equation (4) giving the general formula for a difference equation describing the evolution of a quantity <span class="math notranslate nohighlight">\(U(t)\)</span>, as follows</p>
 <div class="math notranslate nohighlight">
@@ -488,14 +524,56 @@ U(t+\tau)=(1+r \tau) U(t) \tag{42}
 <p>You will show this as part of the exercises at the end of this lecture. Equation (45) is another example of a differential equation, called the continuous logistic model for population growth.</p>
 </section>
 <section id="separable-solutions-examples">
-<h2>5.2 Separable solutions: examples<a class="headerlink" href="#separable-solutions-examples" title="Permalink to this heading">#</a></h2>
+<h2>5.2 Separable solutions: examples<a class="headerlink" href="#separable-solutions-examples" title="Link to this heading">#</a></h2>
 <p>Both Equations 44 and 45 can be solved using a technique (separation of variables) that you learned at school, but may have forgotten. We will go through it here for these two examples, then explain the general method in the Section 5.3.</p>
 <div class="proof example admonition" id="ex5_1">
 <p class="admonition-title"><span class="caption-number">Example 9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Find the solution to Equation (44) where <span class="math notranslate nohighlight">\(U(0)=1\)</span>.</p>
 </section>
-</div><p>First we rearrange Equation (44) to give</p>
+</div><p>Now, in Proposition 1, we found a solution to the original difference equation, Equation (5). Notice that Equation (5) is just Equation (42) with <span class="math notranslate nohighlight">\(\tau=1\)</span>. So it is valuable to compare Equation (51) with the solution of Equation (5). They ought to be similar, right?</p>
+<p>We found that, in Proposition 1, <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span>. By a similar argument</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+\tau)=(1+r \tau) U(t) \Longrightarrow U(t)=U(0)(1+r \tau)^{t / \tau} \tag{52}
+\end{equation*}
+\]</div>
+<p>This is not the same as Equation (51). However,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+(1+r \tau)^{t / \tau} &amp; =\exp \left(\ln \left[(1+r \tau)^{t / \tau}\right]\right) \\
+&amp; =\exp \left[\frac{t}{\tau} \ln (1+r \tau)\right] . \tag{53}
+\end{align*}
+\end{split}\]</div>
+<p>For small <span class="math notranslate nohighlight">\(\tau, \ln (1+r \tau) \approx r \tau\)</span>. (You may not have known this, but now you do! The reason why it’s true will be covered in MAS106 later; it has to do with Taylor Series.) Hence, for small <span class="math notranslate nohighlight">\(\tau\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+(1+r \tau)^{t} &amp; \approx \exp \left[\frac{t}{\tau} r \tau\right] \\
+&amp; =\exp (r t) \tag{54}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
+&amp; \approx U(0) \exp (r t) \tag{55}
+\end{align*}
+\end{split}\]</div>
+<p>This is the same as Equation 51 . Hence, for small time-steps <span class="math notranslate nohighlight">\(\tau\)</span>, the differential equation agrees with the difference equation. We’d expect this, right?</p>
+<div class="proof example admonition" id="ex5_2">
+<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve Equation (45) for <span class="math notranslate nohighlight">\(U(0)=K / 10\)</span>.</p>
+</section>
+</div><p>To compare the general solution from Equation (62) to the discrete logistic model, recall two things. First, we were not able to find an exact analytic solution to the discrete logistic model (see Lecture 3), but we can for the continuous logistic model (Equation 62). Second, the behaviour of the discrete solution can get pretty wild (again, see Lecture 3), including solutions that never settle, period doubling, and chaos. In contrast, the continuous logistic model always tends towards a constant, positive, steady state, <span class="math notranslate nohighlight">\(K\)</span> in a monotonic fashion (e.g. Figure 8).</p>
+<p>So be careful in choosing your model! The choice of discrete or continuous could lead to a big difference in the predicted outcome. In your model choice, you should be informed by the underlying reality. For example, is your organism one that could reproduce at any time (like single-celled organisms) or only at a specific time (like sheep, who reproduce once per year in spring)? If the former, then a continuous-time formalism may be better (i.e. differential equations); if the latter, then use discrete-time equations (i.e. difference equations).</p>
+</section>
+<section id="solution">
+<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>First we rearrange Equation (44) to give</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -539,44 +617,10 @@ U(t)=\exp (r t+c)=A \exp (r t) \tag{50}
 U(t)=U(0) \exp (r t)=\exp (r t) \tag{51}
 \end{equation*}
 \]</div>
-<p>Now, in Proposition 1, we found a solution to the original difference equation, Equation (5). Notice that Equation (5) is just Equation (42) with <span class="math notranslate nohighlight">\(\tau=1\)</span>. So it is valuable to compare Equation (51) with the solution of Equation (5). They ought to be similar, right?</p>
-<p>We found that, in Proposition 1, <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span>. By a similar argument</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-U(t+\tau)=(1+r \tau) U(t) \Longrightarrow U(t)=U(0)(1+r \tau)^{t / \tau} \tag{52}
-\end{equation*}
-\]</div>
-<p>This is not the same as Equation (51). However,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-(1+r \tau)^{t / \tau} &amp; =\exp \left(\ln \left[(1+r \tau)^{t / \tau}\right]\right) \\
-&amp; =\exp \left[\frac{t}{\tau} \ln (1+r \tau)\right] . \tag{53}
-\end{align*}
-\end{split}\]</div>
-<p>For small <span class="math notranslate nohighlight">\(\tau, \ln (1+r \tau) \approx r \tau\)</span>. (You may not have known this, but now you do! The reason why it’s true will be covered in MAS106 later; it has to do with Taylor Series.) Hence, for small <span class="math notranslate nohighlight">\(\tau\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-(1+r \tau)^{t} &amp; \approx \exp \left[\frac{t}{\tau} r \tau\right] \\
-&amp; =\exp (r t) \tag{54}
-\end{align*}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
-&amp; \approx U(0) \exp (r t) \tag{55}
-\end{align*}
-\end{split}\]</div>
-<p>This is the same as Equation 51 . Hence, for small time-steps <span class="math notranslate nohighlight">\(\tau\)</span>, the differential equation agrees with the difference equation. We’d expect this, right?</p>
-<div class="proof example admonition" id="ex5_2">
-<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
-<section class="example-content" id="proof-content">
-<p>Solve Equation (45) for <span class="math notranslate nohighlight">\(U(0)=K / 10\)</span>.</p>
 </section>
-</div><p>First we rearrange Equation (45) to give</p>
+<section id="id1">
+<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>First we rearrange Equation (45) to give</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -632,7 +676,7 @@ U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
 \end{align*}
 \end{split}\]</div>
 <p>(Technical aside: as in the previous example, we have ignored the modulus sign when taking the natural logarithm, thus finding a solution that has <span class="math notranslate nohighlight">\(0&lt;U(t)&lt;K\)</span> which is correct because <span class="math notranslate nohighlight">\(0&lt;U(0)=K / 10&lt;K\)</span>.) Notice that, as <span class="math notranslate nohighlight">\(t\)</span> gets very big, <span class="math notranslate nohighlight">\(U(t)\)</span> approaches <span class="math notranslate nohighlight">\(K\)</span>, so we always reach a steady state solution (e.g. Figure 8).</p>
-<img src="https://cdn.mathpix.com/cropped/2024_08_14_1020f80a8e4d674d89a3g-5.jpg?height=1175&width=1172&top_left_y=1297&top_left_x=402" alt="drawing" width="400"/>
+<img src="mas108_cts_logistic.png" alt="drawing" width="400"/>
 <p><em>Figure 8: A plot of the solution to the continuous logistic model (Equation 62) for <span class="math notranslate nohighlight">\(C=0.01\)</span>, <span class="math notranslate nohighlight">\(r=1, K=1\)</span>.</em></p>
 <p>Now let’s apply the initial condition <span class="math notranslate nohighlight">\(U(0)=K / 10\)</span></p>
 <div class="math notranslate nohighlight">
@@ -652,11 +696,8 @@ U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
 \Longrightarrow U(t)=\frac{K \exp (r t)}{9+\exp (r t)} \tag{64}
 \end{equation*}
 \]</div>
-<p>To compare the general solution from Equation (62) to the discrete logistic model, recall two things. First, we were not able to find an exact analytic solution to the discrete logistic model (see Lecture 3), but we can for the continuous logistic model (Equation 62). Second, the behaviour of the discrete solution can get pretty wild (again, see Lecture 3), including solutions that never settle, period doubling, and chaos. In contrast, the continuous logistic model always tends towards a constant, positive, steady state, <span class="math notranslate nohighlight">\(K\)</span> in a monotonic fashion (e.g. Figure 8).</p>
-<p>So be careful in choosing your model! The choice of discrete or continuous could lead to a big difference in the predicted outcome. In your model choice, you should be informed by the underlying reality. For example, is your organism one that could reproduce at any time (like single-celled organisms) or only at a specific time (like sheep, who reproduce once per year in spring)? If the former, then a continuous-time formalism may be better (i.e. differential equations); if the latter, then use discrete-time equations (i.e. difference equations).</p>
-</section>
 <section id="separable-solutions-general-method">
-<h2>5.3 Separable solutions: general method<a class="headerlink" href="#separable-solutions-general-method" title="Permalink to this heading">#</a></h2>
+<h3>5.3 Separable solutions: general method<a class="headerlink" href="#separable-solutions-general-method" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
@@ -686,8 +727,9 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
 <p>Then, as long as you can integrate <span class="math notranslate nohighlight">\(g(U)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span>, you have a solution - hooray!</p>
 <p>BUT… be warned, integration is a DARK ART! Many apparently innocuous functions can be very difficult to solve. There are plenty that no mathematician knows how to solve. If you don’t believe me, try solving <span class="math notranslate nohighlight">\(\int \exp \left(x^{3}\right) \mathrm{d} x\)</span>. Not so easy, is it?</p>
 </section>
+</section>
 <section id="lecture-5-homework-exercises">
-<h2>Lecture 5 Homework exercises<a class="headerlink" href="#lecture-5-homework-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Lecture 5 Homework exercises<a class="headerlink" href="#lecture-5-homework-exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-11 admonition">
 <p class="admonition-title">Exercise 11</p>
 <p>Find the continuum limit of the logistic model (Equation 7).</p>
@@ -737,11 +779,10 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="lecture4.html"
@@ -761,10 +802,7 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -772,6 +810,7 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -781,7 +820,11 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuum-limit">5.1 The continuum limit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-examples">5.2 Separable solutions: examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-homework-exercises">Lecture 5 Homework exercises</a></li>
 </ul>
   </nav></div>
@@ -804,9 +847,10 @@ By Alex Best / Jonathan Potts
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -830,8 +874,8 @@ By Alex Best / Jonathan Potts
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
