@@ -433,10 +433,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-exponential-to-logistic-growth">2.1 From exponential to logistic growth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-solutions-for-logistic-growth">2.2 Analytic solutions for logistic growth</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-solutions-for-logistic-growth">2.2 Analytic solutions for logistic growth</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-homework-exercises">Lecture 2 Homework exercises</a></li>
 </ul>
             </nav>
@@ -589,14 +586,7 @@ population just grows and grows, the logistic model has the rabbit population le
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
 <section class="example-content" id="proof-content">
 <p>What is the steady state of Equation (7) for <span class="math notranslate nohighlight">\(r&gt;0\)</span> ?</p>
-</section>
-</div><p>In Table 2 and Figure 3b we see that the population converges to the steady state <span class="math notranslate nohighlight">\(U_{*}=K\)</span>, but not <span class="math notranslate nohighlight">\(U_{*}=0\)</span>. In population modelling, the constant <span class="math notranslate nohighlight">\(K\)</span> is referred to as the carrying capacity of the environment, because it denotes the number of organisms (e.g. rabbits) that the environment can sustain (i.e. ‘carry’) due to its resource richness.</p>
-<img src="mas108_fig_explog.png" alt="comparison of exponential and logistic growth" width="800"/>
-<p><em>Figure 3: Comparison between exponential and logistic growth models.</em></p>
-<p>In general, it is not always straightforward to determine analytically which steady state a system converges to, or if it will converge at all. Next lecture, we will see that the discrete logistic model sometimes does not converge, depending on the parameter values we choose.</p>
-</section>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p><strong>Solution.</strong></p>
 <p>By definition, this is a number <span class="math notranslate nohighlight">\(U_{*}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -605,8 +595,14 @@ U_{*}=U_{*}+r U_{*}\left(1-\frac{U_{*}}{K}\right) \tag{8}
 \end{equation*}
 \]</div>
 <p>Thus either <span class="math notranslate nohighlight">\(U_{*}=0\)</span> or we can divide through by <span class="math notranslate nohighlight">\(U_{*}\)</span> to give <span class="math notranslate nohighlight">\(r\left(1-U_{*} / K\right)=0\)</span>, which means that <span class="math notranslate nohighlight">\(U_{*}=K\)</span>.</p>
+</section>
+</div><p>In Table 2 and Figure 3b we see that the population converges to the steady state <span class="math notranslate nohighlight">\(U_{*}=K\)</span>, but not <span class="math notranslate nohighlight">\(U_{*}=0\)</span>. In population modelling, the constant <span class="math notranslate nohighlight">\(K\)</span> is referred to as the carrying capacity of the environment, because it denotes the number of organisms (e.g. rabbits) that the environment can sustain (i.e. ‘carry’) due to its resource richness.</p>
+<img src="mas108_fig_explog.png" alt="comparison of exponential and logistic growth" width="800"/>
+<p><em>Figure 3: Comparison between exponential and logistic growth models.</em></p>
+<p>In general, it is not always straightforward to determine analytically which steady state a system converges to, or if it will converge at all. Next lecture, we will see that the discrete logistic model sometimes does not converge, depending on the parameter values we choose.</p>
+</section>
 <section id="analytic-solutions-for-logistic-growth">
-<h3>2.2 Analytic solutions for logistic growth<a class="headerlink" href="#analytic-solutions-for-logistic-growth" title="Link to this heading">#</a></h3>
+<h2>2.2 Analytic solutions for logistic growth<a class="headerlink" href="#analytic-solutions-for-logistic-growth" title="Link to this heading">#</a></h2>
 <p>Perhaps the best way to find out how a difference equation will behave over time is to find an exact analytic solution, but this is not always possible. For the exponential model, we were able to find such a solution (Proposition 1). However, this is not possible in general for the logistic model (give it a try and you’ll see how hard it is!).</p>
 <p>Instead, we might try to find another model; one that can be solved exactly but yet retains similar qualitative properties as the logistic model, i.e. that it accounts for births, deaths, and also the carrying capacity of the environment. Indeed it is a general principal of model building that it can be valuable to construct models with analytic tractability in mind. One example of this is the following</p>
 <div class="math notranslate nohighlight">
@@ -672,7 +668,6 @@ U(t)=\frac{K U(0)}{U(0)+[K-U(0)] R^{-t}} \tag{11}
 <img src="mas108_fig_bh.png" alt="Comparison of model time courses" width="800"/>
 <p><em>Figure 4: Example plots of the model in Equation (9). Notice that both plots have <span class="math notranslate nohighlight">\(K=500\)</span>, but the convergence to <span class="math notranslate nohighlight">\(K\)</span> is faster in the second plot.</em></p>
 <p>This means that, for the fisheries model, we use Equation (11) once for all time, rather than needing to calculate <span class="math notranslate nohighlight">\(U(t)\)</span> separately for each time step. Two example plots of Equation (11) are shown in Figure 4.</p>
-</section>
 </section>
 <section id="lecture-2-homework-exercises">
 <h2>Lecture 2 Homework exercises<a class="headerlink" href="#lecture-2-homework-exercises" title="Link to this heading">#</a></h2>
@@ -783,10 +778,7 @@ U(t)=U(0)(1+r)^{t}-\frac{s\left[(1+r)^{t}-1\right]}{r} \tag{14}
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-exponential-to-logistic-growth">2.1 From exponential to logistic growth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-solutions-for-logistic-growth">2.2 Analytic solutions for logistic growth</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-solutions-for-logistic-growth">2.2 Analytic solutions for logistic growth</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-homework-exercises">Lecture 2 Homework exercises</a></li>
 </ul>
   </nav></div>

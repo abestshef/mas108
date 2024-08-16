@@ -432,11 +432,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-homework-exercises">Lecture 12 Homework exercises</a></li>
 </ul>
             </nav>
@@ -452,8 +448,25 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-12-inhomogeneous-second-order-odes">
 <h1>Lecture 12. Inhomogeneous second order ODEs<a class="headerlink" href="#lecture-12-inhomogeneous-second-order-odes" title="Link to this heading">#</a></h1>
 <p>Before we go any further, let’s start with an example.</p>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 18 </span></p>
+<section class="example-content" id="proof-content">
+<p>A particle <span class="math notranslate nohighlight">\(P\)</span> of mass <span class="math notranslate nohighlight">\(m\)</span> is attached to one end of a spring of natural length <span class="math notranslate nohighlight">\(L\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span>. The other end of the spring is fixed at the point <span class="math notranslate nohighlight">\(A\)</span>. Initially the spring hangs down vertically in equilibrium. The point <span class="math notranslate nohighlight">\(A\)</span> is then set in vertical motion, so that its displacement from its initial position is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+y(t)=D \sin (\sigma t) \tag{135}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(\sigma&gt;0\)</span> are constants. Let <span class="math notranslate nohighlight">\(x(t)\)</span> be the displacement of the particle from its equilibrium position. Show that the equation of motion for the particle is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\ddot{x}+\omega^{2} x=\omega^{2} D \sin (\sigma t) \tag{136}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is a positive constant which should be determined.</p>
+<p><strong>Solution.</strong></p>
 <p>The forces acting on <span class="math notranslate nohighlight">\(P\)</span> are the weight, <span class="math notranslate nohighlight">\(m g\)</span>, acting vertically downwards, and the tension, <span class="math notranslate nohighlight">\(T\)</span>, in the spring, acting vertically upwards. In equilibrium, let the tension in the spring be <span class="math notranslate nohighlight">\(T=T_{0}\)</span> and the extension of the spring be <span class="math notranslate nohighlight">\(a\)</span>. By Hooke’s Law, <span class="math notranslate nohighlight">\(T_{0}=k a\)</span>. Since the system is in equilibrium, the vertical forces balance (Figure 19), so</p>
 <div class="math notranslate nohighlight">
 \[
@@ -496,49 +509,6 @@ m \ddot{x}+k x &amp; =k y=k D \sin (\sigma t) \\
 \end{equation*}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega^{2}=\frac{k}{m}\)</span>, so that <span class="math notranslate nohighlight">\(\omega=\sqrt{\frac{k}{m}}\)</span>.</p>
-<section id="the-method-of-undetermined-coefficients">
-<h3>12.1 The method of undetermined coefficients<a class="headerlink" href="#the-method-of-undetermined-coefficients" title="Link to this heading">#</a></h3>
-<p>There is no single catch-all method for solving inhomogeneous second order ODE with constant coefficients, but there is a method that works in many cases, called the method of undetermined coefficients, as follows</p>
-<ol class="arabic simple">
-<li><p>Try to find a solution to Equation (142) of the same form as <span class="math notranslate nohighlight">\(f(t)\)</span>, called the particular solution, <span class="math notranslate nohighlight">\(x_{P}(t)\)</span>.</p></li>
-<li><p>Solve the associated homogeneous ODE, <span class="math notranslate nohighlight">\(\ddot{x}_{I}+b \dot{x}_{I}+c x_{I}=0\)</span> to obtain the complementary function, <span class="math notranslate nohighlight">\(x_{I}(t)\)</span>.</p></li>
-<li><p>Then the general solution is <span class="math notranslate nohighlight">\(x(t)=x_{I}(t)+x_{P}(t)\)</span>.</p></li>
-</ol>
-<p>The problem with this method is that Step 1 does not always work for any function <span class="math notranslate nohighlight">\(f(t)\)</span>. However, it usually works for polynomials, exponential functions, sine, and cosine.</p>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 18 </span></p>
-<section class="example-content" id="proof-content">
-<p>Find the general solution to Equation (141) in the case <span class="math notranslate nohighlight">\(\sigma^{2} \neq \omega^{2}\)</span>.</p>
-</section>
-</div><p>The tricky thing about this method is finding a good guess for the form of the particular solution. Here’s some rules as to what you should try for certain specific functions.</p>
-<ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(f(t)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(f(t)=a_{0}+a_{1} t+a_{2} t^{2}+\cdots+a_{n} t^{n}\)</span>, try setting <span class="math notranslate nohighlight">\(x_{P}(t)\)</span> to be another polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(x_{P}(t)=A_{0}+A_{1} t+A_{2} t^{2}+\cdots+A_{n} t^{n}\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \exp \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \exp \left(a_{1} t\right)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> or <span class="math notranslate nohighlight">\(f(t)=\cos \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A_{1} \sin \left(a_{1} t\right)+A_{2} \cos \left(a_{1} t\right)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, <span class="math notranslate nohighlight">\(\operatorname{try} x_{P}(t)=A \sin \left(a_{1} t\right)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \cos \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \cos \left(a_{1} t\right)\)</span>.</p></li>
-</ol>
-<p>In the above, <span class="math notranslate nohighlight">\(A, a_{i}\)</span>, and <span class="math notranslate nohighlight">\(A_{i}\)</span> (for each <span class="math notranslate nohighlight">\(i\)</span> ) are all constants.</p>
-</section>
-</section>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 19 </span></p>
-<section class="example-content" id="proof-content">
-<p>A particle <span class="math notranslate nohighlight">\(P\)</span> of mass <span class="math notranslate nohighlight">\(m\)</span> is attached to one end of a spring of natural length <span class="math notranslate nohighlight">\(L\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span>. The other end of the spring is fixed at the point <span class="math notranslate nohighlight">\(A\)</span>. Initially the spring hangs down vertically in equilibrium. The point <span class="math notranslate nohighlight">\(A\)</span> is then set in vertical motion, so that its displacement from its initial position is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-y(t)=D \sin (\sigma t) \tag{135}
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(\sigma&gt;0\)</span> are constants. Let <span class="math notranslate nohighlight">\(x(t)\)</span> be the displacement of the particle from its equilibrium position. Show that the equation of motion for the particle is</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\ddot{x}+\omega^{2} x=\omega^{2} D \sin (\sigma t) \tag{136}
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is a positive constant which should be determined.</p>
 </section>
 </div><p>Notice that the resulting ODE (Equation 141) is not in the form of Equation (109) so we cannot use our results from Propositions 4-6.</p>
 <div class="proof definition admonition" id="def12_1">
@@ -554,8 +524,20 @@ y(t)=D \sin (\sigma t) \tag{135}
 <p>for some function <span class="math notranslate nohighlight">\(f(t) \neq 0\)</span> and constants <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, is called an inhomogeneous second order ODE with constant coefficients.</p>
 </section>
 </div><p>Notice that Equation (141) is an example of an inhomogeneous second order ODE with constant coefficients.</p>
-<section id="id1">
-<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="the-method-of-undetermined-coefficients">
+<h2>12.1 The method of undetermined coefficients<a class="headerlink" href="#the-method-of-undetermined-coefficients" title="Link to this heading">#</a></h2>
+<p>There is no single catch-all method for solving inhomogeneous second order ODE with constant coefficients, but there is a method that works in many cases, called the method of undetermined coefficients, as follows</p>
+<ol class="arabic simple">
+<li><p>Try to find a solution to Equation (142) of the same form as <span class="math notranslate nohighlight">\(f(t)\)</span>, called the particular solution, <span class="math notranslate nohighlight">\(x_{P}(t)\)</span>.</p></li>
+<li><p>Solve the associated homogeneous ODE, <span class="math notranslate nohighlight">\(\ddot{x}_{I}+b \dot{x}_{I}+c x_{I}=0\)</span> to obtain the complementary function, <span class="math notranslate nohighlight">\(x_{I}(t)\)</span>.</p></li>
+<li><p>Then the general solution is <span class="math notranslate nohighlight">\(x(t)=x_{I}(t)+x_{P}(t)\)</span>.</p></li>
+</ol>
+<p>The problem with this method is that Step 1 does not always work for any function <span class="math notranslate nohighlight">\(f(t)\)</span>. However, it usually works for polynomials, exponential functions, sine, and cosine.</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 19 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the general solution to Equation (141) in the case <span class="math notranslate nohighlight">\(\sigma^{2} \neq \omega^{2}\)</span>.</p>
+<p><strong>Solution.</strong></p>
 <p>The right-hand side of Equation (141) is <span class="math notranslate nohighlight">\(\sin (\sigma t)\)</span>, so we will try to find a solution of the form <span class="math notranslate nohighlight">\(x(t)=A \sin (\sigma t)\)</span>. Here, <span class="math notranslate nohighlight">\(\dot{x}(t)=A \sigma \cos (\sigma t)\)</span> and <span class="math notranslate nohighlight">\(\ddot{x}(t)=-A \sigma^{2} \sin (\sigma t)\)</span>. Plugging these into Equation (141) gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -593,6 +575,16 @@ x_{I}(t)=B \sin (\omega t)+C \cos (\omega t) \tag{146}
 x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\omega^{2}-\sigma^{2}} \sin (\sigma t) \tag{147}
 \end{equation*}
 \]</div>
+</section>
+</div><p>The tricky thing about this method is finding a good guess for the form of the particular solution. Here’s some rules as to what you should try for certain specific functions.</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(f(t)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(f(t)=a_{0}+a_{1} t+a_{2} t^{2}+\cdots+a_{n} t^{n}\)</span>, try setting <span class="math notranslate nohighlight">\(x_{P}(t)\)</span> to be another polynomial of degree <span class="math notranslate nohighlight">\(n\)</span>, i.e. <span class="math notranslate nohighlight">\(x_{P}(t)=A_{0}+A_{1} t+A_{2} t^{2}+\cdots+A_{n} t^{n}\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \exp \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \exp \left(a_{1} t\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> or <span class="math notranslate nohighlight">\(f(t)=\cos \left(a_{1} t\right)\)</span>, try <span class="math notranslate nohighlight">\(x_{P}(t)=A_{1} \sin \left(a_{1} t\right)+A_{2} \cos \left(a_{1} t\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \sin \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, <span class="math notranslate nohighlight">\(\operatorname{try} x_{P}(t)=A \sin \left(a_{1} t\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(t)=a_{0} \cos \left(a_{1} t\right)\)</span> and the coefficient of <span class="math notranslate nohighlight">\(\dot{x}\)</span> is zero, try <span class="math notranslate nohighlight">\(x_{P}(t)=A \cos \left(a_{1} t\right)\)</span>.</p></li>
+</ol>
+<p>In the above, <span class="math notranslate nohighlight">\(A, a_{i}\)</span>, and <span class="math notranslate nohighlight">\(A_{i}\)</span> (for each <span class="math notranslate nohighlight">\(i\)</span> ) are all constants.</p>
 </section>
 <section id="lecture-12-homework-exercises">
 <h2>Lecture 12 Homework exercises<a class="headerlink" href="#lecture-12-homework-exercises" title="Link to this heading">#</a></h2>
@@ -679,11 +671,7 @@ x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-undetermined-coefficients">12.1 The method of undetermined coefficients</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-homework-exercises">Lecture 12 Homework exercises</a></li>
 </ul>
   </nav></div>

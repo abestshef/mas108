@@ -434,11 +434,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuum-limit">5.1 The continuum limit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-examples">5.2 Separable solutions: examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-homework-exercises">Lecture 5 Homework exercises</a></li>
 </ul>
             </nav>
@@ -530,49 +526,7 @@ U(t+\tau)=(1+r \tau) U(t) \tag{42}
 <p class="admonition-title"><span class="caption-number">Example 9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Find the solution to Equation (44) where <span class="math notranslate nohighlight">\(U(0)=1\)</span>.</p>
-</section>
-</div><p>Now, in Proposition 1, we found a solution to the original difference equation, Equation (5). Notice that Equation (5) is just Equation (42) with <span class="math notranslate nohighlight">\(\tau=1\)</span>. So it is valuable to compare Equation (51) with the solution of Equation (5). They ought to be similar, right?</p>
-<p>We found that, in Proposition 1, <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span>. By a similar argument</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-U(t+\tau)=(1+r \tau) U(t) \Longrightarrow U(t)=U(0)(1+r \tau)^{t / \tau} \tag{52}
-\end{equation*}
-\]</div>
-<p>This is not the same as Equation (51). However,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-(1+r \tau)^{t / \tau} &amp; =\exp \left(\ln \left[(1+r \tau)^{t / \tau}\right]\right) \\
-&amp; =\exp \left[\frac{t}{\tau} \ln (1+r \tau)\right] . \tag{53}
-\end{align*}
-\end{split}\]</div>
-<p>For small <span class="math notranslate nohighlight">\(\tau, \ln (1+r \tau) \approx r \tau\)</span>. (You may not have known this, but now you do! The reason why it’s true will be covered in MAS106 later; it has to do with Taylor Series.) Hence, for small <span class="math notranslate nohighlight">\(\tau\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-(1+r \tau)^{t} &amp; \approx \exp \left[\frac{t}{\tau} r \tau\right] \\
-&amp; =\exp (r t) \tag{54}
-\end{align*}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
-&amp; \approx U(0) \exp (r t) \tag{55}
-\end{align*}
-\end{split}\]</div>
-<p>This is the same as Equation 51 . Hence, for small time-steps <span class="math notranslate nohighlight">\(\tau\)</span>, the differential equation agrees with the difference equation. We’d expect this, right?</p>
-<div class="proof example admonition" id="ex5_2">
-<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
-<section class="example-content" id="proof-content">
-<p>Solve Equation (45) for <span class="math notranslate nohighlight">\(U(0)=K / 10\)</span>.</p>
-</section>
-</div><p>To compare the general solution from Equation (62) to the discrete logistic model, recall two things. First, we were not able to find an exact analytic solution to the discrete logistic model (see Lecture 3), but we can for the continuous logistic model (Equation 62). Second, the behaviour of the discrete solution can get pretty wild (again, see Lecture 3), including solutions that never settle, period doubling, and chaos. In contrast, the continuous logistic model always tends towards a constant, positive, steady state, <span class="math notranslate nohighlight">\(K\)</span> in a monotonic fashion (e.g. Figure 8).</p>
-<p>So be careful in choosing your model! The choice of discrete or continuous could lead to a big difference in the predicted outcome. In your model choice, you should be informed by the underlying reality. For example, is your organism one that could reproduce at any time (like single-celled organisms) or only at a specific time (like sheep, who reproduce once per year in spring)? If the former, then a continuous-time formalism may be better (i.e. differential equations); if the latter, then use discrete-time equations (i.e. difference equations).</p>
-</section>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p><strong>Solution.</strong></p>
 <p>First we rearrange Equation (44) to give</p>
 <div class="math notranslate nohighlight">
 \[
@@ -618,8 +572,43 @@ U(t)=U(0) \exp (r t)=\exp (r t) \tag{51}
 \end{equation*}
 \]</div>
 </section>
-<section id="id1">
-<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</div><p>Now, in Proposition 1, we found a solution to the original difference equation, Equation (5). Notice that Equation (5) is just Equation (42) with <span class="math notranslate nohighlight">\(\tau=1\)</span>. So it is valuable to compare Equation (51) with the solution of Equation (5). They ought to be similar, right?</p>
+<p>We found that, in Proposition 1, <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span>. By a similar argument</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+\tau)=(1+r \tau) U(t) \Longrightarrow U(t)=U(0)(1+r \tau)^{t / \tau} \tag{52}
+\end{equation*}
+\]</div>
+<p>This is not the same as Equation (51). However,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+(1+r \tau)^{t / \tau} &amp; =\exp \left(\ln \left[(1+r \tau)^{t / \tau}\right]\right) \\
+&amp; =\exp \left[\frac{t}{\tau} \ln (1+r \tau)\right] . \tag{53}
+\end{align*}
+\end{split}\]</div>
+<p>For small <span class="math notranslate nohighlight">\(\tau, \ln (1+r \tau) \approx r \tau\)</span>. (You may not have known this, but now you do! The reason why it’s true will be covered in MAS106 later; it has to do with Taylor Series.) Hence, for small <span class="math notranslate nohighlight">\(\tau\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+(1+r \tau)^{t} &amp; \approx \exp \left[\frac{t}{\tau} r \tau\right] \\
+&amp; =\exp (r t) \tag{54}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
+&amp; \approx U(0) \exp (r t) \tag{55}
+\end{align*}
+\end{split}\]</div>
+<p>This is the same as Equation 51 . Hence, for small time-steps <span class="math notranslate nohighlight">\(\tau\)</span>, the differential equation agrees with the difference equation. We’d expect this, right?</p>
+<div class="proof example admonition" id="ex5_2">
+<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve Equation (45) for <span class="math notranslate nohighlight">\(U(0)=K / 10\)</span>.</p>
+<p><strong>Solution.</strong></p>
 <p>First we rearrange Equation (45) to give</p>
 <div class="math notranslate nohighlight">
 \[
@@ -696,8 +685,12 @@ U(t)=U(0) \exp (r t)=\exp (r t) \tag{51}
 \Longrightarrow U(t)=\frac{K \exp (r t)}{9+\exp (r t)} \tag{64}
 \end{equation*}
 \]</div>
+</section>
+</div><p>To compare the general solution from Equation (62) to the discrete logistic model, recall two things. First, we were not able to find an exact analytic solution to the discrete logistic model (see Lecture 3), but we can for the continuous logistic model (Equation 62). Second, the behaviour of the discrete solution can get pretty wild (again, see Lecture 3), including solutions that never settle, period doubling, and chaos. In contrast, the continuous logistic model always tends towards a constant, positive, steady state, <span class="math notranslate nohighlight">\(K\)</span> in a monotonic fashion (e.g. Figure 8).</p>
+<p>So be careful in choosing your model! The choice of discrete or continuous could lead to a big difference in the predicted outcome. In your model choice, you should be informed by the underlying reality. For example, is your organism one that could reproduce at any time (like single-celled organisms) or only at a specific time (like sheep, who reproduce once per year in spring)? If the former, then a continuous-time formalism may be better (i.e. differential equations); if the latter, then use discrete-time equations (i.e. difference equations).</p>
+</section>
 <section id="separable-solutions-general-method">
-<h3>5.3 Separable solutions: general method<a class="headerlink" href="#separable-solutions-general-method" title="Link to this heading">#</a></h3>
+<h2>5.3 Separable solutions: general method<a class="headerlink" href="#separable-solutions-general-method" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
@@ -726,7 +719,6 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
 \]</div>
 <p>Then, as long as you can integrate <span class="math notranslate nohighlight">\(g(U)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span>, you have a solution - hooray!</p>
 <p>BUT… be warned, integration is a DARK ART! Many apparently innocuous functions can be very difficult to solve. There are plenty that no mathematician knows how to solve. If you don’t believe me, try solving <span class="math notranslate nohighlight">\(\int \exp \left(x^{3}\right) \mathrm{d} x\)</span>. Not so easy, is it?</p>
-</section>
 </section>
 <section id="lecture-5-homework-exercises">
 <h2>Lecture 5 Homework exercises<a class="headerlink" href="#lecture-5-homework-exercises" title="Link to this heading">#</a></h2>
@@ -820,11 +812,7 @@ g(U) \frac{\mathrm{d} U}{\mathrm{~d} t}=f(t) \tag{66}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuum-limit">5.1 The continuum limit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-examples">5.2 Separable solutions: examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-solutions-general-method">5.3 Separable solutions: general method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-homework-exercises">Lecture 5 Homework exercises</a></li>
 </ul>
   </nav></div>

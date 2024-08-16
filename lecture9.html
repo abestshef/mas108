@@ -432,8 +432,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-homework-exercises">Lecture 9 Homework exercises</a></li>
 </ul>
             </nav>
@@ -466,8 +464,17 @@ document.write(`
 \end{equation*}
 \]</div>
 </div>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="proof example admonition" id="ex9_1">
+<p class="admonition-title"><span class="caption-number">Example 13 </span></p>
+<section class="example-content" id="proof-content">
+<p>Draw the direction field for a population of organisms with a seasonally fluctuating birth rate and constant intraspecific competition, given as follows</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\dot{U}=U\left(2-\frac{1}{2} \sin (t)-U\right) \tag{104}
+\end{equation*}
+\]</div>
+<p><strong>Solution.</strong></p>
 <p>We want to draw arrows on the <span class="math notranslate nohighlight">\((U, t)\)</span>-plane describing the direction of change of the solution. But the direction of change is simply the gradient of the derivative, <span class="math notranslate nohighlight">\(\dot{U}\)</span>, and we have a formula for that in Equation (104). With this in mind, the general technique for plotting a direction field is as follows.</p>
 <ol class="arabic simple">
 <li><p>Select a point <span class="math notranslate nohighlight">\((t, U)\)</span>.</p></li>
@@ -598,20 +605,20 @@ document.write(`
 <img src="mas108_dir_field.png" alt="drawing" width="400"/>
 <p><em>Figure 13: Direction field for Equation (104).</em></p>
 </section>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 13 </span></p>
+</div><p>Figure 13 also shows the solution to Equation (104) for two different initial conditions: <span class="math notranslate nohighlight">\(U(0)=4\)</span>, given by the top curve, and <span class="math notranslate nohighlight">\(U(0)=1 / 2\)</span>, given by the bottom curve. These are not algebraic expressions, but rather they are graphical solutions, showing how <span class="math notranslate nohighlight">\(U\)</span> changes over time. Nonetheless, they are still solutions, and valuable for analysing ODEs.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 14 </span></p>
 <section class="example-content" id="proof-content">
-<p>Draw the direction field for a population of organisms with a seasonally fluctuating birth rate and constant intraspecific competition, given as follows</p>
+<p>Suppose we have a population of animals living in an environment that is being slowly degraded over time (e.g. by climate change or deforestation). We can model this environmental degradation as a decline of carrying capacity: as the environment degrades, it
+is able to sustain less individuals. A simple model of this is as follows</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
-\dot{U}=U\left(2-\frac{1}{2} \sin (t)-U\right) \tag{104}
+\dot{U}=r U\left(1-\frac{U}{K \exp (-\mu t)}\right) \tag{105}
 \end{equation*}
 \]</div>
-</section>
-</div><p>Figure 13 also shows the solution to Equation (104) for two different initial conditions: <span class="math notranslate nohighlight">\(U(0)=4\)</span>, given by the top curve, and <span class="math notranslate nohighlight">\(U(0)=1 / 2\)</span>, given by the bottom curve. These are not algebraic expressions, but rather they are graphical solutions, showing how <span class="math notranslate nohighlight">\(U\)</span> changes over time. Nonetheless, they are still solutions, and valuable for analysing ODEs.</p>
-<section id="id1">
-<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Plot the direction field in the case <span class="math notranslate nohighlight">\(r=K=\mu=1\)</span> for <span class="math notranslate nohighlight">\(0 \leq U \leq 2\)</span> and <span class="math notranslate nohighlight">\(0 \leq t \leq 3\)</span>. What do you think will happen to <span class="math notranslate nohighlight">\(U(t)\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> ? Why?</p>
+<p><strong>Solution.</strong></p>
 <p>Values of <span class="math notranslate nohighlight">\(\dot{U}\)</span> for various <span class="math notranslate nohighlight">\(0 \leq U \leq 2\)</span> and <span class="math notranslate nohighlight">\(0 \leq t \leq 3\)</span> are given in Table 9. The resulting direction field is shown in Figure 14. If we start at any initial location <span class="math notranslate nohighlight">\(U(0)\)</span>, we see that the trajectory seems to be tending to 0 , so the animals die out. This is because the carrying capacity is <span class="math notranslate nohighlight">\(\exp (-t)\)</span>, which tends to zero over time, i.e. the size of population that the environment can sustain decreases to zero over time.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -714,19 +721,6 @@ document.write(`
 <img src="mas108_dir_field2.png" alt="drawing" width="400"/>
 <p><em>Figure 14: Direction field for Equation (105).</em></p>
 </section>
-<div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 14 </span></p>
-<section class="example-content" id="proof-content">
-<p>Suppose we have a population of animals living in an environment that is being slowly degraded over time (e.g. by climate change or deforestation). We can model this environmental degradation as a decline of carrying capacity: as the environment degrades, it
-is able to sustain less individuals. A simple model of this is as follows</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\dot{U}=r U\left(1-\frac{U}{K \exp (-\mu t)}\right) \tag{105}
-\end{equation*}
-\]</div>
-<p>Plot the direction field in the case <span class="math notranslate nohighlight">\(r=K=\mu=1\)</span> for <span class="math notranslate nohighlight">\(0 \leq U \leq 2\)</span> and <span class="math notranslate nohighlight">\(0 \leq t \leq 3\)</span>. What do you think will happen to <span class="math notranslate nohighlight">\(U(t)\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> ? Why?</p>
-</section>
 </div><section id="lecture-9-homework-exercises">
 <h2>Lecture 9 Homework exercises<a class="headerlink" href="#lecture-9-homework-exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercise-19 admonition">
@@ -804,8 +798,6 @@ is able to sustain less individuals. A simple model of this is as follows</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-homework-exercises">Lecture 9 Homework exercises</a></li>
 </ul>
   </nav></div>

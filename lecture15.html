@@ -432,13 +432,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-15-homework-exercises">Lecture 15 Homework exercises</a></li>
 </ul>
             </nav>
@@ -456,79 +451,8 @@ document.write(`
 <p>So far, we have only looked at particles that move in one dimension. However, given that space has (at least) three spatial dimensions, this is very limiting in terms of what we can model about the physical world. To extend the ideas from previous lectures into higher dimensions, we need vectors, which you have been studying in your Core module. For example, suppose there is a particle <span class="math notranslate nohighlight">\(P\)</span> moving in 3 dimensions, as in Figure 21. Then its location at time <span class="math notranslate nohighlight">\(t\)</span> is given by a vector, which we call <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>. (Note that we use bold font for vectors.) As <span class="math notranslate nohighlight">\(t\)</span> changes, <span class="math notranslate nohighlight">\(P\)</span> traces out a curve, called the path of the particle.</p>
 <img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-1.jpg?height=529&width=826&top_left_y=752&top_left_x=615" alt="drawing" width="400"/>
 <p><em>Figure 21: A particle moving in 3 dimensions, tracing out a path.</em></p>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
-<p>Since <span class="math notranslate nohighlight">\(\overrightarrow{O P}=\mathbf{r}\)</span>, the vector <span class="math notranslate nohighlight">\(\overrightarrow{O P}\)</span> is always in the direction of the constant vector <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>. Therefore <span class="math notranslate nohighlight">\(P\)</span> moves along a straight line through the origin <span class="math notranslate nohighlight">\(O\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>. At time <span class="math notranslate nohighlight">\(t\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{g}| \text {. } \tag{177}
-\end{equation*}
-\]</div>
-<p>Therefore the particle moves away from <span class="math notranslate nohighlight">\(O\)</span> in the direction of g , and its distance from <span class="math notranslate nohighlight">\(O\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(g t^{2} / 2\)</span>. A sketch of the path is given below.</p>
-<img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-1.jpg?height=343&width=803&top_left_y=2287&top_left_x=632" alt="drawing" width="400"/>
-<section id="geometric-interpretation-of-velocity">
-<h3>15.1 Geometric interpretation of velocity<a class="headerlink" href="#geometric-interpretation-of-velocity" title="Link to this heading">#</a></h3>
-<p>We can interpret velocity geometrically, by using the definition of a derivative</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\dot{r}_{i}(t)=\lim _{\delta t \rightarrow 0} \frac{r_{i}(t+\delta t)-r_{i}(t)}{\delta t} \tag{184}
-\end{equation*}
-\]</div>
-<p>Combining this definition with Equation (179) gives</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\dot{\mathbf{r}}(t)=\lim _{\delta t \rightarrow 0} \frac{\mathbf{r}(t+\delta t)-\mathbf{r}(t)}{\delta t} \tag{185}
-\end{equation*}
-\]</div>
-<p>Now, suppose a particle is at location <span class="math notranslate nohighlight">\(P\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. Then the vector associated to this location is <span class="math notranslate nohighlight">\(\mathbf{r}(t)=\overrightarrow{O P}\)</span>. Suppose that, at time <span class="math notranslate nohighlight">\(t+\delta t\)</span> the particle is at <span class="math notranslate nohighlight">\(P^{\prime}\)</span> (where <span class="math notranslate nohighlight">\(\delta t\)</span> is arbitrarily small). Then we can write <span class="math notranslate nohighlight">\(\mathbf{r}(t+\delta t)=\overrightarrow{O P^{\prime}}\)</span>.</p>
-<p>Furthermore, <span class="math notranslate nohighlight">\(\overrightarrow{P P^{\prime}}=\overrightarrow{O P^{\prime}}-\overrightarrow{O P}\)</span> (see Figure 22). Therefore</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{v}=\frac{d \mathbf{r}}{d t}=\dot{\mathbf{r}}=\lim _{\delta t \rightarrow 0}\left(\frac{1}{\delta t} \overrightarrow{P P^{\prime}}\right) \tag{186}
-\end{equation*}
-\]</div>
-<p>In this limit, the velocity of the particle is along the tangent to the path.. Hence we can view the velocity at a point as the tangent vector to the path of motion at that point.</p>
-<img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-3.jpg?height=600&width=807&top_left_y=1302&top_left_x=633" alt="drawing" width="400"/>
-<p><em>Figure 22: Geometric interpretation of velocity</em></p>
-</section>
-<section id="examples">
-<h3>15.2 Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 21 </span></p>
-<section class="example-content" id="proof-content">
-<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{r}(t)=\frac{1}{2} \mathbf{g} t^{2} \tag{187}
-\end{equation*}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is a constant vector. Find the velocity, speed, and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
-</section>
-</div><p>Notice that velocity and acceleration are vectors, whereas speed is a scalar.</p>
-<div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 22 </span></p>
-<section class="example-content" id="proof-content">
-<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> in two dimensions is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation*}
-\mathbf{r}(t)=\sin (t) \mathbf{i}+\cos (t) \mathbf{j} \tag{190}
-\end{equation*}
-\]</div>
-<p>(a) Find the velocity, speed and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.
-(b) Show that the path of the particle is a unit circle around the origin.
-(c) Show that the acceleration is orthogonal to the velocity.</p>
-</section>
-</div><p>Recall from your Core module that, since the dot product vanishes, this means that <span class="math notranslate nohighlight">\(\mathbf{a}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}(t)\)</span> are orthogonal. Acceleration acting orthogonally to the direction of motion is sometimes called centripetal acceleration.</p>
-</section>
-</section>
 <div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 23 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 21 </span></p>
 <section class="example-content" id="proof-content">
 <p>The position vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
 <div class="math notranslate nohighlight">
@@ -538,6 +462,16 @@ O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{
 \end{equation*}
 \]</div>
 <p>where g is a constant vector. Sketch the path of the particle.</p>
+<p><strong>Solution.</strong></p>
+<p>Since <span class="math notranslate nohighlight">\(\overrightarrow{O P}=\mathbf{r}\)</span>, the vector <span class="math notranslate nohighlight">\(\overrightarrow{O P}\)</span> is always in the direction of the constant vector <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>. Therefore <span class="math notranslate nohighlight">\(P\)</span> moves along a straight line through the origin <span class="math notranslate nohighlight">\(O\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>. At time <span class="math notranslate nohighlight">\(t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{g}| \text {. } \tag{177}
+\end{equation*}
+\]</div>
+<p>Therefore the particle moves away from <span class="math notranslate nohighlight">\(O\)</span> in the direction of g , and its distance from <span class="math notranslate nohighlight">\(O\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(g t^{2} / 2\)</span>. A sketch of the path is given below.</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-1.jpg?height=343&width=803&top_left_y=2287&top_left_x=632" alt="drawing" width="400"/>
 </section>
 </div><p>Now we have shown how to describe the location of a particle, we also want to be able to describe its velocity and acceleration. For this, we need to know how to differentiate vectors.</p>
 <div class="proof definition admonition" id="definition-1">
@@ -597,8 +531,48 @@ O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{
 \mathbf{i}=\binom{1}{0}, \quad \mathbf{j}=\binom{0}{1} \tag{183}
 \end{equation*}
 \]</div>
-<section id="id1">
-<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="geometric-interpretation-of-velocity">
+<h2>15.1 Geometric interpretation of velocity<a class="headerlink" href="#geometric-interpretation-of-velocity" title="Link to this heading">#</a></h2>
+<p>We can interpret velocity geometrically, by using the definition of a derivative</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\dot{r}_{i}(t)=\lim _{\delta t \rightarrow 0} \frac{r_{i}(t+\delta t)-r_{i}(t)}{\delta t} \tag{184}
+\end{equation*}
+\]</div>
+<p>Combining this definition with Equation (179) gives</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\dot{\mathbf{r}}(t)=\lim _{\delta t \rightarrow 0} \frac{\mathbf{r}(t+\delta t)-\mathbf{r}(t)}{\delta t} \tag{185}
+\end{equation*}
+\]</div>
+<p>Now, suppose a particle is at location <span class="math notranslate nohighlight">\(P\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. Then the vector associated to this location is <span class="math notranslate nohighlight">\(\mathbf{r}(t)=\overrightarrow{O P}\)</span>. Suppose that, at time <span class="math notranslate nohighlight">\(t+\delta t\)</span> the particle is at <span class="math notranslate nohighlight">\(P^{\prime}\)</span> (where <span class="math notranslate nohighlight">\(\delta t\)</span> is arbitrarily small). Then we can write <span class="math notranslate nohighlight">\(\mathbf{r}(t+\delta t)=\overrightarrow{O P^{\prime}}\)</span>.</p>
+<p>Furthermore, <span class="math notranslate nohighlight">\(\overrightarrow{P P^{\prime}}=\overrightarrow{O P^{\prime}}-\overrightarrow{O P}\)</span> (see Figure 22). Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{v}=\frac{d \mathbf{r}}{d t}=\dot{\mathbf{r}}=\lim _{\delta t \rightarrow 0}\left(\frac{1}{\delta t} \overrightarrow{P P^{\prime}}\right) \tag{186}
+\end{equation*}
+\]</div>
+<p>In this limit, the velocity of the particle is along the tangent to the path.. Hence we can view the velocity at a point as the tangent vector to the path of motion at that point.</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_16_058de69f86454c22e667g-3.jpg?height=600&width=807&top_left_y=1302&top_left_x=633" alt="drawing" width="400"/>
+<p><em>Figure 22: Geometric interpretation of velocity</em></p>
+</section>
+<section id="examples">
+<h2>15.2 Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 22 </span></p>
+<section class="example-content" id="proof-content">
+<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\frac{1}{2} \mathbf{g} t^{2} \tag{187}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is a constant vector. Find the velocity, speed, and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p><strong>Solution.</strong></p>
 <p>The velocity is <span class="math notranslate nohighlight">\(\mathbf{v}(t)=\dot{\mathbf{r}}(t)\)</span>. Since <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is a constant,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -614,8 +588,21 @@ O P=|\overrightarrow{O P}|=\frac{1}{2} g t^{2} \quad \text { where } g=|\mathbf{
 \end{equation*}
 \]</div>
 </section>
-<section id="id2">
-<h2>Solution.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+</div><p>Notice that velocity and acceleration are vectors, whereas speed is a scalar.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 23 </span></p>
+<section class="example-content" id="proof-content">
+<p>The location vector of a particle <span class="math notranslate nohighlight">\(P\)</span> in two dimensions is given, at time <span class="math notranslate nohighlight">\(t\)</span>, by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\sin (t) \mathbf{i}+\cos (t) \mathbf{j} \tag{190}
+\end{equation*}
+\]</div>
+<p>(a) Find the velocity, speed and acceleration of the particle at time <span class="math notranslate nohighlight">\(t\)</span>.
+(b) Show that the path of the particle is a unit circle around the origin.
+(c) Show that the acceleration is orthogonal to the velocity.</p>
+<p><strong>Solution.</strong></p>
 <p>(a) The velocity is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -655,6 +642,8 @@ product as</p>
 \mathbf{a}(t) \cdot \mathbf{v}(t)=\binom{-\sin (t)}{-\cos (t)} \cdot\binom{\cos (t)}{-\sin (t)}=-\sin (t) \cos (t)+\cos (t) \sin (t)=0 \tag{195}
 \end{equation*}
 \]</div>
+</section>
+</div><p>Recall from your Core module that, since the dot product vanishes, this means that <span class="math notranslate nohighlight">\(\mathbf{a}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}(t)\)</span> are orthogonal. Acceleration acting orthogonally to the direction of motion is sometimes called centripetal acceleration.</p>
 </section>
 <section id="lecture-15-homework-exercises">
 <h2>Lecture 15 Homework exercises<a class="headerlink" href="#lecture-15-homework-exercises" title="Link to this heading">#</a></h2>
@@ -768,13 +757,8 @@ product as</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-of-velocity">15.1 Geometric interpretation of velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">15.2 Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-15-homework-exercises">Lecture 15 Homework exercises</a></li>
 </ul>
   </nav></div>

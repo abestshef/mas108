@@ -432,8 +432,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-16-homework-exercises">Lecture 16 Homework exercises</a></li>
 </ul>
             </nav>
@@ -449,8 +447,13 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-16-relative-motion">
 <h1>Lecture 16. Relative motion<a class="headerlink" href="#lecture-16-relative-motion" title="Link to this heading">#</a></h1>
 <p>In the previous lecture, we looked at the motion of particles relative to a fixed origin, which we denoted by <span class="math notranslate nohighlight">\(O\)</span>. However, in reality objects will often be moving relative to one another. For example, you may be running in the park and about to reach a junction of footpaths, but see a cyclist coming along another path towards the same junction. Your motion relative to the cyclist determines whether one of you needs to change speed to avoid a collision. Similar situations happen at sea with boats moving along overlapping trajectories. In this lecture, we will develop the tools for modelling such situations. Let’s start with an example.</p>
-<section id="solution">
-<h2>Solution.<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 24 </span></p>
+<section class="example-content" id="proof-content">
+<p>At time <span class="math notranslate nohighlight">\(t=0\)</span> a boat leaves a port situated at the origin <span class="math notranslate nohighlight">\(O\)</span> and moves with uniform velocity <span class="math notranslate nohighlight">\(u \mathbf{i} \mathrm{kmh}^{-1}\)</span>. (Here, <span class="math notranslate nohighlight">\(\mathrm{kmh}^{-1}\)</span> stands for ‘kilometres per hour’, the number of kilometres the boat will travel in an hour at its current speed.) A second boat is moving with uniform velocity <span class="math notranslate nohighlight">\(5 \mathbf{i}+4 \mathbf{j} \mathrm{kmh}^{-1}\)</span> and is initially at the point in the ocean with location vector <span class="math notranslate nohighlight">\(6 \mathbf{i}-2 \mathbf{j} \mathrm{km}\)</span> with respect to the origin, <span class="math notranslate nohighlight">\(O\)</span>.
+(a) Find the value of <span class="math notranslate nohighlight">\(u\)</span> for which the boats collide.
+(b) Find the minimum distance between the boats when <span class="math notranslate nohighlight">\(u=7\)</span>.</p>
+<p><strong>Solution.</strong></p>
 <p>The most important thing to do at the start of any question on relative motion is to draw a sketch. This is given in Figure 23.</p>
 <img src="https://cdn.mathpix.com/cropped/2024_08_16_18238ff787b17a985cb6g-1.jpg?height=435&width=1015&top_left_y=1433&top_left_x=526" alt="drawing" width="400"/>
 <p><em>Figure 23: Relative motion of two boats.</em></p>
@@ -523,21 +526,17 @@ d(t) &amp; =\sqrt{20\left(t^{2}-2 t+1+1\right)} \\
 \end{split}\]</div>
 <p>The minimum of <span class="math notranslate nohighlight">\(d(t)\)</span> is therefore the minimum of <span class="math notranslate nohighlight">\((t-1)^{2}\)</span>, which is where <span class="math notranslate nohighlight">\(t=1\)</span>. Here, <span class="math notranslate nohighlight">\(d(t)=\sqrt{20}=4.47\)</span> to three significant figures. Thus the minimum distance between the boats, when <span class="math notranslate nohighlight">\(u=7\)</span>, is 4.47 km .</p>
 </section>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 24 </span></p>
-<section class="example-content" id="proof-content">
-<p>At time <span class="math notranslate nohighlight">\(t=0\)</span> a boat leaves a port situated at the origin <span class="math notranslate nohighlight">\(O\)</span> and moves with uniform velocity <span class="math notranslate nohighlight">\(u \mathbf{i} \mathrm{kmh}^{-1}\)</span>. (Here, <span class="math notranslate nohighlight">\(\mathrm{kmh}^{-1}\)</span> stands for ‘kilometres per hour’, the number of kilometres the boat will travel in an hour at its current speed.) A second boat is moving with uniform velocity <span class="math notranslate nohighlight">\(5 \mathbf{i}+4 \mathbf{j} \mathrm{kmh}^{-1}\)</span> and is initially at the point in the ocean with location vector <span class="math notranslate nohighlight">\(6 \mathbf{i}-2 \mathbf{j} \mathrm{km}\)</span> with respect to the origin, <span class="math notranslate nohighlight">\(O\)</span>.
-(a) Find the value of <span class="math notranslate nohighlight">\(u\)</span> for which the boats collide.
-(b) Find the minimum distance between the boats when <span class="math notranslate nohighlight">\(u=7\)</span>.</p>
-</section>
 </div><p>The previous example motivated a few concepts, which could do with formal definitions.</p>
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Suppose we have two moving objects, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Denote by <span class="math notranslate nohighlight">\(\mathbf{r}_{A}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{r}_{B}(t)\)</span> the location vectors of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>, respectively. Denote by <span class="math notranslate nohighlight">\(\mathbf{v}_{A}(t)=\dot{\mathbf{r}}_{A}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}_{B}(t)=\dot{\mathbf{r}}_{B}(t)\)</span> the velocities of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>, respectively. Then the location of <span class="math notranslate nohighlight">\(B\)</span> relative to <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(\overrightarrow{A B}=\mathbf{r}_{B}-\mathbf{r}_{A}\)</span>. The velocity of <span class="math notranslate nohighlight">\(B\)</span> relative to <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(\mathbf{v}_{B}-\mathbf{v}_{A}\)</span>. Note that the distance between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is <span class="math notranslate nohighlight">\(|\overrightarrow{A B}|=\left|\mathbf{r}_{B}-\mathbf{r}_{A}\right|\)</span>.</p>
 </section>
-</div><section id="id1">
-<h2>Solution.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 25 </span></p>
+<section class="example-content" id="proof-content">
+<p>To a cyclist riding due East at <span class="math notranslate nohighlight">\(15 \mathrm{kmh}^{-1}\)</span> the wind appears to the cyclist to be blowing from the North-East at <span class="math notranslate nohighlight">\(12 \mathrm{kmh}^{-1}\)</span>. Find the true velocity of the wind.</p>
+<p><strong>Solution.</strong></p>
 <p>As always, we start by drawing a sketch of the situation, which is shown in Figure (24).</p>
 <img src="https://cdn.mathpix.com/cropped/2024_08_16_18238ff787b17a985cb6g-3.jpg?height=495&width=812&top_left_y=918&top_left_x=631" alt="drawing" width="400"/>
 <p><em>Figure 24: Cyclist in the wind.</em></p>
@@ -562,11 +561,6 @@ d(t) &amp; =\sqrt{20\left(t^{2}-2 t+1+1\right)} \\
 \left[\left(15-\frac{12}{\sqrt{2}}\right) \mathbf{i}-\frac{12}{\sqrt{2}} \mathbf{j}\right] \mathrm{kmh}^{-1} \tag{210}
 \end{equation*}
 \]</div>
-</section>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 25 </span></p>
-<section class="example-content" id="proof-content">
-<p>To a cyclist riding due East at <span class="math notranslate nohighlight">\(15 \mathrm{kmh}^{-1}\)</span> the wind appears to the cyclist to be blowing from the North-East at <span class="math notranslate nohighlight">\(12 \mathrm{kmh}^{-1}\)</span>. Find the true velocity of the wind.</p>
 </section>
 </div><section id="lecture-16-homework-exercises">
 <h2>Lecture 16 Homework exercises<a class="headerlink" href="#lecture-16-homework-exercises" title="Link to this heading">#</a></h2>
@@ -659,8 +653,6 @@ d(t) &amp; =\sqrt{20\left(t^{2}-2 t+1+1\right)} \\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-16-homework-exercises">Lecture 16 Homework exercises</a></li>
 </ul>
   </nav></div>
