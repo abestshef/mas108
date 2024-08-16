@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 2. Introduction to Difference Equations &#8212; MAS108 Mathematical Modelling</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lecture 3. Cycles, period-doubling, and chaos" href="lecture3.html" />
+    <link rel="prev" title="Lecture 1. The concept of mathematical modelling" href="lecture1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    MAS108: Mathematical Modelling
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture1.html">Lecture 1. The concept of mathematical modelling</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 2. Introduction to Difference Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3.html">Lecture 3. Cycles, period-doubling, and chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4.html">Lecture 4. More examples of difference equation models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5.html">Lecture 5. From difference to differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture6.html">Lecture 6. First order linear ordinary differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture7.html">Lecture 7. The muddiest point: part I</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture8.html">Lecture 8. Nature’s non-linearity and the need for qualitative solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture9.html">Lecture 9. Direction fields for non-autonomous ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture10.html">Lecture 10. From the second law of motion to second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture11.html">Lecture 11. Modelling damped oscillations with homogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture12.html">Lecture 12. Inhomogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture15.html">Lecture 15. Motion in more than one dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture16.html">Lecture 16. Relative motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture17.html">Lecture 17. Modelling the effect of gravity close to the Earth’s surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture18.html">Lecture 18. Modelling projectile motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture19.html">Lecture 19. More examples of motion with constant acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture20.html">Lecture 20. The muddiest point: part III</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108/issues/new?title=Issue%20on%20page%20%2Flecture2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lecture2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 2. Introduction to Difference Equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-exponential-to-logistic-growth">2.1 From exponential to logistic growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-solutions-for-logistic-growth">2.2 Analytic solutions for logistic growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-homework-exercises">Lecture 2 Homework exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-introduction-to-difference-equations">
+<h1>Lecture 2. Introduction to Difference Equations<a class="headerlink" href="#lecture-2-introduction-to-difference-equations" title="Permalink to this heading">#</a></h1>
+<section id="from-exponential-to-logistic-growth">
+<h2>2.1 From exponential to logistic growth<a class="headerlink" href="#from-exponential-to-logistic-growth" title="Permalink to this heading">#</a></h2>
+<p>Recall Example 2 from Lecture 1, about population growth of rabbits. The equation we used to model this situation (Equation 1) is an example of a difference equation.</p>
+<div class="proof definition admonition" id="def2_1">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a quantity <span class="math notranslate nohighlight">\(U(t)\)</span> that is a function of time, <span class="math notranslate nohighlight">\(t\)</span>. A difference equation for <span class="math notranslate nohighlight">\(U(t)\)</span> is an equation of the following form</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=f[U(t)] \tag{4}
+\end{equation*}
+\]</div>
+<p>for some function <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</section>
+</div><p>In other words, a difference equation tells you the value of <span class="math notranslate nohighlight">\(U\)</span> at time <span class="math notranslate nohighlight">\(t+1\)</span> as a function of the value of <span class="math notranslate nohighlight">\(U\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can generalise this to <span class="math notranslate nohighlight">\(U(t+\tau)=f_{\tau}[U(t)]\)</span> for some constant time <span class="math notranslate nohighlight">\(\tau\)</span>. However, in practice, you can always choose your units so that <span class="math notranslate nohighlight">\(\tau=1\)</span>. For example, foxes breed once per year, so it makes sense to use one year as your unit of time. However, some species of albatross breed only once every two years. In this case you could set <span class="math notranslate nohighlight">\(\tau=2\)</span> and have ‘one year’ as your unit of time. But instead you may choose to have ‘two years’ as your unit of time and then we can stick with <span class="math notranslate nohighlight">\(\tau=1\)</span>. With this in mind, we say that ‘without loss of generality’ we can set <span class="math notranslate nohighlight">\(\tau=1\)</span>, and thus use Equation (4) as our definition of a difference equation.</p>
+</div>
+<p>Going back to Example 2, notice that we can simplify Equation (1) by setting <span class="math notranslate nohighlight">\(r=a-d\)</span> to give</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=(1+r) U(t) \tag{5}
+\end{equation*}
+\]</div>
+<p>noting that <span class="math notranslate nohighlight">\(r&gt;-1\)</span> (since <span class="math notranslate nohighlight">\(0 \leq d \leq 1\)</span> and <span class="math notranslate nohighlight">\(a&gt;0\)</span> ). The model in Equation (5) is called the discrete exponential model (or sometimes just ‘exponential model’ for short). We call <span class="math notranslate nohighlight">\(r\)</span> the net reproduction rate when we are modelling population growth. However, Equation (5) can be used to model anything whose growth over time is proportional to its value. For example, we can use it to model the growth of someone’s student loan debt over time once the have finished University. Here, <span class="math notranslate nohighlight">\(U(t)\)</span> is the value of the debt and <span class="math notranslate nohighlight">\(r\)</span> is the interest rate.</p>
+<p>For now let’s go back to our rabbits on an island. Suppose the net reproductive rate is <span class="math notranslate nohighlight">\(r=1\)</span>, which is big, but rabbits are well-known as prolific breeders.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Time, <span class="math notranslate nohighlight">\(t\)</span> years</p></th>
+<th class="head text-left"><p>0</p></th>
+<th class="head text-left"><p>1</p></th>
+<th class="head text-left"><p>2</p></th>
+<th class="head text-left"><p>3</p></th>
+<th class="head text-left"><p>4</p></th>
+<th class="head text-left"><p>5</p></th>
+<th class="head text-left"><p>6</p></th>
+<th class="head text-left"><p>7</p></th>
+<th class="head text-left"><p>8</p></th>
+<th class="head text-left"><p>9</p></th>
+<th class="head text-left"><p>10</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Number of rabbits, <span class="math notranslate nohighlight">\(U(t)\)</span></p></td>
+<td class="text-left"><p>10</p></td>
+<td class="text-left"><p>20</p></td>
+<td class="text-left"><p>40</p></td>
+<td class="text-left"><p>80</p></td>
+<td class="text-left"><p>160</p></td>
+<td class="text-left"><p>320</p></td>
+<td class="text-left"><p>640</p></td>
+<td class="text-left"><p>1280</p></td>
+<td class="text-left"><p>2560</p></td>
+<td class="text-left"><p>5120</p></td>
+<td class="text-left"><p>10240</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1: Change in rabbit population over time, using the model in Equation (5) with <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(U(0)=10\)</span>.</em></p>
+<p>In Table 1 we see that after 10 years, we have more than ten thousand rabbits on our island. Let’s hope it’s a reasonably big island! You may have noticed that <span class="math notranslate nohighlight">\(U(t)=U(0) 2^{t}\)</span>. Indeed, we have the following general result</p>
+<div class="proof proposition admonition" id="prop2_1">
+<p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
+<section class="proposition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> is a solution to Equation (5).</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Plugging <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> into the right-hand side of Equation (5) gives RHS <span class="math notranslate nohighlight">\(=(1+r) U(t)=(1+r) U(0)(1+r)^{t}=(1+r)^{t+1} U(0)\)</span>. Now notice that <span class="math notranslate nohighlight">\((1+r)^{t+1} U(0)=\)</span> <span class="math notranslate nohighlight">\(U(t+1)=L H S\)</span>. Hence <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> solves Equation (5).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RHS stands for ‘right-hand side’ and <span class="math notranslate nohighlight">\(L H S\)</span> stands for ‘left-hand side’.</p>
+</div>
+<p>We can use the result of Proposition (1) to calculate the number of rabbits in <span class="math notranslate nohighlight">\(N\)</span> years time for any <span class="math notranslate nohighlight">\(N\)</span>. For example, assuming <span class="math notranslate nohighlight">\(r=1\)</span>, in 20 years time there will be <span class="math notranslate nohighlight">\(10 \times 2^{20}\)</span> rabbits, which is more than ten million. In 30 years there will be more than ten billion. As it happens, these numbers are not far off what really happened in Austrtalia during the late 1800s and early 1900s. However, if we keep going, in 270 years, there will be more rabbits on the island than atoms in the known universe, which is both a flat contradiction and terrifying. The moral of the story is, unless we are only concerned with short times, we will need a better model.</p>
+<p>So what is missing in our current model? Well, it currently does not account for the fact that rabbits must eat in order to survive and reproduce, and there is only a finite amount of vegetation on the island. To model this fact, we incorporate a competition term, <span class="math notranslate nohighlight">\(r U^{2}(t) / K\)</span>, as follows</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=(1+r) U(t)-\frac{r U^{2}(t)}{K} \tag{6}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(K&gt;0\)</span> is a constant. The reason for using <span class="math notranslate nohighlight">\(U^{2}(t)\left(=[U(t)]^{2}\right)\)</span> in the competition term is that it takes two rabbits to compete, so the amount of possible competition between <span class="math notranslate nohighlight">\(U(t)\)</span> rabbits is proportional to <span class="math notranslate nohighlight">\(U^{2}(t)\)</span>. We can re-write Equation (6) as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=U(t)+r U(t)\left(1-\frac{U(t)}{K}\right) \tag{7}
+\end{equation*}
+\]</div>
+<p>This is called the discrete logistic model (sometimes also referred to as the ‘discrete logistic map’ or just ‘logistic model’).</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Time, <span class="math notranslate nohighlight">\(t\)</span> years</p></th>
+<th class="head text-left"><p>0</p></th>
+<th class="head text-left"><p>1</p></th>
+<th class="head text-left"><p>2</p></th>
+<th class="head text-left"><p>3</p></th>
+<th class="head text-left"><p>4</p></th>
+<th class="head text-left"><p>5</p></th>
+<th class="head text-left"><p>6</p></th>
+<th class="head text-left"><p>7</p></th>
+<th class="head text-left"><p>8</p></th>
+<th class="head text-left"><p>9</p></th>
+<th class="head text-left"><p>10</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Number of rabbits, <span class="math notranslate nohighlight">\(U(t)\)</span></p></td>
+<td class="text-left"><p>10</p></td>
+<td class="text-left"><p>20</p></td>
+<td class="text-left"><p>39</p></td>
+<td class="text-left"><p>75</p></td>
+<td class="text-left"><p>138</p></td>
+<td class="text-left"><p>238</p></td>
+<td class="text-left"><p>363</p></td>
+<td class="text-left"><p>462</p></td>
+<td class="text-left"><p>497</p></td>
+<td class="text-left"><p>500</p></td>
+<td class="text-left"><p>500</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 2: Change in rabbit population over time, using the model in Equation (7) with <span class="math notranslate nohighlight">\(r=1\)</span>, <span class="math notranslate nohighlight">\(K=500\)</span> and <span class="math notranslate nohighlight">\(U(0)=10\)</span>.</em></p>
+<p>In Table 2, the number of rabbits for the discrete logistic model is shown for the first ten years after introduction to the island, where <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(K=500\)</span>. In Figure 3, we see how the logistic model compares to the exponential model. Whilst in the exponential model the
+population just grows and grows, the logistic model has the rabbit population levelling out at about <span class="math notranslate nohighlight">\(U(t)=500\)</span>.</p>
+<p>Why 500? Where have we seen that before? Well, it’s the value of <span class="math notranslate nohighlight">\(K\)</span>, right? Indeed, <span class="math notranslate nohighlight">\(K\)</span> is an example of what is called a ‘steady state’ and what we have seen is an example of ‘convergence to a steady state’. Let’s define these concepts.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<section class="definition-content" id="proof-content">
+<p>For a difference equation, <span class="math notranslate nohighlight">\(U(t+1)=f[U(t)]\)</span>, a steady state is a constant, <span class="math notranslate nohighlight">\(U_{*}\)</span>, such that <span class="math notranslate nohighlight">\(U_{*}=f\left(U_{*}\right)\)</span>. We say that a difference equation converges to the steady state, <span class="math notranslate nohighlight">\(U_{*}\)</span>, if <span class="math notranslate nohighlight">\(U(t) \rightarrow U_{*}\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="ex2_1">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<section class="example-content" id="proof-content">
+<p>What is the steady state of Equation (7) for <span class="math notranslate nohighlight">\(r&gt;0\)</span> ?</p>
+<p class="rubric">Solution.</p>
+<p>By definition, this is a number <span class="math notranslate nohighlight">\(U_{*}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U_{*}=U_{*}+r U_{*}\left(1-\frac{U_{*}}{K}\right) \tag{8}
+\end{equation*}
+\]</div>
+<p>Thus either <span class="math notranslate nohighlight">\(U_{*}=0\)</span> or we can divide through by <span class="math notranslate nohighlight">\(U_{*}\)</span> to give <span class="math notranslate nohighlight">\(r\left(1-U_{*} / K\right)=0\)</span>, which means that <span class="math notranslate nohighlight">\(U_{*}=K\)</span>.</p>
+</section>
+</div><p>In Table 2 and Figure 3b we see that the population converges to the steady state <span class="math notranslate nohighlight">\(U_{*}=K\)</span>, but not <span class="math notranslate nohighlight">\(U_{*}=0\)</span>. In population modelling, the constant <span class="math notranslate nohighlight">\(K\)</span> is referred to as the carrying capacity of the environment, because it denotes the number of organisms (e.g. rabbits) that the environment can sustain (i.e. ‘carry’) due to its resource richness.</p>
+<img src="mas108_fig_explog.png" alt="comparison of exponential and logistic growth" width="800"/>
+<p><em>Figure 3: Comparison between exponential and logistic growth models.</em></p>
+<p>In general, it is not always straightforward to determine analytically which steady state a system converges to, or if it will converge at all. Next lecture, we will see that the discrete logistic model sometimes does not converge, depending on the parameter values we choose.</p>
+</section>
+<section id="analytic-solutions-for-logistic-growth">
+<h2>2.2 Analytic solutions for logistic growth<a class="headerlink" href="#analytic-solutions-for-logistic-growth" title="Permalink to this heading">#</a></h2>
+<p>Perhaps the best way to find out how a difference equation will behave over time is to find an exact analytic solution, but this is not always possible. For the exponential model, we were able to find such a solution (Proposition 1). However, this is not possible in general for the logistic model (give it a try and you’ll see how hard it is!).</p>
+<p>Instead, we might try to find another model; one that can be solved exactly but yet retains similar qualitative properties as the logistic model, i.e. that it accounts for births, deaths, and also the carrying capacity of the environment. Indeed it is a general principal of model building that it can be valuable to construct models with analytic tractability in mind. One example of this is the following</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=\frac{M R U(t)}{M+U(t)} \tag{9}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(M&gt;0\)</span> and <span class="math notranslate nohighlight">\(R&gt;1\)</span>. We will call this the fisheries model as it was originally introduced to model fisheries (it is also sometimes referred to as the Beverton-Holt model after the people who introduced it). Like Equation (7), Equation (9) has two steady states, as follows.</p>
+<div class="proof proposition admonition" id="prop2_2">
+<p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(U_{*}\)</span> be a steady state of Equation (9). Then either <span class="math notranslate nohighlight">\(U_{*}=0\)</span> or <span class="math notranslate nohighlight">\(U_{*}=K\)</span>, where <span class="math notranslate nohighlight">\(K:=M(R-1)\)</span>. Note that <span class="math notranslate nohighlight">\(K&gt;0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. The equation defining <span class="math notranslate nohighlight">\(U_{*}\)</span> as a steady state is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U_{*}=\frac{M R U_{*}}{M+U_{*}} \tag{10}
+\end{equation*}
+\]</div>
+<p>so either <span class="math notranslate nohighlight">\(U_{*}=0\)</span> or <span class="math notranslate nohighlight">\(M R / M+U_{*}=1 \Longrightarrow M R=M+U_{*} \Longrightarrow U_{*}=M(R-1)\)</span>.</p>
+</div>
+<p>However, we go further and show the following.</p>
+<div class="proof proposition admonition" id="prop2_3">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(U(t)\)</span> is governed by the fisheries model (Equation 9) then</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t)=\frac{K U(0)}{U(0)+[K-U(0)] R^{-t}} \tag{11}
+\end{equation*}
+\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. [This is a bit tedious and uninspiring so don’t worry about understanding it in full. I just put it in for completeness.] Plugging Equation (11) into the right-hand side of Equation</p>
+<p>(9) gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{M R U(t)}{M+U(t)} &amp; =\frac{M R K U(0) /\left\{U(0)+[K-U(0)] R^{-t}\right\}}{M+K U(0) /\left\{U(0)+[K-U(0)] R^{-t}\right\}} \\
+&amp; =\frac{M R K U(0)}{M\left\{U(0)+[K-U(0)] R^{-t}\right\}+K U(0)}
+\end{aligned}
+\end{split}\]</div>
+<p>(multiply top and bottom by: <span class="math notranslate nohighlight">\(\quad U(0)+[K-U(0)] R^{-t}\)</span> )</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(\begin{array}{ll}
+=\frac{M^{2} R(R-1) U(0)}{M\left\{U(0)+[M(R-1)-U(0)] R^{-t}\right\}+M(R-1) U(0)} &amp; (K=M(R-1)) \\
+=\frac{M R(R-1) U(0)}{U(0)+[M(R-1)-U(0)] R^{-t}+(R-1) U(0)}
+\end{array} \quad \quad \text { (cancel } M \mathrm{~s}\right)
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(=\frac{M R(R-1) U(0)}{R U(0)+[M(R-1)-U(0)] R^{-t}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(=\frac{M(R-1) U(0)}{U(0)+[M(R-1)-U(0)] R^{-(t+1)}}\)</span></p>
+<p>(cancel <span class="math notranslate nohighlight">\(R \mathrm{~s}\)</span> )</p>
+<p><span class="math notranslate nohighlight">\(=\frac{K U(0)}{U(0)+[K-U(0)] R^{-(t+1)}}\)</span></p>
+<p><span class="math notranslate nohighlight">\((K=M(R-1))\)</span></p>
+<p><span class="math notranslate nohighlight">\(=U(t+1)\)</span>,</p>
+<p>which is the left-hand side of Equation (9).</p>
+</div>
+<img src="mas108_fig_bh.png" alt="Comparison of model time courses" width="800"/>
+<p><em>Figure 4: Example plots of the model in Equation (9). Notice that both plots have <span class="math notranslate nohighlight">\(K=500\)</span>, but the convergence to <span class="math notranslate nohighlight">\(K\)</span> is faster in the second plot.</em></p>
+<p>This means that, for the fisheries model, we use Equation (11) once for all time, rather than needing to calculate <span class="math notranslate nohighlight">\(U(t)\)</span> separately for each time step. Two example plots of Equation (11) are shown in Figure 4.</p>
+</section>
+<section id="lecture-2-homework-exercises">
+<h2>Lecture 2 Homework exercises<a class="headerlink" href="#lecture-2-homework-exercises" title="Permalink to this heading">#</a></h2>
+<div class="admonition-exercise-3 admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>For the logistic model (Equation 7), when <span class="math notranslate nohighlight">\(U(0)=10\)</span> and <span class="math notranslate nohighlight">\(K=100\)</span>, calculate <span class="math notranslate nohighlight">\(U(1), \ldots, U(10)\)</span> for the following values of <span class="math notranslate nohighlight">\(r\)</span> : (a) <span class="math notranslate nohighlight">\(r=1\)</span>, (b) <span class="math notranslate nohighlight">\(r=1.5\)</span>, (c) <span class="math notranslate nohighlight">\(r=2.2\)</span>, (d) <span class="math notranslate nohighlight">\(r=2.5\)</span>, (e) <span class="math notranslate nohighlight">\(r=3\)</span>.</p>
+<p>Plot the graph of <span class="math notranslate nohighlight">\(U(t)\)</span> against <span class="math notranslate nohighlight">\(t\)</span> for each of the five cases and describe the solution qualitatively. If you are keen, you can extend this to values higher than <span class="math notranslate nohighlight">\(t=10\)</span>. Feel free to use a computer package (e.g. Excel), if you know how, but this is not mandatory.</p>
+</div>
+<div class="admonition-exercise-4 admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Another model of population growth is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=U(t) \exp \left[r\left(1-\frac{U(t)}{K}\right)\right] \tag{12}
+\end{equation*}
+\]</div>
+<p>(a) Find the steady state solutions for this model, assuming <span class="math notranslate nohighlight">\(r \neq 0\)</span>.</p>
+<p>(b) Using <span class="math notranslate nohighlight">\(U(0)=10\)</span> and <span class="math notranslate nohighlight">\(K=100\)</span>, calculate <span class="math notranslate nohighlight">\(U(1), \ldots, U(10)\)</span> for the same values of <span class="math notranslate nohighlight">\(r\)</span> as in Question 3 (but using Equation 12).</p>
+<p>(c) For each of the five cases, compare the solutions with the corresponding solutions from Question 3. What does this comparison tell you about choosing models for modelling population growth?</p>
+</div>
+<div class="admonition-exercise-5 admonition">
+<p class="admonition-title">Exercise 5</p>
+<p>A farmer owns some sheep. They breed each year and the farmer sells a fixed number each year for food. Explain all the terms in the following model of this situation</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t+1)=(1+r) U(t)-s \tag{13}
+\end{equation*}
+\]</div>
+<p>(a) Show that</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U(t)=U(0)(1+r)^{t}-\frac{s\left[(1+r)^{t}-1\right]}{r} \tag{14}
+\end{equation*}
+\]</div>
+<p>(b) Plot <span class="math notranslate nohighlight">\(U(t)\)</span> against <span class="math notranslate nohighlight">\(t\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq 7\)</span> in the case <span class="math notranslate nohighlight">\(U(0)=100, r=1\)</span> and <span class="math notranslate nohighlight">\(s=101\)</span>.</p>
+<p>(c) Plot <span class="math notranslate nohighlight">\(U(t)\)</span> against <span class="math notranslate nohighlight">\(t\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq 7\)</span> in the case <span class="math notranslate nohighlight">\(U(0)=100, r=1\)</span> and <span class="math notranslate nohighlight">\(s=99\)</span>.</p>
+<p>(d) If the farmer chooses to sell 101 sheep per year, what does that mean for his flock?</p>
+<p>(e) Find the steady state solution to this model. What strategy for selling sheep must the farmer have to maintain a steady state?</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lecture1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 1. The concept of mathematical modelling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lecture3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 3. Cycles, period-doubling, and chaos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-exponential-to-logistic-growth">2.1 From exponential to logistic growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-solutions-for-logistic-growth">2.2 Analytic solutions for logistic growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-homework-exercises">Lecture 2 Homework exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alex Best / Jonathan Potts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

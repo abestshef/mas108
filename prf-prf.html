@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof Index &#8212; MAS108 Mathematical Modelling</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prf-prf';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    MAS108: Mathematical Modelling
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture1.html">Lecture 1. The concept of mathematical modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2.html">Lecture 2. Introduction to Difference Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3.html">Lecture 3. Cycles, period-doubling, and chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4.html">Lecture 4. More examples of difference equation models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5.html">Lecture 5. From difference to differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture6.html">Lecture 6. First order linear ordinary differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture7.html">Lecture 7. The muddiest point: part I</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture8.html">Lecture 8. Nature’s non-linearity and the need for qualitative solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture9.html">Lecture 9. Direction fields for non-autonomous ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture10.html">Lecture 10. From the second law of motion to second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture11.html">Lecture 11. Modelling damped oscillations with homogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture12.html">Lecture 12. Inhomogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture15.html">Lecture 15. Motion in more than one dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture16.html">Lecture 16. Relative motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture17.html">Lecture 17. Modelling the effect of gravity close to the Earth’s surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture18.html">Lecture 18. Modelling projectile motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture19.html">Lecture 19. More examples of motion with constant acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture20.html">Lecture 20. The muddiest point: part III</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108/issues/new?title=Issue%20on%20page%20%2Fprf-prf.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+
+   <h1>Proof Index</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-def 6_4"><strong>def 6_4</strong></a> | 
+   <a href="#cap-def 6_5"><strong>def 6_5</strong></a> | 
+   <a href="#cap-def _6"><strong>def _6</strong></a> | 
+   <a href="#cap-def12_1"><strong>def12_1</strong></a> | 
+   <a href="#cap-def2_1"><strong>def2_1</strong></a> | 
+   <a href="#cap-def3_1"><strong>def3_1</strong></a> | 
+   <a href="#cap-def6_1"><strong>def6_1</strong></a> | 
+   <a href="#cap-def6_2"><strong>def6_2</strong></a> | 
+   <a href="#cap-def6_3"><strong>def6_3</strong></a> | 
+   <a href="#cap-def6_7"><strong>def6_7</strong></a> | 
+   <a href="#cap-def8_1"><strong>def8_1</strong></a> | 
+   <a href="#cap-def8_2"><strong>def8_2</strong></a> | 
+   <a href="#cap-def8_3"><strong>def8_3</strong></a> | 
+   <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
+   <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
+   <a href="#cap-ex2_1"><strong>ex2_1</strong></a> | 
+   <a href="#cap-ex4_1"><strong>ex4_1</strong></a> | 
+   <a href="#cap-ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die."><strong>ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die.</strong></a> | 
+   <a href="#cap-ex4_3"><strong>ex4_3</strong></a> | 
+   <a href="#cap-ex4_4"><strong>ex4_4</strong></a> | 
+   <a href="#cap-ex5_1"><strong>ex5_1</strong></a> | 
+   <a href="#cap-ex5_2"><strong>ex5_2</strong></a> | 
+   <a href="#cap-example-0"><strong>example-0</strong></a> | 
+   <a href="#cap-example-1"><strong>example-1</strong></a> | 
+   <a href="#cap-example-2"><strong>example-2</strong></a> | 
+   <a href="#cap-example-3"><strong>example-3</strong></a> | 
+   <a href="#cap-example-4"><strong>example-4</strong></a> | 
+   <a href="#cap-example-7"><strong>example-7</strong></a> | 
+   <a href="#cap-prof10_1"><strong>prof10_1</strong></a> | 
+   <a href="#cap-prop2_1"><strong>prop2_1</strong></a> | 
+   <a href="#cap-prop2_2"><strong>prop2_2</strong></a> | 
+   <a href="#cap-prop2_3"><strong>prop2_3</strong></a> | 
+   <a href="#cap-proposition-2"><strong>proposition-2</strong></a> | 
+   <a href="#cap-proposition-3"><strong>proposition-3</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def 6_4"><td></td><td>
+       <strong>def 6_4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def 6_4"><code class="xref">def 6_4</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def 6_5"><td></td><td>
+       <strong>def 6_5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def 6_5"><code class="xref">def 6_5</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def _6"><td></td><td>
+       <strong>def _6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def _6"><code class="xref">def _6</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def12_1"><td></td><td>
+       <strong>def12_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture12.html#def12_1"><code class="xref">def12_1</code></a> <em>(lecture12)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def2_1"><td></td><td>
+       <strong>def2_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture2.html#def2_1"><code class="xref">def2_1</code></a> <em>(lecture2)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def3_1"><td></td><td>
+       <strong>def3_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture3.html#def3_1"><code class="xref">def3_1</code></a> <em>(lecture3)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def6_1"><td></td><td>
+       <strong>def6_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def6_1"><code class="xref">def6_1</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def6_2"><td></td><td>
+       <strong>def6_2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def6_2"><code class="xref">def6_2</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def6_3"><td></td><td>
+       <strong>def6_3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def6_3"><code class="xref">def6_3</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def6_7"><td></td><td>
+       <strong>def6_7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#def6_7"><code class="xref">def6_7</code></a> <em>(lecture6)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def8_1"><td></td><td>
+       <strong>def8_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture8.html#def8_1"><code class="xref">def8_1</code></a> <em>(lecture8)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def8_2"><td></td><td>
+       <strong>def8_2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture8.html#def8_2"><code class="xref">def8_2</code></a> <em>(lecture8)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def8_3"><td></td><td>
+       <strong>def8_3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture8.html#def8_3"><code class="xref">def8_3</code></a> <em>(lecture8)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-1"><td></td><td>
+       <strong>definition-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture16.html#definition-1"><code class="xref">definition-1</code></a> <em>(lecture16)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-2"><td></td><td>
+       <strong>definition-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture2.html#definition-2"><code class="xref">definition-2</code></a> <em>(lecture2)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex2_1"><td></td><td>
+       <strong>ex2_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture2.html#ex2_1"><code class="xref">ex2_1</code></a> <em>(lecture2)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex4_1"><td></td><td>
+       <strong>ex4_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture4.html#ex4_1"><code class="xref">ex4_1</code></a> <em>(lecture4)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die."><td></td><td>
+       <strong>ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die.</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture4.html#ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die."><code class="xref">ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die.</code></a> <em>(lecture4)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex4_3"><td></td><td>
+       <strong>ex4_3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture4.html#ex4_3"><code class="xref">ex4_3</code></a> <em>(lecture4)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex4_4"><td></td><td>
+       <strong>ex4_4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture4.html#ex4_4"><code class="xref">ex4_4</code></a> <em>(lecture4)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex5_1"><td></td><td>
+       <strong>ex5_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture5.html#ex5_1"><code class="xref">ex5_1</code></a> <em>(lecture5)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex5_2"><td></td><td>
+       <strong>ex5_2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture5.html#ex5_2"><code class="xref">ex5_2</code></a> <em>(lecture5)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-0"><td></td><td>
+       <strong>example-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture1.html#example-0"><code class="xref">example-0</code></a> <em>(lecture1)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-1"><td></td><td>
+       <strong>example-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture1.html#example-1"><code class="xref">example-1</code></a> <em>(lecture1)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-2"><td></td><td>
+       <strong>example-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture1.html#example-2"><code class="xref">example-2</code></a> <em>(lecture1)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-3"><td></td><td>
+       <strong>example-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture15.html#example-3"><code class="xref">example-3</code></a> <em>(lecture15)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-4"><td></td><td>
+       <strong>example-4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture10.html#example-4"><code class="xref">example-4</code></a> <em>(lecture10)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-7"><td></td><td>
+       <strong>example-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture6.html#example-7"><code class="xref">example-7</code></a> <em>(lecture6)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prof10_1"><td></td><td>
+       <strong>prof10_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture10.html#prof10_1"><code class="xref">prof10_1</code></a> <em>(lecture10)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop2_1"><td></td><td>
+       <strong>prop2_1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture2.html#prop2_1"><code class="xref">prop2_1</code></a> <em>(lecture2)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop2_2"><td></td><td>
+       <strong>prop2_2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture2.html#prop2_2"><code class="xref">prop2_2</code></a> <em>(lecture2)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-prop2_3"><td></td><td>
+       <strong>prop2_3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture2.html#prop2_3"><code class="xref">prop2_3</code></a> <em>(lecture2)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-2"><td></td><td>
+       <strong>proposition-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture10.html#proposition-2"><code class="xref">proposition-2</code></a> <em>(lecture10)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-3"><td></td><td>
+       <strong>proposition-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="lecture10.html#proposition-3"><code class="xref">proposition-3</code></a> <em>(lecture10)</em></td><td>
+       <em>proposition</em></td></tr>
+   </table>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alex Best / Jonathan Potts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

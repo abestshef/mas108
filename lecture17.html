@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 17. Modelling the effect of gravity close to the Earth’s surface &#8212; MAS108 Mathematical Modelling</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture17';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lecture 18. Modelling projectile motion" href="lecture18.html" />
+    <link rel="prev" title="Lecture 16. Relative motion" href="lecture16.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    MAS108: Mathematical Modelling
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture1.html">Lecture 1. The concept of mathematical modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2.html">Lecture 2. Introduction to Difference Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3.html">Lecture 3. Cycles, period-doubling, and chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4.html">Lecture 4. More examples of difference equation models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5.html">Lecture 5. From difference to differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture6.html">Lecture 6. First order linear ordinary differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture7.html">Lecture 7. The muddiest point: part I</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture8.html">Lecture 8. Nature’s non-linearity and the need for qualitative solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture9.html">Lecture 9. Direction fields for non-autonomous ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture10.html">Lecture 10. From the second law of motion to second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture11.html">Lecture 11. Modelling damped oscillations with homogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture12.html">Lecture 12. Inhomogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture15.html">Lecture 15. Motion in more than one dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture16.html">Lecture 16. Relative motion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 17. Modelling the effect of gravity close to the Earth’s surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture18.html">Lecture 18. Modelling projectile motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture19.html">Lecture 19. More examples of motion with constant acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture20.html">Lecture 20. The muddiest point: part III</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture17.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108/issues/new?title=Issue%20on%20page%20%2Flecture17.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lecture17.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 17. Modelling the effect of gravity close to the Earth’s surface</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-constant-acceleration">17.1 Motion under constant acceleration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-acceleration-in-1d">17.2 Constant acceleration in 1D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">17.3 Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-17-homework-exercises">Lecture 17 Homework exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-17-modelling-the-effect-of-gravity-close-to-the-earth-s-surface">
+<h1>Lecture 17. Modelling the effect of gravity close to the Earth’s surface<a class="headerlink" href="#lecture-17-modelling-the-effect-of-gravity-close-to-the-earth-s-surface" title="Permalink to this heading">#</a></h1>
+<p>Gravity is a fundamental aspect of life on Earth. Almost all the motion we experience on a day-to-day basis is influenced by the effect of gravity. That is why it seems so weird and wonderful to see astronauts hovering in space capsules away from (most of) the effects of gravity, or bouncing on the Moon where the gravity is much lower than on Earth.</p>
+<p>Consequently, being able to model the effect of gravity is a foundational aspect of our understanding of how the physical world works. There are still many unsolved problems related to understanding gravity out in the cosmos, where there are exotic objects like black holes, some of which are currently being explored by SoMaS staff. However, the effect of gravity close to the Earth’s surface is something humankind has known how to model with great accuracy for a very long time.</p>
+<p>In this lecture we will derive the equations that govern motion under gravity close to the Earth’s surface. (These are sometimes known as the ‘suvat’ equations, for reasons that will become clear soon.) Then, in the next few lectures, we will show how to put these into practice in a variety of applications.</p>
+<section id="motion-under-constant-acceleration">
+<h2>17.1 Motion under constant acceleration<a class="headerlink" href="#motion-under-constant-acceleration" title="Permalink to this heading">#</a></h2>
+<p>The key aspect of gravity near the Earth’s surface that eases the modelling process is that it is pretty-well constant, at about <span class="math notranslate nohighlight">\(g \approx 9.8 \mathrm{~ms}^{-2}\)</span>. It is therefore useful to begin by generalising to any situation where acceleration is constant. So suppose an object is moving subject to a constant acceleration, <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is a vector of arbitrary dimension. Denote its location at time <span class="math notranslate nohighlight">\(t\)</span> by <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> and its velocity by <span class="math notranslate nohighlight">\(\mathbf{v}(t)\)</span>.</p>
+<p>Recall from Lecture 15, Equation (180), that <span class="math notranslate nohighlight">\(\ddot{\mathbf{r}}(t)=\dot{\mathbf{v}}(t)=\mathbf{a}\)</span>. Integrating once with resect to time gives</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{v}(t)=\mathbf{a} t+\mathbf{u} \tag{211}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is a constant vector. Notice that <span class="math notranslate nohighlight">\(\mathbf{v}(0)=\mathbf{u}\)</span> so <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is the initial velocity of the object. Since <span class="math notranslate nohighlight">\(\mathbf{v}(t)=\dot{\mathbf{r}}(t)\)</span>, by Equation (178), we have <span class="math notranslate nohighlight">\(\dot{\mathbf{r}}(t)=\mathbf{a} t+\mathbf{u}\)</span>, which we can integrate with respect to time to give</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\frac{1}{2} \mathbf{a} t^{2}+\mathbf{u} t+\mathbf{c} \tag{212}
+\end{equation*}
+\]</div>
+<p>The initial location is <span class="math notranslate nohighlight">\(\mathbf{r}(0)=\mathbf{c}\)</span>. It is often convenient to pick <span class="math notranslate nohighlight">\(\mathbf{c}=\mathbf{0}\)</span>, the origin. In this case we have</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\frac{1}{2} \mathbf{a} t^{2}+\mathbf{u} t \tag{213}
+\end{equation*}
+\]</div>
+<p>Finally, by writing Equation (211) as <span class="math notranslate nohighlight">\(\mathbf{a} t=\mathbf{v}(t)-\mathbf{u}\)</span>, we can substitute this into Equation
+(213) to give</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathbf{r}(t)=\frac{1}{2}(\mathbf{v}(t)-\mathbf{u}) t+\mathbf{u} t=\frac{1}{2}(\mathbf{v}(t)+\mathbf{u}) t \tag{214}
+\end{equation*}
+\]</div>
+<p>You may have come across the one dimensional (1D) versions of Equations (211), (213), and (214) in school. However, if you have not seen these before, do not worry! We will have a look at them now.</p>
+</section>
+<section id="constant-acceleration-in-1d">
+<h2>17.2 Constant acceleration in 1D<a class="headerlink" href="#constant-acceleration-in-1d" title="Permalink to this heading">#</a></h2>
+<p>In 1D, as well as Equations (211), (213), and (214), we can derive a further equation. We will do this now. Let’s start by writing <span class="math notranslate nohighlight">\(s=\mathbf{r}, u=\mathbf{u}, v=\mathbf{v}\)</span>, and <span class="math notranslate nohighlight">\(a=\mathbf{a}\)</span>, as these are now scalars rather than vectors. In this notation, Equations (211), (213), and (214) become, respectively,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp; v(t)=a t+u  \tag{215}\\
+&amp; s(t)=\frac{1}{2} a t^{2}+u t  \tag{216}\\
+&amp; s(t)=\frac{1}{2}(v(t)+u) t \tag{217}
+\end{align*}
+\end{split}\]</div>
+<p>We start by squaring both sides of Equation (215) and rearranging</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+v^{2}(t) &amp; =(a t+u)^{2} \\
+&amp; =a^{2} t^{2}+2 a u t+u^{2} \\
+&amp; =u^{2}+2 a\left(\frac{1}{2} a t^{2}+u t\right) \tag{218}
+\end{align*}
+\end{split}\]</div>
+<p>Next we use Equation (216) to give</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+v^{2}(t)=u^{2}+2 a s(t) \tag{219}
+\end{equation*}
+\]</div>
+<p>Together, Equations (215), (216), (217), and (219) are often called the ‘suvat’ equations.</p>
+</section>
+<section id="examples">
+<h2>17.3 Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 26 </span></p>
+<section class="example-content" id="proof-content">
+<p>A lift starts from rest at time <span class="math notranslate nohighlight">\(t=0\)</span> and moves in three stages:</p>
+<ul class="simple">
+<li><p>Stage 1. The lift moves upwards with constant acceleration for 2 s .</p></li>
+<li><p>Stage 2. The lift moves upwards with constant velocity for 7 s .</p></li>
+<li><p>Stage 3. The lift moves upwards with constant deceleration for 1s.</p></li>
+</ul>
+<p>After this period of 10 s , the lift is at rest at a height of 34 m above its starting point. Find the acceleration in Stage 1.</p>
+<p class="rubric">Solution.</p>
+<p>We start by drawing a graph of velocity over time (Figure 25).</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_16_1daf131b1b3ede8ec322g-3.jpg?height=580&width=1405&top_left_y=144&top_left_x=334" alt="drawing" width="400"/>
+<p><em>Figure 25: Change in velocity over time.</em></p>
+<p>Since velocity is the time-derivative of distance <span class="math notranslate nohighlight">\((\dot{\mathbf{r}}=\mathbf{v}\)</span>, Equation 178), the total distance travelled is the area under the velocity-time graph. To find the area under the graph, we first need to find the speed after 2 s . Let <span class="math notranslate nohighlight">\(a\)</span> denote the acceleration in Stage 1 in <span class="math notranslate nohighlight">\(\mathrm{ms}^{-2}\)</span>. Let <span class="math notranslate nohighlight">\(v\)</span> denote the speed after 2 s in <span class="math notranslate nohighlight">\(\mathrm{ms}^{-1}\)</span>. Since the lift starts from rest in Stage 1, we can use <span class="math notranslate nohighlight">\(v=u+a t\)</span> (Equation 215) with <span class="math notranslate nohighlight">\(u=0\)</span>, to give <span class="math notranslate nohighlight">\(v=2 a\)</span>.</p>
+<p>The total distance travelled by the lift is 34 m , so, working in m ,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+34 &amp; =\text { Area } 1+\text { Area } 2+\text { Area } 3 \\
+&amp; =\frac{1}{2} \times 2 \times 2 a+7 \times 2 a+\frac{1}{2} \times 1 \times 2 a \\
+&amp; =2 a+14 a+a \\
+&amp; =17 a \tag{220}
+\end{align*}
+\end{split}\]</div>
+<p>Therefore <span class="math notranslate nohighlight">\(a=2\)</span>, and the acceleration in Stage 1 is <span class="math notranslate nohighlight">\(2 \mathrm{~ms}^{-2}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 27 </span></p>
+<section class="example-content" id="proof-content">
+<p>A student standing on the edge of a cliff 75 m above sea level throws a stone vertically upwards with a speed of <span class="math notranslate nohighlight">\(10 \mathrm{~ms}^{-1}\)</span>. Find the time at which the stone hits the water. You can assume the acceleration due to gravity is <span class="math notranslate nohighlight">\(g=9.8 \mathrm{~ms}^{-2}\)</span>.</p>
+<p class="rubric">Solution.</p>
+<p>As always, we start by drawing a sketch (Figure 26).</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_16_1daf131b1b3ede8ec322g-3.jpg?height=312&width=809&top_left_y=889&top_left_x=635" alt="drawing" width="400"/>
+<p><em>Figure 26: Throwing a stone off a cliff</em></p>
+<p>Let <span class="math notranslate nohighlight">\(O\)</span> be the point of projection. Let <span class="math notranslate nohighlight">\(s\)</span> be the height (in metres) of the stone above the point of projection at time <span class="math notranslate nohighlight">\(t\)</span> (in seconds). The initial velocity of the stone is <span class="math notranslate nohighlight">\(u=10 \mathrm{~ms}^{-1}\)</span>. Suppose the stone hits the
+water at time <span class="math notranslate nohighlight">\(t\)</span>. Then <span class="math notranslate nohighlight">\(s(t)=-75\)</span>. Therefore, by Equation (213), we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp; s(t)=u t+\frac{1}{2} g t^{2} \\
+\Longrightarrow &amp; -75=10 t-4.9 t^{2} \\
+\Longrightarrow &amp; 4.9 t^{2}-10 t-75=0 \\
+\Longrightarrow &amp; t=\frac{10 \pm \sqrt{100+4 \times 4.9 \times 75}}{2 \times 4.9}=\frac{10 \pm \sqrt{1570}}{9.8} \tag{221}
+\end{align*}
+\end{split}\]</div>
+<p>Then, as <span class="math notranslate nohighlight">\(t&gt;0\)</span>, we have <span class="math notranslate nohighlight">\(t=5.06\)</span> to three significant figures.</p>
+</section>
+</div></section>
+<section id="lecture-17-homework-exercises">
+<h2>Lecture 17 Homework exercises<a class="headerlink" href="#lecture-17-homework-exercises" title="Permalink to this heading">#</a></h2>
+<div class="admonition-exercise-33 admonition">
+<p class="admonition-title">Exercise 33. </p>
+<p>A person throws a stone vertically upwards at a speed of <span class="math notranslate nohighlight">\(10 \mathrm{~ms}^{-1}\)</span>, releasing it at a location 1 m above the ground, then runs out of the way. Use the ‘suvat’ equations with <span class="math notranslate nohighlight">\(a=g\)</span> to find when the stone will hit the ground. The same person throws a feather in an identical manner. If you were to use the same model for the feather as you used for the stone, do you expect your estimate to be accurate? Why or why not? Do you expect it to be an underestimate or an overestimate?</p>
+</div>
+<div class="admonition-exercise-34 admonition">
+<p class="admonition-title">Exercise 34. </p>
+<p>A man fires a gun vertically upwards at head height and the bullet leaves the gun with a speed of <span class="math notranslate nohighlight">\(1000 \mathrm{~ms}^{-1}\)</span>. How long does he have to move out of the way before the bullet hits him on the head? What is the speed of the bullet when it returns to his head height?</p>
+</div>
+<div class="admonition-exercise-35 admonition">
+<p class="admonition-title">Exercise 35. </p>
+<p>A woman drops a stone down a well. It takes 5 seconds before she hears the stone hit the water below. How deep is the well? What is the speed of the stone when it hits the water?</p>
+</div>
+<div class="admonition-exercise-36 admonition">
+<p class="admonition-title">Exercise 36. </p>
+<p>A bus sets off from a bus station <span class="math notranslate nohighlight">\(P\)</span>. It accelerates uniformly for <span class="math notranslate nohighlight">\(T_{1}\)</span> seconds, covering a distance of 300 m . It then travels at a speed of <span class="math notranslate nohighlight">\(V \mathrm{kmh}^{-1}\)</span> for <span class="math notranslate nohighlight">\(T_{2}\)</span> seconds, covering a further distance of 1250 m . Finally, it decelerates uniformly for <span class="math notranslate nohighlight">\(T_{3}\)</span> seconds, coming to rest at a bus stop <span class="math notranslate nohighlight">\(Q\)</span>. If the total time taken is 3 minutes, and <span class="math notranslate nohighlight">\(2 T_{1}=3 T_{3}\)</span>, find the distance from <span class="math notranslate nohighlight">\(P\)</span> to <span class="math notranslate nohighlight">\(Q\)</span> and the values of <span class="math notranslate nohighlight">\(T_{1}, T_{2}, T_{3}\)</span> and <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</div>
+<div class="admonition-exercise-37 admonition">
+<p class="admonition-title">Exercise 37. </p>
+<p>A ball is dropped from a board 10 m above a pool. When does it hit the surface? Now assume that, at the same time the ball is dropped, a dolphin rises vertically from the water, with a speed of <span class="math notranslate nohighlight">\(8 \mathrm{~ms}^{-1}\)</span> when its head breaks the surface. Where and when does the dolphin head the ball?</p>
+</div>
+<div class="admonition-exercise-38 admonition">
+<p class="admonition-title">Exercise 38. </p>
+<p>A car is travelling along a straight level road at a constant speed of <span class="math notranslate nohighlight">\(54 \mathrm{kmh}^{-1}\)</span>. At time <span class="math notranslate nohighlight">\(t=0\)</span>, the car passes a lorry which is starting to accelerate from rest at a uniform rate of <span class="math notranslate nohighlight">\(0.5 \mathrm{~ms}^{-2}\)</span>. Find the time that elapses and the distance covered when the lorry draws level with the car.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lecture16.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 16. Relative motion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lecture18.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 18. Modelling projectile motion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-constant-acceleration">17.1 Motion under constant acceleration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-acceleration-in-1d">17.2 Constant acceleration in 1D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">17.3 Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-17-homework-exercises">Lecture 17 Homework exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alex Best / Jonathan Potts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

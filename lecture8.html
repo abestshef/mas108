@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 8. Nature’s non-linearity and the need for qualitative solutions &#8212; MAS108 Mathematical Modelling</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture8';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lecture 9. Direction fields for non-autonomous ODEs" href="lecture9.html" />
+    <link rel="prev" title="Lecture 7. The muddiest point: part I" href="lecture7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    MAS108: Mathematical Modelling
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture1.html">Lecture 1. The concept of mathematical modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2.html">Lecture 2. Introduction to Difference Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture3.html">Lecture 3. Cycles, period-doubling, and chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture4.html">Lecture 4. More examples of difference equation models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture5.html">Lecture 5. From difference to differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture6.html">Lecture 6. First order linear ordinary differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture7.html">Lecture 7. The muddiest point: part I</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 8. Nature’s non-linearity and the need for qualitative solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture9.html">Lecture 9. Direction fields for non-autonomous ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture10.html">Lecture 10. From the second law of motion to second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture11.html">Lecture 11. Modelling damped oscillations with homogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture12.html">Lecture 12. Inhomogeneous second order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture13.html">Lecture 13. Modelling oscillations with second order ODEs: a worked example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture14.html">Lecture 14. The muddiest point: part II</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/abestshef/mas108/blob/main/_sources//lecture8.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/abestshef/mas108/issues/new?title=Issue%20on%20page%20%2Flecture8.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lecture8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 8. Nature’s non-linearity and the need for qualitative solutions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-lines">8.1 Phase lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-points-and-stability">8.2 Equilibrium points and stability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-8-homework-exercises">Lecture 8 Homework exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-8-nature-s-non-linearity-and-the-need-for-qualitative-solutions">
+<h1>Lecture 8. Nature’s non-linearity and the need for qualitative solutions<a class="headerlink" href="#lecture-8-nature-s-non-linearity-and-the-need-for-qualitative-solutions" title="Permalink to this heading">#</a></h1>
+<p>Many larger, sexually-reproducing animals disperse as adolescents to find a new place to live. This is probably an evolved tactic to make it less likely for individuals to mate with those they are closely related to (that’s why humans disperse to different universities as teenagers, right?).</p>
+<p>A dispersing animal will want to find the ‘best place’ to live on the landscape, which may mean the place with the most access to the resources it needs, or away from danger, or a combination thereof. Suppose we can quantify the ‘quality’ of the landscape (as perceived by the animal) as a function <span class="math notranslate nohighlight">\(G(x)\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> is space. Here we are assume (for simplicity despite lack of realism) that the landscape is one dimensional. Then a simple model of animal movement might assume that the change in location over time is equal to the gradient of <span class="math notranslate nohighlight">\(G(x)\)</span> (Figure 9), so define <span class="math notranslate nohighlight">\(g(x)=\frac{\mathrm{d} G}{\mathrm{~d} x}\)</span>.</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_15_0b9a9bf69f871124de5dg-1.jpg?height=638&width=1332&top_left_y=1143&top_left_x=365" alt="drawing" width="800"/>
+<p><em>Figure 9: Panel (a) shows an example landscape whose quality (for a dispersing animal) is given by a function <span class="math notranslate nohighlight">\(G(x)\)</span>. If the animal is at a place where the gradient of <span class="math notranslate nohighlight">\(G(x)\)</span> is positive, such as the rabbit on the left-hand side at <span class="math notranslate nohighlight">\(x \approx 30\)</span>, the animal will move to the right. On the other hand, if the gradient of <span class="math notranslate nohighlight">\(G(x)\)</span> is negative, such as at <span class="math notranslate nohighlight">\(x \approx 75\)</span>, the animal will move left. Panel (b) shows <span class="math notranslate nohighlight">\(g(x)\)</span>, the gradient of <span class="math notranslate nohighlight">\(G(x)\)</span>. The left-hand arrow shows the point where the left-hand rabbit from Panel (a) resides. Note that the value of <span class="math notranslate nohighlight">\(g(x)\)</span> is positive here. The right-hand arrow shows the point where the right-hand rabbit from Panel (a) resides, where <span class="math notranslate nohighlight">\(g(x)\)</span> is negative.</em></p>
+<p>An equation describing the location of the animal, <span class="math notranslate nohighlight">\(x\)</span>, at time <span class="math notranslate nohighlight">\(t\)</span> might be</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\frac{\mathrm{d} x}{\mathrm{~d} t}=g(x) \tag{96}
+\end{equation*}
+\]</div>
+<p>Now you might think ‘Ah, this is a separable first order ODE; I know how to solve this!’</p>
+<p>Indeed, the solution is (Section 5.3)</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\int \frac{1}{g(x)} \mathrm{d} x=\int \mathrm{d} t=t+c \tag{97}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant. But it might not be easy to compute the left-hand side of Equation (97). Even if you do, you will ultimately have to invert the resulting function to get a solution with <span class="math notranslate nohighlight">\(x(t)\)</span> as the subject.</p>
+<p>For example, if <span class="math notranslate nohighlight">\(g(x)=\sin (x)\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\int \frac{1}{\sin (x)} \mathrm{d} x=t+c \tag{98}
+\end{equation*}
+\]</div>
+<p>It’s not so straightforward to calculate the integral of <span class="math notranslate nohighlight">\(1 / \sin (x)\)</span> (Challenge: try to do it by hand! It can be done, but takes some thought.) One can use Wolfram Alpha to help, and you will find</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\int \frac{1}{\sin (x)} \mathrm{d} x=\ln \left[\sin \left(\frac{x}{2}\right)\right]-\ln \left[\cos \left(\frac{x}{2}\right)\right] \tag{99}
+\end{equation*}
+\]</div>
+<p>But you now have to invert this, which is also tough. It is possible to find the solution eventually (it’s <span class="math notranslate nohighlight">\(x(t)=2 \cot ^{-1}\left(\exp ^{c-t}\right)\)</span> ), but it would be valuable to get some insight into the model without having to do tricky integration or rely on computer packages such as Wolfram Alpha. Furthermore, <span class="math notranslate nohighlight">\(g(x)\)</span> could be way more complicated than a simple sine wave. Indeed, in reality it is likely to be some function for which we do not have a simple closed-form solution: there is no reason to suppose that the quality of a landscape will follow a nice algebraic expression!</p>
+<p>This is where qualitative analysis steps in. The idea is that, even if we cannot solve an ODE exactly, we can still find out certain properties of the solution to the ODE. These usually consist of asymptotic properties, i.e. those related to the behaviour of the solution at long times.</p>
+<section id="phase-lines">
+<h2>8.1 Phase lines<a class="headerlink" href="#phase-lines" title="Permalink to this heading">#</a></h2>
+<p>The first qualitative method we will look at is the construction of a phase line. We will start with the example from Equation (96) with <span class="math notranslate nohighlight">\(g(x)=\sin (x)\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\frac{\mathrm{d} x}{\mathrm{~d} t}=\sin (x) \tag{100}
+\end{equation*}
+\]</div>
+<p>Notice three things:</p>
+<ul class="simple">
+<li><p>For any value of <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(\sin (x)=0, x\)</span> is stationary,</p></li>
+<li><p>For any value of <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(\sin (x)&gt;0, x\)</span> is moving to the right,</p></li>
+<li><p>For any value of <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(\sin (x)&lt;0, x\)</span> is moving to the left.</p></li>
+</ul>
+<p>We can draw a diagram of this, as shown in Figure (10). We simply draw a straight line, put
+dots at the points where <span class="math notranslate nohighlight">\(\sin (x)=0\)</span>, and flow arrows denoting the direction of change of <span class="math notranslate nohighlight">\(x\)</span>. This is called the phase line.</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_15_0b9a9bf69f871124de5dg-3.jpg?height=981&width=1100&top_left_y=372&top_left_x=478" alt="drawing" width="400"/>
+<p><em>Figure 10: Here we plot <span class="math notranslate nohighlight">\(\sin (x)\)</span> with the corresponding phase line beneath. We can see that the unstable equilibria are <span class="math notranslate nohighlight">\(x=2 \pi n\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb{Z}\)</span> whilst the stable equilibria are <span class="math notranslate nohighlight">\(x=(2 n+1) \pi\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb{Z}\)</span>.</em></p>
+<p>Notice that there is nothing special here about the sine function. It is entirely possible to construct a phase line for Equation (96) with any continuous function <span class="math notranslate nohighlight">\(g(x)\)</span>. We see an example with a rather more wiggly function in Figure 11. (In this case, we have not shown all the flow arrows as some of the equilibria are too close together to display the arrows easily.)</p>
+<div class="proof definition admonition" id="def8_1">
+<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<section class="definition-content" id="proof-content">
+<p>An autonomous first order ODE is one of the form</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d} U}{\mathrm{~d} t}=g(U)
+\]</div>
+</section>
+</div><p>Notice that <span class="math notranslate nohighlight">\(g\)</span> is a function of <span class="math notranslate nohighlight">\(U\)</span> but not of <span class="math notranslate nohighlight">\(t\)</span>. A non-autonomous first order ODE is a first order ODE that is not autonomous (unsurprisingly).</p>
+<p>We can construct the phase line for any autonomous first order ODE (but not for nonautonomous ODEs). The method can be summarised as follows</p>
+<ul class="simple">
+<li><p>Draw a line (representing the real numbers),</p></li>
+<li><p>Put a point on the line at any value of <span class="math notranslate nohighlight">\(U\)</span> such that <span class="math notranslate nohighlight">\(g(U)=0\)</span>,</p></li>
+<li><p>Between each pair of consecutive points, draw an arrow to the right if <span class="math notranslate nohighlight">\(g(U)&gt;0\)</span> or to the left if <span class="math notranslate nohighlight">\(g(U)&lt;0\)</span>.</p></li>
+</ul>
+<img src="https://cdn.mathpix.com/cropped/2024_08_15_0b9a9bf69f871124de5dg-4.jpg?height=1032&width=1077&top_left_y=346&top_left_x=501" alt="drawing" width="400"/>
+<p><em>Figure 11: Here we plot the function <span class="math notranslate nohighlight">\(g(x)\)</span> from Figure 9 with the corresponding phase line beneath. If the animal starts at around <span class="math notranslate nohighlight">\(x \approx 30\)</span> (see the left-hand downwards-pointing arrow) then it will move right towards the equilibrium point at <span class="math notranslate nohighlight">\(x \approx 35\)</span>, because the arrow on the phase line points right. If the animal starts at around <span class="math notranslate nohighlight">\(x \approx 75\)</span> (see the right-hand downwardspointing arrow) then it will move left, eventually settling at the equilibrium point at <span class="math notranslate nohighlight">\(x \approx 63\)</span>, because the arrow on the phase line points left.</em></p>
+</section>
+<section id="equilibrium-points-and-stability">
+<h2>8.2 Equilibrium points and stability<a class="headerlink" href="#equilibrium-points-and-stability" title="Permalink to this heading">#</a></h2>
+<p>What sort of questions can we answer with phase lines? We can gain insight into a few concepts that we will now define.</p>
+<div class="proof definition admonition" id="def8_2">
+<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
+<section class="definition-content" id="proof-content">
+<p>For an autonomous first order ODE</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d} U}{\mathrm{~d} t}=g(U)
+\]</div>
+<p>the stable states (also known as equilibrium points or equilibria) are the points <span class="math notranslate nohighlight">\(U=U_{*}\)</span> where <span class="math notranslate nohighlight">\(g\left(U_{*}\right)=0\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="def8_3">
+<p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
+<section class="definition-content" id="proof-content">
+<p>An equilibrium point, <span class="math notranslate nohighlight">\(U_{*}\)</span>, is asymptotically stable if there is some <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span> such that <span class="math notranslate nohighlight">\(U(t) \rightarrow U_{*}\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> whenever <span class="math notranslate nohighlight">\(U_{*}-\epsilon&lt;U(0)&lt;U_{*}+\epsilon\)</span>.</p>
+</section>
+</div><p>These definitions are easier to appreciate if we look at a phase line (e.g. Figure 11). Here, the equilibria are simply the points where we have dots marked on the line (where <span class="math notranslate nohighlight">\(g(U)=0\)</span> ). If the arrows either side of an equilibrium point both point towards that point then the point is stable. Otherwise, it is unstable. So this is a really easy method for finding the equilibria of an autonomous ODE and their stability. It requires no calculations whatsoever, just some simple sketching. Nice!</p>
+<img src="https://cdn.mathpix.com/cropped/2024_08_15_0b9a9bf69f871124de5dg-5.jpg?height=898&width=1026&top_left_y=599&top_left_x=478" alt="drawing" width="400"/>
+<p><em>Figure 12: The function <span class="math notranslate nohighlight">\(U(K-U)(U-a)\)</span> is shown with the corresponding phase line beneath. For the purposes of this plot, we have set <span class="math notranslate nohighlight">\(K=0.9\)</span> and <span class="math notranslate nohighlight">\(a=0.3\)</span>.</em></p>
+<p>Going back to the example of a dispersing animal, we may want to know ‘where does the animal end up?’ The simple answer is ‘at one of the stable equilibria’. If you know the initial condition, you can also tell which one: just follow the arrows on the phase line. This is explained more in the caption of Figure 11.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 12 </span></p>
+<section class="example-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(U(t)\)</span> be the number of organisms in a population. In the 1930s, a nowfamous study on goldfish showed that there needs to be a sufficiently high number of organisms for the reproductive rate to exceed the death rate. This has since been observed in a wide variety of contexts, and is named the Allee effect after the author of the goldfish study. The Allee effect may emerge simply because it is too hard to find a suitable mate when the population density is low (not enough fish in the sea, literally). Otherwise, it could be due a complex social structure being required for bringing up young who themselves are able to reproduce. In any case, such a population can be described by the following ODE model</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\frac{\mathrm{d} U}{\mathrm{~d} t}=U(K-U)(U-a) \tag{101}
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(K\)</span> is the carrying capacity, as before (see e.g. Example 4) and <span class="math notranslate nohighlight">\(a\)</span> is the number of organisms below which <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}\)</span> is negative (this is sometimes called the Allee threshold). We assume <span class="math notranslate nohighlight">\(0&lt;a&lt;K\)</span>.</p>
+<p>(a) Find the equilibria of Equation (101),</p>
+<p>(b) Plot the phase line for Equation (101),</p>
+<p>(c) Use the phase line to determine the stability of each of the equilibrium points,</p>
+<p>(d) If <span class="math notranslate nohighlight">\(0&lt;U(0)&lt;a\)</span> what is the limit as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> of <span class="math notranslate nohighlight">\(U(t)\)</span> ?</p>
+<p>(e) If <span class="math notranslate nohighlight">\(a&lt;U(0)&lt;K\)</span> what is the limit as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> of <span class="math notranslate nohighlight">\(U(t)\)</span> ?</p>
+<p class="rubric">Solution.</p>
+<p>(a) The equilibria are where <span class="math notranslate nohighlight">\(U(K-U)(U-a)=0\)</span>, so <span class="math notranslate nohighlight">\(U=0\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, or <span class="math notranslate nohighlight">\(K\)</span>.</p>
+<p>(b) Figure 12 shows the phase line.</p>
+<p>(c) The arrows on the phase line (Figure 12) point into <span class="math notranslate nohighlight">\(U=0\)</span>, so <span class="math notranslate nohighlight">\(U=0\)</span> is a stable equilibrium point. They point out of <span class="math notranslate nohighlight">\(U=a\)</span> so <span class="math notranslate nohighlight">\(a\)</span> is unstable, and into <span class="math notranslate nohighlight">\(U=K\)</span> so <span class="math notranslate nohighlight">\(K\)</span> is stable.</p>
+<p>(d) Looking at the phase line (Figure 12) between <span class="math notranslate nohighlight">\(U=0\)</span> and <span class="math notranslate nohighlight">\(U=a\)</span>, we see that the arrow is pointing left towards the equilibrium point at <span class="math notranslate nohighlight">\(U=0\)</span>. Hence <span class="math notranslate nohighlight">\(U(t) \rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span>.</p>
+<p>(e) Looking at the phase line (Figure 12) between <span class="math notranslate nohighlight">\(U=a\)</span> and <span class="math notranslate nohighlight">\(U=K\)</span>, we see that the arrow is pointing right towards the equilibrium point at <span class="math notranslate nohighlight">\(U=K\)</span>. Hence <span class="math notranslate nohighlight">\(U(t) \rightarrow K\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span>.</p>
+</section>
+</div></section>
+<section id="lecture-8-homework-exercises">
+<h2>Lecture 8 Homework exercises<a class="headerlink" href="#lecture-8-homework-exercises" title="Permalink to this heading">#</a></h2>
+<div class="admonition-exercise-16 admonition">
+<p class="admonition-title">Exercise 16</p>
+<p>Plot the phase lines for</p>
+<p>(a) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=U(1-U)\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=\cos (U)\)</span></p>
+<p>(c) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=U^{3}-6 U^{2}+11 U-6\)</span></p>
+<p>(d) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=\sin (U) \exp (-U)\)</span></p>
+<p>(e) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=(U+2)(U-3)\)</span></p>
+<p>(f) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=(U-1)^{2}\)</span></p>
+</div>
+<div class="admonition-exercise-17 admonition">
+<p class="admonition-title">Exercise 17</p>
+<p>For each of the examples in the previous question, state the equilibria and their stability.</p>
+</div>
+<div class="admonition-exercise-18 admonition">
+<p class="admonition-title">Exercise 18</p>
+<p>For each of the following examples, if <span class="math notranslate nohighlight">\(U(0)=1\)</span> then what is the limit as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> of <span class="math notranslate nohighlight">\(U(t)\)</span> ?</p>
+<p>(a) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=U(2-U)\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=\cos (U)\)</span></p>
+<p>(c) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=\sin (U) \exp (-U)\)</span></p>
+<p>(d) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=(U+2)(U-3)\)</span></p>
+<p>(e) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}=(U-2)^{2}\)</span></p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lecture7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 7. The muddiest point: part I</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lecture9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 9. Direction fields for non-autonomous ODEs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-lines">8.1 Phase lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-points-and-stability">8.2 Equilibrium points and stability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-8-homework-exercises">Lecture 8 Homework exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alex Best / Jonathan Potts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

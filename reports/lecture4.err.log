@@ -1,0 +1,219 @@
+Traceback (most recent call last):
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\sm1ab\AppData\Local\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Lecture 4. More examples of difference equation models 
+
+The last couple of lectures introduced a wealth of new concepts, which might have felt a bit overwhelming! This lecture, we are going to shift down gears with the mathematical investigations and just explore a few examples of difference equation models.
+
+````{prf:example}
+:label: ex4_1
+Paying off a mortgage. Suppose you buy a house and borrow $M$ pounds from the bank as a mortgage. The bank charges interest at a rate of $R \%$ per year, and each year you pay $s$ pounds to the bank. How long does it take to pay off your mortgage, as a function of $M, R$, and $s$ ? Writing $r=R / 100$, find the numerical value of this time when $M=200,000$, $s=10,000$, and $r=0.02$. Are there any values of $M, R$, and $s$ for which you will never pay off your mortgage?
+````
+We can model this situation as follows
+
+$$
+\begin{equation*}
+U(t+1)=\left(1+\frac{R}{100}\right) U(t)-s \tag{21}
+\end{equation*}
+$$
+
+where $U(t)$ is the debt at time $t$. You may recall a similar model from Exercise 5 (Lecture 2). In fact, if we set $r=R / 100$ then the two models are identical. In Exercise 5, we found that
+
+$$
+\begin{equation*}
+U(t)=U(0)(1+r)^{t}-\frac{s\left[(1+r)^{t}-1\right]}{r} \tag{22}
+\end{equation*}
+$$
+
+We have $U(0)=M$ and we want to find the time at which $U(t)$ first drops below zero. In other words, we want to find the time $T$ such that
+
+$$
+\begin{aligned}
+& 0=M(1+r)^{T}-\frac{s\left[(1+r)^{T}-1\right]}{r}, \\
+\Longrightarrow & r M(1+r)^{T}=s\left[(1+r)^{T}-1\right], \\
+\Longrightarrow & (1+r)^{T}(s-r M)=s \\
+\Longrightarrow & (1+r)^{T}=\frac{s}{s-r M}, \\
+\Longrightarrow & T \ln (1+r)=\ln (s)-\ln (s-r M) \\
+\Longrightarrow & T=\frac{\ln (s)-\ln (s-r M)}{\ln (1+r)} .
+\end{aligned}
+$$
+
+In general, $T$ will not be an integer, so we will need to round up (why up?).
+
+If $M=200,000, s=10,000$, and $r=0.02$ then
+
+$$
+\begin{equation*}
+T=\frac{\ln (10,000)-\ln (10,000-0.02 \times 200,000)}{\ln (1.02)} \approx 25.8 \tag{23}
+\end{equation*}
+$$
+
+so it will take 26 years to pay off your mortgage.
+
+You will not get a solution if $r M>s$, so in this case you will never pay off your mortgage. This is because the annual payments are not sufficient even for paying off the interest on the mortgage.
+
+````{prf:example}
+:label: ex4_2 Including a gestation period into population models. Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of a month (i.e. a month between breeding and giving birth). Denote by $U(t)$ the number of breeding pairs at time $t$ and assume no organisms die.
+
+(a) Construct a difference equation model of the change in population size over time.
+
+(b) In the case $r=1$ and $U(0)=1$, find the values of $U(1), \ldots, U(10)$. Do you recognise this sequence?
+
+(c) Find the steady state solution of the sequence $S(t)=U(t) / U(t-1)$ for $r=1$.
+````
+(a) Suppose we start with $U(0)$ organisms. In month one they breed, but they do not give birth, so at the end of the month we have $U(1)=U(0)$ organisms. In month two, those who bred in month one give birth at a rate $r$, so we have $r U(0)$ new organisms, in addition to the $U(1)$ we already have, so $U(2)=U(1)+r U(0)$. In general, in month $t+1$, we have all the organisms we had at the end of month $t$, which is $U(t)$ organisms, plus those born as a result of breeding in month $t$, which is $r U(t-1)$ organisms. The resulting model is
+
+$$
+\begin{align*}
+U(1) & =U(0) \\
+U(t+1) & =U(t)+r U(t-1), \quad \text { for } t \geq 1 \tag{24}
+\end{align*}
+$$
+
+(b) If $r=1$ then $U(t+1)=U(t)+U(t-1)$ and since $U(0)=1$, the sequence is $U(t)=$ $1,1,2,3,5,8,13,21,34,55,89$. Europeans often call this the 'Fibonacci sequence', after an Italian mathematician from the 13th Century. But this is an historically inaccurate attribution. The Indian mathematician Virahanka wrote about the same sequence about 500 years before Fibonacci, and there is evidence that this sequence had already been studied in India for perhaps 1000 years before Virahanka.
+
+(c) If we divide Equation (24) by $U(t)$, we find that
+
+$$
+\begin{align*}
+\frac{U(t+1)}{U(t)} & =1+r \frac{U(t-1)}{U(t)} \\
+\Longrightarrow S(t+1) & =1+\frac{r}{S(t)} \tag{25}
+\end{align*}
+$$
+
+The steady state solution to Equation (25) is $S_{*}$ where
+
+$$
+\begin{align*}
+& S_{*}=1+\frac{r}{S_{*}} \\
+& \Longrightarrow S_{*}^{2}-S_{*}-r=0 \\
+& \Longrightarrow S_{*}=\frac{1 \pm \sqrt{1+4 r}}{2} \tag{26}
+\end{align*}
+$$
+
+Notice that, for $r=1$, the positive value of $S_{*}$ is called the Golden Ratio. If you have never heard of the Golden Ratio then look it up using your favourite search engine. There are many claims about its relation to a wide range of applications (some more dubious than others).
+
+````{prf:example}
+:label: ex4_3
+Predicting the weather. Suppose that there is a probability $p$ of there being a dry day (no rain) after a wet day (some rain) and a probability $q$ of there being a dry day after a dry day. Suppose it is a dry day today. What is the probability that it will be a dry day in $t$ days time, as a function of $p$ and $q$ ? Find the numerical value for $p=0.2$, and $q=0.8$, and $t=1,2,3,4,5$.
+````
+Let $U(t)$ be the probability that it is dry on day $t$. Then the probability of it being wet on day $t$ is $1-U(t)$. Thus probability of it being dry on day $t+1$ is
+
+$$
+\begin{equation*}
+U(t+1)=p[1-U(t)]+q U(t)=p+(q-p) U(t) \tag{27}
+\end{equation*}
+$$
+
+Again, this is very similar to Equation (13), but $-s$ is replaced with $p$ and $1+r$ is replaced with $q-p$. Thus, using Equation (14) the analytic solution is
+
+$$
+\begin{equation*}
+U(t)=U(0)(q-p)^{t}+\frac{p\left[(q-p)^{t}-1\right]}{q-p-1} \tag{28}
+\end{equation*}
+$$
+
+If $p=0.2$ and $q=0.8$ then $U(t)=1,0.8,0.68,0.61,0.56,0.54$ for $t=0,1,2,3,4,5$ respectively. Note that $U(0)=1$ because the question stated 'it is a dry day today'.
+
+````{prf:example}
+:label: ex4_4
+Competing species. Suppose we have two competing species of organisms in the same place, for example rabbits and sheep competing for edible vegetation. Denote by $U(t)$ and $V(t)$ the number of organisms of each species given in some arbitrary unit (for example, there could be $U(t)$ thousand rabbits and $V(t)$ thousand sheep). We can model this as follows
+
+$$
+\begin{align*}
+& U(t+1)=(1+r) U(t)-a U^{2}(t)-b U(t) V(t)  \tag{29}\\
+& V(t+1)=(1+r) V(t)-\alpha V^{2}(t)-\beta U(t) V(t) \tag{30}
+\end{align*}
+$$
+
+Explain what all the parameters $(r, a, b, \alpha, \beta)$ mean biologically. Consider the case where $r=1, a=\alpha=2, b=\beta=1$ and $U(0)=1 / 2, V(0)=1 / 4$.
+
+(a) Calculate the steady state solutions.
+
+(b) Explore how the population changes over time (possibly using coding).
+
+(c) Which steady state solution does the system appear to be moving towards?
+````
+The parameter $r$ is the net reproductive rate of the organisms, which we are assuming is the same for both populations. Parameters $a$ and $\alpha$ denote the strength of intraspecific competition (meaning the competition of rabbits with other rabbits and sheep with other sheep) for $U(t)$ and $V(t)$ respectively. The parameter $b$ denotes the effect of interspecific competition (meaning competition between rabbits and sheep) on the death rate of rabbits and $\beta$ denotes the effect of interspecies competition on the death rate of sheep.
+
+(a) Let $U_{*}$ and $V_{*}$ denote the steady states of $U(t)$ and $V(t)$ respectively. Then, using
+
+Equations (29-30) with $r=1, a=\alpha=2, b=\beta=1$, we have the following equations for $U_{*}$ and $V_{*}$
+
+$$
+\begin{align*}
+& U_{*}=2 U_{*}-2 U_{*}^{2}-U_{*} V_{*},  \tag{31}\\
+& V_{*}=2 V_{*}-2 V_{*}^{2}-U_{*} V_{*} \tag{32}
+\end{align*}
+$$
+
+By Equation (31) we either have $U_{*}=0$ or $1-2 U_{*}-V_{*}=0 \Longrightarrow U_{*}=\left(1-V_{*}\right) / 2$. By Equation (32) we either have $V_{*}=0$ or $1-2 V_{*}-U_{*}=0 \Longrightarrow V_{*}=\left(1-U_{*}\right) / 2$. We therefore have four possible solutions
+
+$$
+\begin{align*}
+& U_{*}=V_{*}=0  \tag{33}\\
+& U_{*}=0, V_{*}=\frac{1-U_{*}}{2}=\frac{1}{2}  \tag{34}\\
+& V_{*}=0, U_{*}=\frac{1-V_{*}}{2}=\frac{1}{2} \tag{35}
+\end{align*}
+$$
+
+or
+
+$$
+\begin{equation*}
+V_{*}=\frac{1-U_{*}}{2}, U_{*}=\frac{1-V_{*}}{2} \Longrightarrow U_{*}=V_{*}=\frac{1}{3} \tag{36}
+\end{equation*}
+$$
+
+(b) To show how the population changes, we will code up the model.
+
+(c) We see from Figure 7 that the solution seems to converge to the steady state solution from Equation (36), $U_{*}=V_{*}=1 / 3$. This means we can expect coexistence between the two
+species.
+
+## Lecture 4 Homework exercises
+
+```{admonition} Exercise 7
+Find the steady state solution to Equation (27). Give values of $p$ and $q$ for a city that has dry days $80 \%$ of the time (note that there is not a unique answer to this question).
+````
+```{admonition} Exercise 8
+(a) Repeat Example 8 but this time with $a=\alpha=1$ and $b=\beta=2$, keeping the other values the same.
+
+(b) Now repeat Example 8(b-c) but with $a=\alpha=1, b=\beta=2$, and also $U(0)=1 / 4$, $V(0)=1 / 2$ (keeping everything else the same).
+
+(c) Compare the outcomes of (a) and (b) and give a biological interpretation of your observations.
+````
+```{admonition} Exercise 9
+Suppose you leave university with a debt of $£ 50,000$ and the interest on that debt is $5 \%$. If you pay $£ 5,000$ of the debt each year, how long will it take you to pay off your debt? (Hint: look at Example 5.)
+````
+```{admonition} Exercise 10
+Suppose we have a population of organisms that breed every month at a rate $r$ but there is a gestation period of two months. Suggest a model for this situation. (Hint: look at Example 6.)
+````
+------------------
+
+[1;36m  Cell [1;32mIn[1], line 3[1;36m[0m
+[1;33m    The last couple of lectures introduced a wealth of new concepts, which might have felt a bit overwhelming! This lecture, we are going to shift down gears with the mathematical investigations and just explore a few examples of difference equation models.[0m
+[1;37m        ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (1541675850.py, line 3)
+
