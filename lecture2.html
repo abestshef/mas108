@@ -476,7 +476,8 @@ U(t+1)=(1+r) U(t) \tag{5}
 \end{equation*}
 \]</div>
 <p>noting that <span class="math notranslate nohighlight">\(r&gt;-1\)</span> (since <span class="math notranslate nohighlight">\(0 \leq d \leq 1\)</span> and <span class="math notranslate nohighlight">\(a&gt;0\)</span> ). The model in Equation (5) is called the discrete exponential model (or sometimes just ‘exponential model’ for short). We call <span class="math notranslate nohighlight">\(r\)</span> the net reproduction rate when we are modelling population growth. However, Equation (5) can be used to model anything whose growth over time is proportional to its value. For example, we can use it to model the growth of someone’s student loan debt over time once the have finished University. Here, <span class="math notranslate nohighlight">\(U(t)\)</span> is the value of the debt and <span class="math notranslate nohighlight">\(r\)</span> is the interest rate.</p>
-<p>For now let’s go back to our rabbits on an island. Suppose the net reproductive rate is <span class="math notranslate nohighlight">\(r=1\)</span>, which is big, but rabbits are well-known as prolific breeders.</p>
+<p>For now let’s go back to rabbits. Rabbits were introduced into Australia by European settlers. Until around 1860 they were kept in secure cages/enclosures. One wise soul then decided to release a small number of rabbits for hunting. Let’s model what happened next.</p>
+<p>Suppose the net reproductive rate is <span class="math notranslate nohighlight">\(r=1\)</span>, which is fairly big, but rabbits are well-known as prolific breeders.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Time, <span class="math notranslate nohighlight">\(t\)</span> years</p></th>
@@ -511,7 +512,7 @@ U(t+1)=(1+r) U(t) \tag{5}
 </table>
 </div>
 <p><em>Table 1: Change in rabbit population over time, using the model in Equation (5) with <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(U(0)=10\)</span>.</em></p>
-<p>In Table 1 we see that after 10 years, we have more than ten thousand rabbits on our island. Let’s hope it’s a reasonably big island! You may have noticed that <span class="math notranslate nohighlight">\(U(t)=U(0) 2^{t}\)</span>. Indeed, we have the following general result</p>
+<p>In Table 1 we see that after 10 years, we have more than ten thousand rabbits on our island. This may sound incredible but in fact evidence suggests that rabbit numbers reached well over a million in Australia within 10 years of their first release. You may have noticed that <span class="math notranslate nohighlight">\(U(t)=U(0) 2^{t}\)</span>. Indeed, we have the following general result</p>
 <div class="proof proposition admonition" id="prop2_1">
 <p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
 <section class="proposition-content" id="proof-content">
@@ -524,8 +525,8 @@ U(t+1)=(1+r) U(t) \tag{5}
 <p class="admonition-title">Note</p>
 <p>RHS stands for ‘right-hand side’ and <span class="math notranslate nohighlight">\(L H S\)</span> stands for ‘left-hand side’.</p>
 </div>
-<p>We can use the result of Proposition (1) to calculate the number of rabbits in <span class="math notranslate nohighlight">\(N\)</span> years time for any <span class="math notranslate nohighlight">\(N\)</span>. For example, assuming <span class="math notranslate nohighlight">\(r=1\)</span>, in 20 years time there will be <span class="math notranslate nohighlight">\(10 \times 2^{20}\)</span> rabbits, which is more than ten million. In 30 years there will be more than ten billion. As it happens, these numbers are not far off what really happened in Austrtalia during the late 1800s and early 1900s. However, if we keep going, in 270 years, there will be more rabbits on the island than atoms in the known universe, which is both a flat contradiction and terrifying. The moral of the story is, unless we are only concerned with short times, we will need a better model.</p>
-<p>So what is missing in our current model? Well, it currently does not account for the fact that rabbits must eat in order to survive and reproduce, and there is only a finite amount of vegetation on the island. To model this fact, we incorporate a competition term, <span class="math notranslate nohighlight">\(r U^{2}(t) / K\)</span>, as follows</p>
+<p>We can use the result of Proposition (1) to calculate the number of rabbits in <span class="math notranslate nohighlight">\(N\)</span> years time for any <span class="math notranslate nohighlight">\(N\)</span>. For example, assuming <span class="math notranslate nohighlight">\(r=1\)</span>, in 20 years time there will be <span class="math notranslate nohighlight">\(10 \times 2^{20}\)</span> rabbits, which is more than ten million. Again, these numbers are if anything an under-prediction of what really happened in Austrtalia during the late 1800s and early 1900s. In 30 years there will be more than ten billion.  However, if we keep going, in 270 years, there will be more rabbits on the island than atoms in the known universe, which is both a flat contradiction and terrifying. The moral of the story is, unless we are only concerned with short times, we will need a better model.</p>
+<p>So what is missing in our current model? Well, it currently does not account for the fact that rabbits must eat in order to survive and reproduce, and there is only a finite amount of vegetation on the continent. To model this fact, we incorporate a competition term, <span class="math notranslate nohighlight">\(r U^{2}(t) / K\)</span>, as follows</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -640,8 +641,7 @@ U(t)=\frac{K U(0)}{U(0)+[K-U(0)] R^{-t}} \tag{11}
 \]</div>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. [This is a bit tedious and uninspiring so don’t worry about understanding it in full. I just put it in for completeness.] Plugging Equation (11) into the right-hand side of Equation</p>
-<p>(9) gives</p>
+<p>Proof. [This is a bit tedious and uninspiring so don’t worry about understanding it in full. I just put it in for completeness.] Plugging Equation (11) into the right-hand side of Equation (9) gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -674,7 +674,7 @@ U(t)=\frac{K U(0)}{U(0)+[K-U(0)] R^{-t}} \tag{11}
 <div class="admonition-exercise-3 admonition">
 <p class="admonition-title">Exercise 3</p>
 <p>For the logistic model (Equation 7), when <span class="math notranslate nohighlight">\(U(0)=10\)</span> and <span class="math notranslate nohighlight">\(K=100\)</span>, calculate <span class="math notranslate nohighlight">\(U(1), \ldots, U(10)\)</span> for the following values of <span class="math notranslate nohighlight">\(r\)</span> : (a) <span class="math notranslate nohighlight">\(r=1\)</span>, (b) <span class="math notranslate nohighlight">\(r=1.5\)</span>, (c) <span class="math notranslate nohighlight">\(r=2.2\)</span>, (d) <span class="math notranslate nohighlight">\(r=2.5\)</span>, (e) <span class="math notranslate nohighlight">\(r=3\)</span>.</p>
-<p>Plot the graph of <span class="math notranslate nohighlight">\(U(t)\)</span> against <span class="math notranslate nohighlight">\(t\)</span> for each of the five cases and describe the solution qualitatively. If you are keen, you can extend this to values higher than <span class="math notranslate nohighlight">\(t=10\)</span>. Feel free to use a computer package (e.g. Excel), if you know how, but this is not mandatory.</p>
+<p>Plot the graph of <span class="math notranslate nohighlight">\(U(t)\)</span> against <span class="math notranslate nohighlight">\(t\)</span> for each of the five cases and describe the solution qualitatively. If you are keen, you can extend this to values higher than <span class="math notranslate nohighlight">\(t=10\)</span>. Feel free to use a computer package (e.g. Python, R, Excel), if you know how, but this is not mandatory - you can do just fine with a calculator.</p>
 </div>
 <div class="admonition-exercise-4 admonition">
 <p class="admonition-title">Exercise 4</p>
