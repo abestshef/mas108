@@ -462,7 +462,7 @@ document.write(`
 <p>(b) <span class="math notranslate nohighlight">\(\beta=1\)</span>,</p>
 <p>(c) <span class="math notranslate nohighlight">\(\beta=\frac{1}{2}\)</span>.</p>
 <p>Interpret each solution in terms of the motion of the spring.</p>
-<img src="https://cdn.mathpix.com/cropped/2024_08_15_41dd2eb40876053e397fg-1.jpg?height=398&width=1423&top_left_y=1754&top_left_x=319" alt="drawing" width="400"/>
+<img src="mas108_damped_osc.png" alt="drawing" width="400"/>
 <p><em>Figure 16: A spring on a table, with a mass on one end and fixed at the other end.</em></p>
 <p><strong>Solution.</strong></p>
 <p>The forces acting on the particle are the tension in the spring, <span class="math notranslate nohighlight">\(T\)</span>, and the resistance, <span class="math notranslate nohighlight">\(R\)</span>, both acting horizontally to oppose motion. By Hooke’s Law (see Example 15), the tension in the spring is <span class="math notranslate nohighlight">\(T=k x\)</span>. The resistance is <span class="math notranslate nohighlight">\(R=2 \beta \omega m \dot{x}\)</span>. Since both <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(T\)</span> act in the opposite direction to the motion, the second law of motion (Equation 106) gives</p>
@@ -523,8 +523,8 @@ x(t)=A \exp \left(t \omega \frac{-3+\sqrt{5}}{2}\right)+B \exp \left(t \omega \f
 x(t)=(A t+B) \exp \left(-\frac{2 \omega t}{2}\right)=(A t+B) \exp (-\omega t) \tag{131}
 \end{equation*}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants. Here, as <span class="math notranslate nohighlight">\(t \rightarrow \infty,(A t+B) \exp (-\omega t) \rightarrow 0\)</span> so at long times the mass moves exponentially towards its equilibrium location. In Figure (17), we see the four qualitative possibilities for the motion of <span class="math notranslate nohighlight">\(x(t)\)</span>, depending on the signs of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.
-<img src="https://cdn.mathpix.com/cropped/2024_08_15_41dd2eb40876053e397fg-3.jpg?height=1240&width=1215&top_left_y=234&top_left_x=409" alt="drawing" width="400"/></p>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants. Here, as <span class="math notranslate nohighlight">\(t \rightarrow \infty,(A t+B) \exp (-\omega t) \rightarrow 0\)</span> so at long times the mass moves exponentially towards its equilibrium location. In Figure (17), we see the four qualitative possibilities for the motion of <span class="math notranslate nohighlight">\(x(t)\)</span>, depending on the signs of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<img src="mas108_damped_osc2png" alt="drawing" width="400"/>
 <p><em>Figure 17: Examples of Equation (131) for various values of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Notice that for some values (e.g. <span class="math notranslate nohighlight">\(A=B=1\)</span> in top-left and <span class="math notranslate nohighlight">\(A=B=-1\)</span> in bottom-right) the mass returns monotonically to its resting location. For others (e.g. <span class="math notranslate nohighlight">\(A=1, B=-1\)</span> in top-right and <span class="math notranslate nohighlight">\(A=-1, B=1\)</span> in bottom-left) the mass moves in one direction, turns once, and then settles to its equilibrium location.</em></p>
 <p>(c) If <span class="math notranslate nohighlight">\(\beta=1 / 2\)</span>, Equation (125) is</p>
 <div class="math notranslate nohighlight">
@@ -547,7 +547,7 @@ x(t)=\exp \left(-\frac{\omega t}{2}\right)[A \sin (q t)+B \cos (q t)] \tag{133}
 x(t)=\exp \left(-\frac{\omega t}{2}\right)\left[A \sin \left(\frac{\sqrt{3}}{2} \omega t\right)+B \cos \left(\frac{\sqrt{3}}{2} \omega t\right)\right] \tag{134}
 \end{equation*}
 \]</div>
-<img src="https://cdn.mathpix.com/cropped/2024_08_15_41dd2eb40876053e397fg-4.jpg?height=998&width=1018&top_left_y=229&top_left_x=476" alt="drawing" width="400"/>
+<img src="mas108_damped_osc3.png" alt="drawing" width="400"/>
 <p><em>Figure 18: Example of Equation (134) with <span class="math notranslate nohighlight">\(\omega=1, A=0, B=1\)</span></em></p>
 <p>In this case <span class="math notranslate nohighlight">\(x(t)\)</span> exhibits damped oscillations. The frequency of these oscillations (i.e. the number of oscillations per unit time) is</p>
 <div class="math notranslate nohighlight">
@@ -573,7 +573,7 @@ x(t)=\exp \left(-\frac{\omega t}{2}\right)\left[A \sin \left(\frac{\sqrt{3}}{2} 
 <div class="admonition-exercise-24 admonition">
 <p class="admonition-title">Exercise 24</p>
 <p>An elastic string of natural length <span class="math notranslate nohighlight">\(2 l_{0}\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span> is stretched horizontally between two points <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> a distance <span class="math notranslate nohighlight">\(2 l\)</span> apart (where <span class="math notranslate nohighlight">\(l&gt;l_{0}\)</span> ), in a gravity-free environment. A particle of mass <span class="math notranslate nohighlight">\(m\)</span> attached to the midpoint <span class="math notranslate nohighlight">\(O\)</span> of the string is drawn aside a small distance <span class="math notranslate nohighlight">\(a\)</span>, where <span class="math notranslate nohighlight">\(a&lt;l-l_{0}\)</span>, along <span class="math notranslate nohighlight">\(A B\)</span> and released. Let <span class="math notranslate nohighlight">\(x(t)\)</span> be the location of the</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_08_15_41dd2eb40876053e397fg-5.jpg?height=324&amp;width=989&amp;top_left_y=1397&amp;top_left_x=525" /></p>
+<img src="mas108_elastic_qn.png" alt="drawing" width="400"/>
 <p>particle with respect to the origin, <span class="math notranslate nohighlight">\(O\)</span>.</p>
 <p>(a) Find the extensions in the segments of the string to the left and right of the mass (Hint: subtract the natural length from the stretched length).</p>
 <p>(b) Find the tensions in each segment of the stretched string, and indicate on a diagram the directions of their actions on the particle.</p>
