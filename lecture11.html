@@ -465,6 +465,7 @@ document.write(`
 <img src="mas108_damped_osc.png" alt="drawing" width="400"/>
 <p><em>Figure 16: A spring on a table, with a mass on one end and fixed at the other end.</em></p>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>The forces acting on the particle are the tension in the spring, <span class="math notranslate nohighlight">\(T\)</span>, and the resistance, <span class="math notranslate nohighlight">\(R\)</span>, both acting horizontally to oppose motion. By Hooke’s Law (see Example 15), the tension in the spring is <span class="math notranslate nohighlight">\(T=k x\)</span>. The resistance is <span class="math notranslate nohighlight">\(R=2 \beta \omega m \dot{x}\)</span>. Since both <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(T\)</span> act in the opposite direction to the motion, the second law of motion (Equation 106) gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -524,7 +525,7 @@ x(t)=(A t+B) \exp \left(-\frac{2 \omega t}{2}\right)=(A t+B) \exp (-\omega t) \t
 \end{equation*}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are constants. Here, as <span class="math notranslate nohighlight">\(t \rightarrow \infty,(A t+B) \exp (-\omega t) \rightarrow 0\)</span> so at long times the mass moves exponentially towards its equilibrium location. In Figure (17), we see the four qualitative possibilities for the motion of <span class="math notranslate nohighlight">\(x(t)\)</span>, depending on the signs of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
-<img src="mas108_damped_osc2png" alt="drawing" width="400"/>
+<img src="mas108_damped_osc2.png" alt="drawing" width="400"/>
 <p><em>Figure 17: Examples of Equation (131) for various values of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Notice that for some values (e.g. <span class="math notranslate nohighlight">\(A=B=1\)</span> in top-left and <span class="math notranslate nohighlight">\(A=B=-1\)</span> in bottom-right) the mass returns monotonically to its resting location. For others (e.g. <span class="math notranslate nohighlight">\(A=1, B=-1\)</span> in top-right and <span class="math notranslate nohighlight">\(A=-1, B=1\)</span> in bottom-left) the mass moves in one direction, turns once, and then settles to its equilibrium location.</em></p>
 <p>(c) If <span class="math notranslate nohighlight">\(\beta=1 / 2\)</span>, Equation (125) is</p>
 <div class="math notranslate nohighlight">
@@ -555,6 +556,7 @@ x(t)=\exp \left(-\frac{\omega t}{2}\right)\left[A \sin \left(\frac{\sqrt{3}}{2} 
 \frac{\sqrt{3}}{4 \pi} \omega
 \]</div>
 <p>The sine and cosine terms cause the mass <span class="math notranslate nohighlight">\(m\)</span> to oscillate between a positive and negative extension, whilst the <span class="math notranslate nohighlight">\(\exp (-\omega t / 2)\)</span> term causes those oscillations to decrease over time. Figure 18 gives a plot of Equation (134) for <span class="math notranslate nohighlight">\(\omega=1, A=0, B=1\)</span>.</p>
+</div>
 </section>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>

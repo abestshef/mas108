@@ -603,6 +603,7 @@ differentiated twice. Here are two examples</p>
 \end{equation*}
 \]</div>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>First re-write Equation (91) as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -637,6 +638,7 @@ differentiated twice. Here are two examples</p>
 \end{align*}
 \end{split}\]</div>
 <p>for a constant, <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</div>
 </section>
 </div></section>
 <section id="lecture-6-homework-exercises">
@@ -652,6 +654,50 @@ differentiated twice. Here are two examples</p>
 <p>(f) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}+2 U-6=0\)</span> with initial condition <span class="math notranslate nohighlight">\(U(0)=1\)</span></p>
 <p>(g) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}-U-2 \cos (t)=0\)</span> with initial condition <span class="math notranslate nohighlight">\(U(0)=1\)</span></p>
 <p>(h) <span class="math notranslate nohighlight">\(\frac{\mathrm{d} U}{\mathrm{~d} t}-U-2 t=0\)</span> with initial condition <span class="math notranslate nohighlight">\(U(0)=1\)</span></p>
+</div>
+<div class="admonition-option-extra-coding admonition">
+<p class="admonition-title">Option extra: coding</p>
+<p>The code below will show the time-course from the ODE we looked at in example 11. It computes the solution in two ways: it uses the explicit solution we found (having used an initial condition <span class="math notranslate nohighlight">\(U(0)=1\)</span> to get a value for <span class="math notranslate nohighlight">\(c\)</span>), and it also uses an in-built ‘numerical solver’ to calculate the time-course. This is well beyond this module (you’ll see it in more detail in the 2nd year scientific programming course) but just trust that it works! If you want a challenge, try altering the code to check your results for some of the questions in exercise 15.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="c1">#Accompanying python code for MAS108 lecture 6</span>
+<span class="c1">#Code to produce plots of first-order linear ODEs</span>
+
+<span class="c1"># First we import the libraries we need</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1">#A &#39;function&#39; for the ODE</span>
+<span class="k">def</span> <span class="nf">ex11_ode</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">U</span><span class="p">):</span>
+    <span class="n">dUdt</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">t</span>
+    <span class="k">return</span> <span class="n">dUdt</span>
+
+<span class="c1">#The initial value of U</span>
+<span class="n">U0</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># The timespan we will inetgrate over</span>
+<span class="n">tspan</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+
+<span class="c1"># The special funciton to numerically solve the ODE</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">ex11_ode</span><span class="p">,[</span><span class="n">tspan</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tspan</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[</span><span class="n">U0</span><span class="p">],</span><span class="n">t_eval</span><span class="o">=</span><span class="n">tspan</span><span class="p">)</span>
+
+<span class="c1"># The explicit solution we derived (having used he initial condition to find c)</span>
+<span class="n">mysol</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tspan</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#Code to plot the output</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span><span class="c1">#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+<span class="n">fig1</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tspan</span><span class="p">,</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tspan</span><span class="p">,</span><span class="n">mysol</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </section>
 </section>
