@@ -475,6 +475,7 @@ document.write(`
 \end{equation*}
 \]</div>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>We want to draw arrows on the <span class="math notranslate nohighlight">\((U, t)\)</span>-plane describing the direction of change of the solution. But the direction of change is simply the gradient of the derivative, <span class="math notranslate nohighlight">\(\dot{U}\)</span>, and we have a formula for that in Equation (104). With this in mind, the general technique for plotting a direction field is as follows.</p>
 <ol class="arabic simple">
 <li><p>Select a point <span class="math notranslate nohighlight">\((t, U)\)</span>.</p></li>
@@ -604,6 +605,7 @@ document.write(`
 <p><em>Table 8: The first row gives values of <span class="math notranslate nohighlight">\(t\)</span> and the first column gives values of <span class="math notranslate nohighlight">\(U\)</span>. The other cells show values of <span class="math notranslate nohighlight">\(\dot{U}\)</span> for the corresponding values of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, as determined by Equation (104).</em></p>
 <img src="mas108_dir_field.png" alt="drawing" width="400"/>
 <p><em>Figure 13: Direction field for Equation (104).</em></p>
+</div>
 </section>
 </div><p>Figure 13 also shows the solution to Equation (104) for two different initial conditions: <span class="math notranslate nohighlight">\(U(0)=4\)</span>, given by the top curve, and <span class="math notranslate nohighlight">\(U(0)=1 / 2\)</span>, given by the bottom curve. These are not algebraic expressions, but rather they are graphical solutions, showing how <span class="math notranslate nohighlight">\(U\)</span> changes over time. Nonetheless, they are still solutions, and valuable for analysing ODEs.</p>
 <div class="proof example admonition" id="example-1">
@@ -619,6 +621,7 @@ is able to sustain less individuals. A simple model of this is as follows</p>
 \]</div>
 <p>Plot the direction field in the case <span class="math notranslate nohighlight">\(r=K=\mu=1\)</span> for <span class="math notranslate nohighlight">\(0 \leq U \leq 2\)</span> and <span class="math notranslate nohighlight">\(0 \leq t \leq 3\)</span>. What do you think will happen to <span class="math notranslate nohighlight">\(U(t)\)</span> as <span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span> ? Why?</p>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>Values of <span class="math notranslate nohighlight">\(\dot{U}\)</span> for various <span class="math notranslate nohighlight">\(0 \leq U \leq 2\)</span> and <span class="math notranslate nohighlight">\(0 \leq t \leq 3\)</span> are given in Table 9. The resulting direction field is shown in Figure 14. If we start at any initial location <span class="math notranslate nohighlight">\(U(0)\)</span>, we see that the trajectory seems to be tending to 0 , so the animals die out. This is because the carrying capacity is <span class="math notranslate nohighlight">\(\exp (-t)\)</span>, which tends to zero over time, i.e. the size of population that the environment can sustain decreases to zero over time.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -720,6 +723,7 @@ is able to sustain less individuals. A simple model of this is as follows</p>
 <p><em>Table 9: The first row gives values of <span class="math notranslate nohighlight">\(t\)</span> and the first column gives values of <span class="math notranslate nohighlight">\(U\)</span>. The other cells show values of <span class="math notranslate nohighlight">\(\dot{U}\)</span> for the corresponding values of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, as determined by Equation (104).</em></p>
 <img src="mas108_dir_field2.png" alt="drawing" width="400"/>
 <p><em>Figure 14: Direction field for Equation (105).</em></p>
+</div>
 </section>
 </div><section id="lecture-9-homework-exercises">
 <h2>Lecture 9 Homework exercises<a class="headerlink" href="#lecture-9-homework-exercises" title="Link to this heading">#</a></h2>

@@ -467,6 +467,7 @@ y(t)=D \sin (\sigma t) \tag{135}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega\)</span> is a positive constant which should be determined.</p>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>The forces acting on <span class="math notranslate nohighlight">\(P\)</span> are the weight, <span class="math notranslate nohighlight">\(m g\)</span>, acting vertically downwards, and the tension, <span class="math notranslate nohighlight">\(T\)</span>, in the spring, acting vertically upwards. In equilibrium, let the tension in the spring be <span class="math notranslate nohighlight">\(T=T_{0}\)</span> and the extension of the spring be <span class="math notranslate nohighlight">\(a\)</span>. By Hooke’s Law, <span class="math notranslate nohighlight">\(T_{0}=k a\)</span>. Since the system is in equilibrium, the vertical forces balance (Figure 19), so</p>
 <div class="math notranslate nohighlight">
 \[
@@ -509,6 +510,7 @@ m \ddot{x}+k x &amp; =k y=k D \sin (\sigma t) \\
 \end{equation*}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega^{2}=\frac{k}{m}\)</span>, so that <span class="math notranslate nohighlight">\(\omega=\sqrt{\frac{k}{m}}\)</span>.</p>
+</div>
 </section>
 </div><p>Notice that the resulting ODE (Equation 141) is not in the form of Equation (109) so we cannot use our results from Propositions 4-6.</p>
 <div class="proof definition admonition" id="def12_1">
@@ -538,6 +540,7 @@ m \ddot{x}+k x &amp; =k y=k D \sin (\sigma t) \\
 <section class="example-content" id="proof-content">
 <p>Find the general solution to Equation (141) in the case <span class="math notranslate nohighlight">\(\sigma^{2} \neq \omega^{2}\)</span>.</p>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>The right-hand side of Equation (141) is <span class="math notranslate nohighlight">\(\sin (\sigma t)\)</span>, so we will try to find a solution of the form <span class="math notranslate nohighlight">\(x(t)=A \sin (\sigma t)\)</span>. Here, <span class="math notranslate nohighlight">\(\dot{x}(t)=A \sigma \cos (\sigma t)\)</span> and <span class="math notranslate nohighlight">\(\ddot{x}(t)=-A \sigma^{2} \sin (\sigma t)\)</span>. Plugging these into Equation (141) gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -575,6 +578,7 @@ x_{I}(t)=B \sin (\omega t)+C \cos (\omega t) \tag{146}
 x(t)=x_{I}(t)+x_{P}(t)=B \sin (\omega t)+C \cos (\omega t)+\frac{D \omega^{2}}{\omega^{2}-\sigma^{2}} \sin (\sigma t) \tag{147}
 \end{equation*}
 \]</div>
+</div>
 </section>
 </div><p>The tricky thing about this method is finding a good guess for the form of the particular solution. Here’s some rules as to what you should try for certain specific functions.</p>
 <ol class="arabic simple">

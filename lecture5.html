@@ -527,6 +527,7 @@ U(t+\tau)=(1+r \tau) U(t) \tag{42}
 <section class="example-content" id="proof-content">
 <p>Find the solution to Equation (44) where <span class="math notranslate nohighlight">\(U(0)=1\)</span>.</p>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>First we rearrange Equation (44) to give</p>
 <div class="math notranslate nohighlight">
 \[
@@ -571,6 +572,7 @@ U(t)=\exp (r t+c)=A \exp (r t) \tag{50}
 U(t)=U(0) \exp (r t)=\exp (r t) \tag{51}
 \end{equation*}
 \]</div>
+</div>
 </section>
 </div><p>Now, in Proposition 1, we found a solution to the original difference equation, Equation (5). Notice that Equation (5) is just Equation (42) with <span class="math notranslate nohighlight">\(\tau=1\)</span>. So it is valuable to compare Equation (51) with the solution of Equation (5). They ought to be similar, right?</p>
 <p>We found that, in Proposition 1, <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span>. By a similar argument</p>
@@ -609,6 +611,7 @@ U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
 <section class="example-content" id="proof-content">
 <p>Solve Equation (45) for <span class="math notranslate nohighlight">\(U(0)=K / 10\)</span>.</p>
 <p><strong>Solution.</strong></p>
+<div class="toggle docutils container">
 <p>First we rearrange Equation (45) to give</p>
 <div class="math notranslate nohighlight">
 \[
@@ -685,6 +688,7 @@ U(t+\tau) &amp; =U(0)(1+r \tau)^{t / \tau} \\
 \Longrightarrow U(t)=\frac{K \exp (r t)}{9+\exp (r t)} \tag{64}
 \end{equation*}
 \]</div>
+</div>
 </section>
 </div><p>To compare the general solution from Equation (62) to the discrete logistic model, recall two things. First, we were not able to find an exact analytic solution to the discrete logistic model (see Lecture 3), but we can for the continuous logistic model (Equation 62). Second, the behaviour of the discrete solution can get pretty wild (again, see Lecture 3), including solutions that never settle, period doubling, and chaos. In contrast, the continuous logistic model always tends towards a constant, positive, steady state, <span class="math notranslate nohighlight">\(K\)</span> in a monotonic fashion (e.g. Figure 8).</p>
 <p>So be careful in choosing your model! The choice of discrete or continuous could lead to a big difference in the predicted outcome. In your model choice, you should be informed by the underlying reality. For example, is your organism one that could reproduce at any time (like single-celled organisms) or only at a specific time (like sheep, who reproduce once per year in spring)? If the former, then a continuous-time formalism may be better (i.e. differential equations); if the latter, then use discrete-time equations (i.e. difference equations).</p>
