@@ -519,7 +519,11 @@ U(t+1)=(1+r) U(t) \tag{5}
 <p><span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> is a solution to Equation (5).</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Plugging <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> into the right-hand side of Equation (5) gives RHS <span class="math notranslate nohighlight">\(=(1+r) U(t)=(1+r) U(0)(1+r)^{t}=(1+r)^{t+1} U(0)\)</span>. Now notice that <span class="math notranslate nohighlight">\((1+r)^{t+1} U(0)=\)</span> <span class="math notranslate nohighlight">\(U(t+1)=L H S\)</span>. Hence <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> solves Equation (5).</p>
+<p>Proof. Plugging <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> into the right-hand side of Equation (5) gives</p>
+<p><span class="math notranslate nohighlight">\(RHS =(1+r) U(t)=(1+r) U(0)(1+r)^{t}=(1+r)^{t+1} U(0).\)</span></p>
+<p>Now notice that</p>
+<p><span class="math notranslate nohighlight">\((1+r)^{t+1} U(0)=U(t+1)=L H S\)</span>.</p>
+<p>Hence <span class="math notranslate nohighlight">\(U(t)=U(0)(1+r)^{t}\)</span> solves Equation (5).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -644,23 +648,17 @@ U(t)=\frac{K U(0)}{U(0)+[K-U(0)] R^{-t}} \tag{11}
 <p>Proof. [This is a bit tedious and uninspiring so don’t worry about understanding it in full. I just put it in for completeness.] Plugging Equation (11) into the right-hand side of Equation (9) gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{aligned}
+\begin{align}
 \frac{M R U(t)}{M+U(t)} &amp; =\frac{M R K U(0) /\left\{U(0)+[K-U(0)] R^{-t}\right\}}{M+K U(0) /\left\{U(0)+[K-U(0)] R^{-t}\right\}} \\
-&amp; =\frac{M R K U(0)}{M\left\{U(0)+[K-U(0)] R^{-t}\right\}+K U(0)}
-\end{aligned}
+&amp; =\frac{M R K U(0)}{M\left\{U(0)+[K-U(0)] R^{-t}\right\}+K U(0)}\\
+&amp;=\frac{M^{2} R(R-1) U(0)}{M\left\{U(0)+[M(R-1)-U(0)] R^{-t}\right\}+M(R-1) U(0)}  \\
+&amp;=\frac{M R(R-1) U(0)}{U(0)+[M(R-1)-U(0)] R^{-t}+(R-1) U(0)} \\
+&amp;=\frac{M R(R-1) U(0)}{R U(0)+[M(R-1)-U(0)] R^{-t}}\\
+&amp;=\frac{M(R-1) U(0)}{U(0)+[M(R-1)-U(0)] R^{-(t+1)}}\\
+&amp;=\frac{K U(0)}{U(0)+[K-U(0)] R^{-(t+1)}}\\
+&amp;=U(t+1)
+\end{align} 
 \end{split}\]</div>
-<p>(multiply top and bottom by: <span class="math notranslate nohighlight">\(\quad U(0)+[K-U(0)] R^{-t}\)</span> )</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{ll}
-=\frac{M^{2} R(R-1) U(0)}{M\left\{U(0)+[M(R-1)-U(0)] R^{-t}\right\}+M(R-1) U(0)} &amp; (K=M(R-1)) \\
-=\frac{M R(R-1) U(0)}{U(0)+[M(R-1)-U(0)] R^{-t}+(R-1) U(0)} &amp; (\text { cancel } M \mathrm{~s})
-\end{array} 
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(=\frac{M R(R-1) U(0)}{R U(0)+[M(R-1)-U(0)] R^{-t}}\)</span></p>
-<p><span class="math notranslate nohighlight">\(=\frac{M(R-1) U(0)}{U(0)+[M(R-1)-U(0)] R^{-(t+1)}}\)</span></p>
-<p><span class="math notranslate nohighlight">\(=\frac{K U(0)}{U(0)+[K-U(0)] R^{-(t+1)}}\)</span></p>
-<p><span class="math notranslate nohighlight">\(=U(t+1)\)</span>,</p>
 <p>which is the left-hand side of Equation (9).</p>
 </div>
 <img src="mas108_fig_bh.png" alt="Comparison of model time courses" width="800"/>
